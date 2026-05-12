@@ -1,30 +1,32 @@
+import React from 'react'
 import {
-  MousePointer2, Frame, PenTool, Square, Type, Hand, MessageSquare,
-  Minus,
+  MousePointer2, Frame, PenTool, Square, Type, Hand, MessageSquare, Minus,
 } from 'lucide-react'
 import styles from './FigmaUI.module.css'
 
-const tools = [
+type Tool = { icon: React.ElementType; label: string; active?: boolean } | { type: 'sep' }
+
+const tools: Tool[] = [
   { icon: MousePointer2, label: 'Move', active: true },
-  { icon: Frame, label: 'Frame' },
+  { icon: Frame,         label: 'Frame' },
   { type: 'sep' },
-  { icon: PenTool, label: 'Pen' },
-  { icon: Square, label: 'Rectangle' },
-  { icon: Type, label: 'Text' },
+  { icon: PenTool,       label: 'Pen' },
+  { icon: Square,        label: 'Rectangle' },
+  { icon: Type,          label: 'Text' },
   { type: 'sep' },
-  { icon: Hand, label: 'Hand' },
+  { icon: Hand,          label: 'Hand' },
   { icon: MessageSquare, label: 'Comment' },
-] as const
+]
 
 export function FigmaUI() {
   return (
     <>
       {/* ── Left toolbar ── */}
       <div className={styles.leftBar}>
-        {tools.map((t, i) =>
-          'type' in t ? (
-            <div key={i} className={styles.sep} />
-          ) : (
+        {tools.map((t, i) => {
+          if ('type' in t) return <div key={i} className={styles.sep} />
+          const Icon = t.icon
+          return (
             <button
               key={i}
               className={`${styles.tool} ${t.active ? styles.toolActive : ''}`}
@@ -32,10 +34,10 @@ export function FigmaUI() {
               aria-hidden="true"
               title={t.label}
             >
-              <t.icon size={16} strokeWidth={1.5} />
+              <Icon size={16} strokeWidth={1.5} />
             </button>
           )
-        )}
+        })}
       </div>
 
       {/* ── Right panel ── */}
