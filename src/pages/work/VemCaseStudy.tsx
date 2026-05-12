@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
 import { MetricCard } from '@/components/casestudy/MetricCard'
 import { BarChart } from '@/components/casestudy/BarChart'
@@ -134,6 +135,7 @@ const designPrinciples = [
 export function VemCaseStudy() {
   return (
     <main className={styles.page}>
+      <SEO title="VEM — Cartão Inteligente" description="Case study do app VEM, cartão de benefícios inteligente para colaboradores." />
 
       {/* ─── HERO ─── */}
       <motion.section
@@ -142,7 +144,7 @@ export function VemCaseStudy() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={v('capa.png')} alt="" className={styles.heroBgImg} />
+        <img src={v('capa.png')} alt="" className={styles.heroBgImg} fetchPriority="high" />
         <div className={styles.heroOverlay} />
 
         <div className={styles.heroContent}>
@@ -402,42 +404,65 @@ export function VemCaseStudy() {
         {/* ── CORES ── */}
         <div className={styles.dsBlock}>
           <p className={styles.dsSectionTitle}>Paleta de cores</p>
-          <div className={styles.dsColorGrid}>
-            {[
-              { hex: '#E75B32', name: 'Brand Orange', role: 'CTA principal, logo' },
-              { hex: '#F67F1D', name: 'Orange Light', role: 'Hover, destaque' },
-              { hex: '#0165AA', name: 'Brand Blue', role: 'Ações interativas' },
-              { hex: '#259EDE', name: 'Blue Light', role: 'Links, secundário' },
-              { hex: '#333333', name: 'Text Primary', role: 'Títulos e textos' },
-              { hex: '#69615C', name: 'Text Secondary', role: 'Corpo de texto' },
-              { hex: '#CCCCCC', name: 'Border', role: 'Separadores, bordas' },
-              { hex: '#EEEEEE', name: 'Surface', role: 'Fundos alternados' },
-              { hex: '#44AC48', name: 'Success', role: 'Concluído, sucesso' },
-              { hex: '#CC0000', name: 'Error', role: 'Erro, cancelamento' },
-              { hex: '#D3532E', name: 'Orange Dark', role: 'Hover destrutivo' },
-              { hex: '#FFFFFF', name: 'White', role: 'Fundo principal' },
-            ].map((c) => (
-              <motion.div
-                key={c.hex}
-                className={styles.dsSwatch}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-              >
-                <div
-                  className={styles.dsSwatchColor}
-                  style={{
-                    backgroundColor: c.hex,
-                    border: c.hex === '#FFFFFF' ? '1px solid #EEEEEE' : 'none',
-                  }}
-                />
-                <div className={styles.dsSwatchInfo}>
-                  <span className={styles.dsSwatchHex}>{c.hex}</span>
-                  <span className={styles.dsSwatchName}>{c.name}</span>
-                  <span className={styles.dsSwatchRole}>{c.role}</span>
+          <div className={styles.dsColorGroups}>
+            {([
+              {
+                label: 'Brand',
+                colors: [
+                  { hex: '#E75B32', name: 'Brand Orange', role: 'CTA principal, logo', wcag: 'AA large' },
+                  { hex: '#F67F1D', name: 'Orange Light', role: 'Hover, destaque' },
+                  { hex: '#D3532E', name: 'Orange Dark', role: 'Hover destrutivo' },
+                  { hex: '#0165AA', name: 'Brand Blue', role: 'Ações interativas', wcag: 'AA' },
+                  { hex: '#259EDE', name: 'Blue Light', role: 'Links, secundário' },
+                ],
+              },
+              {
+                label: 'Texto & Neutros',
+                colors: [
+                  { hex: '#333333', name: 'Text Primary', role: 'Títulos e textos', wcag: 'AAA' },
+                  { hex: '#69615C', name: 'Text Secondary', role: 'Corpo de texto', wcag: 'AA' },
+                  { hex: '#CCCCCC', name: 'Border', role: 'Separadores, bordas' },
+                  { hex: '#EEEEEE', name: 'Surface', role: 'Fundos alternados' },
+                  { hex: '#FFFFFF', name: 'White', role: 'Fundo principal', outline: true },
+                ],
+              },
+              {
+                label: 'Status',
+                colors: [
+                  { hex: '#44AC48', name: 'Success', role: 'Concluído, confirmado', wcag: 'AA large' },
+                  { hex: '#CC0000', name: 'Error', role: 'Erro, cancelamento', wcag: 'AA' },
+                ],
+              },
+            ] as Array<{ label: string; colors: Array<{ hex: string; name: string; role: string; wcag?: string; outline?: boolean }> }>).map((group) => (
+              <div key={group.label} className={styles.dsColorGroup}>
+                <span className={styles.dsColorGroupLabel}>{group.label}</span>
+                <div className={styles.dsColorGroupSwatches}>
+                  {group.colors.map((c) => (
+                    <motion.div
+                      key={c.hex}
+                      className={styles.dsSwatchNew}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35 }}
+                    >
+                      <div
+                        className={styles.dsSwatchColorNew}
+                        style={{
+                          backgroundColor: c.hex,
+                          border: c.outline ? '1px solid #D8D8D8' : 'none',
+                        }}
+                      />
+                      <div className={styles.dsSwatchInfoNew}>
+                        <span className={styles.dsSwatchHexNew}>{c.hex}</span>
+                        <span className={styles.dsSwatchNameNew}>{c.name}</span>
+                        <span className={styles.dsSwatchRoleNew}>{c.role}</span>
+                        {c.wcag && <span className={styles.dsSwatchWcag}>{c.wcag}</span>}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -475,18 +500,36 @@ export function VemCaseStudy() {
           <div className={styles.dsButtonSection}>
             <div className={styles.dsButtonGroup}>
               <span className={styles.dsButtonGroupLabel}>Primário — Azul</span>
-              <div className={styles.dsButtonRow}>
-                <button className={styles.dsBtnBlue}>Acessar</button>
-                <button className={styles.dsBtnBlueHover}>Hover</button>
-                <button className={styles.dsBtnDisabled} disabled>Desabilitado</button>
+              <div className={styles.dsButtonStates}>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnBlue}>Acessar</button>
+                  <span className={styles.dsStateLabel}>Padrão</span>
+                </div>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnBlueHover}>Acessar</button>
+                  <span className={styles.dsStateLabel}>Hover</span>
+                </div>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnDisabled} disabled>Acessar</button>
+                  <span className={styles.dsStateLabel}>Desabilitado</span>
+                </div>
               </div>
             </div>
             <div className={styles.dsButtonGroup}>
               <span className={styles.dsButtonGroupLabel}>Primário — Laranja</span>
-              <div className={styles.dsButtonRow}>
-                <button className={styles.dsBtnOrange}>Saiba mais</button>
-                <button className={styles.dsBtnOrangeHover}>Hover</button>
-                <button className={styles.dsBtnDisabled} disabled>Desabilitado</button>
+              <div className={styles.dsButtonStates}>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnOrange}>Saiba mais</button>
+                  <span className={styles.dsStateLabel}>Padrão</span>
+                </div>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnOrangeHover}>Saiba mais</button>
+                  <span className={styles.dsStateLabel}>Hover</span>
+                </div>
+                <div className={styles.dsButtonState}>
+                  <button className={styles.dsBtnDisabled} disabled>Saiba mais</button>
+                  <span className={styles.dsStateLabel}>Desabilitado</span>
+                </div>
               </div>
             </div>
             <div className={styles.dsButtonGroup}>
@@ -550,63 +593,48 @@ export function VemCaseStudy() {
           </div>
         </div>
 
-        {/* ── ÍCONES ── */}
+        {/* ── ESPAÇAMENTO ── */}
         <div className={styles.dsBlock}>
-          <p className={styles.dsSectionTitle}>Biblioteca de ícones</p>
-          <div className={styles.dsIconSection}>
+          <p className={styles.dsSectionTitle}>Tokens de espaçamento — base 4px</p>
+          <div className={styles.dsSpacingRow}>
             {[
-              {
-                category: 'UI Controls',
-                icons: ['→', '👤', 'ℹ', '✓', '⚠', '✕', '»', '↓'],
-              },
-              {
-                category: 'Cartão & Pagamento',
-                icons: ['💳', '💰', '🚫', '☝', '📲'],
-              },
-              {
-                category: 'Serviços VEM',
-                icons: ['🔔', '💲', '👤', '❌', '📱', '🪪'],
-              },
-              {
-                category: 'Conta & Dados',
-                icons: ['⭕', '🪪', '📋', '📄', '📅', '📍'],
-              },
-              {
-                category: 'Social',
-                icons: ['💬', '📷', '👤'],
-              },
-            ].map((cat) => (
-              <div key={cat.category} className={styles.dsIconGroup}>
-                <span className={styles.dsIconGroupLabel}>{cat.category}</span>
-                <div className={styles.dsIconRow}>
-                  {cat.icons.map((icon, i) => (
-                    <div key={i} className={styles.dsIconItem}>{icon}</div>
-                  ))}
-                </div>
+              { token: 'space-1', px: 4 },
+              { token: 'space-2', px: 8 },
+              { token: 'space-3', px: 12 },
+              { token: 'space-4', px: 16 },
+              { token: 'space-6', px: 24 },
+              { token: 'space-8', px: 32 },
+              { token: 'space-10', px: 40 },
+              { token: 'space-12', px: 48 },
+              { token: 'space-16', px: 64 },
+              { token: 'space-20', px: 80 },
+            ].map((s) => (
+              <div key={s.token} className={styles.dsSpacingItem}>
+                <div className={styles.dsSpacingBar} style={{ height: Math.round(s.px * 1.1) }} />
+                <span className={styles.dsSpacingToken}>{s.token}</span>
+                <span className={styles.dsSpacingPx}>{s.px}px</span>
               </div>
             ))}
           </div>
-          <div className={styles.dsIconImageWrapper}>
-            <img src={v('ds-icones.png')} alt="Biblioteca de ícones VEM" className={styles.dsIconImage} />
+        </div>
+
+        {/* ── ÍCONES ── */}
+        <div className={styles.dsBlock}>
+          <p className={styles.dsSectionTitle}>Biblioteca de ícones</p>
+          <div className={styles.dsIconImageClip}>
+            <img
+              src={v('ds-icones.png')}
+              alt="Biblioteca de ícones VEM"
+              className={styles.dsIconImage}
+              loading="lazy"
+            />
           </div>
         </div>
 
         {/* ── HEADER & FOOTER ── */}
         <div className={styles.dsBlock}>
           <p className={styles.dsSectionTitle}>Navegação — Header & Footer</p>
-          <div className={styles.dsNavPreview}>
-            <div className={styles.dsHeader}>
-              <div className={styles.dsHeaderLogo}>vem</div>
-              <nav className={styles.dsHeaderNav}>
-                {['Para você', 'Para empresas', 'Informativos', 'Sobre o VEM', 'Ajuda'].map((item) => (
-                  <span key={item} className={styles.dsHeaderNavItem}>{item}</span>
-                ))}
-              </nav>
-              <div className={styles.dsHeaderActions}>
-                <span className={styles.dsHeaderAction}>Minha conta</span>
-                <span className={[styles.dsHeaderAction, styles.dsHeaderActionActive].join(' ')}>Posto Virtual</span>
-              </div>
-            </div>
+          <div className={styles.dsNavImageClip}>
             <img src={v('ds-header-footer.png')} alt="Header e footer do VEM" className={styles.dsNavImage} />
           </div>
         </div>

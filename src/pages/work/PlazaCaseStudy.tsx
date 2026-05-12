@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
 import { MetricCard } from '@/components/casestudy/MetricCard'
 import { BarChart } from '@/components/casestudy/BarChart'
@@ -234,6 +235,7 @@ const personas = [
 export function PlazaCaseStudy() {
   return (
     <main className={styles.page}>
+      <SEO title="Shopping Plaza" description="Case study do redesign digital do Shopping Plaza." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <motion.section
@@ -242,7 +244,7 @@ export function PlazaCaseStudy() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={p('capa.png')} alt="Plaza Shopping — Central do Lojista" className={styles.heroBgImg} />
+        <img src={p('capa.png')} alt="Plaza Shopping — Central do Lojista" className={styles.heroBgImg} fetchPriority="high" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <motion.div

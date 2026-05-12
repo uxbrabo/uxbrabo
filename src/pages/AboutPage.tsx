@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import { AccordionItem } from '@/components/sections/about/AccordionItem'
 import { Button } from '@/components/ui/Button'
 import { experiences, education } from '@/data/experience'
+import { SEO } from '@/components/SEO'
 import styles from './AboutPage.module.css'
 
 const fadeUp = {
@@ -46,6 +47,7 @@ function AboutSection({ letter, label, children }: AboutSectionProps) {
 export function AboutPage() {
   return (
     <main className={styles.page}>
+      <SEO title="Sobre" description="Conheça Lucas Brabo — Designer de Produto e desenvolvedor front-end com mais de 5 anos de experiência em UX/UI, direção de arte e código." />
       {/* Intro hero */}
       <section className={styles.intro}>
         <div className={styles.introLeft}>

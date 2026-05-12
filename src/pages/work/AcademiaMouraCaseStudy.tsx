@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
 import { MetricCard } from '@/components/casestudy/MetricCard'
 import { BarChart } from '@/components/casestudy/BarChart'
@@ -175,6 +176,7 @@ const mobileScreens = [
 export function AcademiaMouraCaseStudy() {
   return (
     <main className={styles.page}>
+      <SEO title="Academia Moura EAD" description="Case study da plataforma de ensino a distância da Academia Moura." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <motion.section
@@ -183,7 +185,7 @@ export function AcademiaMouraCaseStudy() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={a('hero.png')} alt="Academia Moura EAD" className={styles.heroBgImg} />
+        <img src={a('hero.png')} alt="Academia Moura EAD" className={styles.heroBgImg} fetchPriority="high" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <motion.div

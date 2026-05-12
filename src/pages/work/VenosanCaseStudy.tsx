@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
 import { MetricCard } from '@/components/casestudy/MetricCard'
 import { BarChart } from '@/components/casestudy/BarChart'
@@ -131,6 +132,7 @@ const screens = [
 export function VenosanCaseStudy() {
   return (
     <main className={styles.page}>
+      <SEO title="Venosan — Calculadora de Medidas" description="Case study da calculadora de medidas para meias de compressão Venosan." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <motion.section
@@ -139,7 +141,7 @@ export function VenosanCaseStudy() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={v('capa.png')} alt="Venosan — Calculadora de Medidas" className={styles.heroBgImg} />
+        <img src={v('capa.png')} alt="Venosan — Calculadora de Medidas" className={styles.heroBgImg} fetchPriority="high" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <motion.div

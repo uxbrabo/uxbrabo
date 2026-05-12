@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import styles from './RosarinhoPage.module.css'
 
 const fadeUp = {
@@ -22,6 +23,7 @@ const overviewItems = [
 export function RosarinhoPage() {
   return (
     <main className={styles.page}>
+      <SEO title="Rosarinho — Direção de Arte" description="Direção de arte e identidade visual para o bairro Rosarinho, Recife." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>

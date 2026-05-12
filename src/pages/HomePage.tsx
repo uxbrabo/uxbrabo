@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Footer } from '@/components/layout/Footer'
 import { ProjectScrollCard } from '@/components/sections/home/ProjectScrollCard'
 import { projects } from '@/data/projects'
+import { SEO } from '@/components/SEO'
 import styles from './HomePage.module.css'
 
 const stagger = {
@@ -21,6 +22,7 @@ const fadeUp = {
 export function HomePage() {
   return (
     <main className={styles.page}>
+      <SEO />
       {/* Hero */}
       <section className={styles.hero} aria-label="Apresentação">
         <motion.div

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import styles from './BellyrisiPage.module.css'
 
 const fadeUp = {
@@ -22,6 +23,7 @@ const overviewItems = [
 export function BellyrisiPage() {
   return (
     <main className={styles.page}>
+      <SEO title="Bellyrisi — Direção de Arte" description="Direção de arte e identidade visual para Bellyrisi." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>

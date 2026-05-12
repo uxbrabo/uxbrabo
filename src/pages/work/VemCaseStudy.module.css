@@ -411,61 +411,109 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  background: #FAFAFA;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 36px 40px;
 }
 
 .dsSectionTitle {
-  font-size: var(--fs-small);
+  font-size: 10px;
   font-weight: var(--fw-semibold);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.35);
 }
 
-/* Colors */
-.dsColorGrid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-}
-
-.dsSwatch {
+/* ── Color groups ──────────────────────────────────── */
+.dsColorGroups {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 28px;
 }
 
-.dsSwatchColor {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 4px;
+.dsColorGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.dsSwatchInfo {
+.dsColorGroupLabel {
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+.dsColorGroupSwatches {
+  display: flex;
+  gap: 3px;
+}
+
+.dsSwatchNew {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dsSwatchColorNew {
+  height: 96px;
+}
+
+.dsSwatchInfoNew {
+  padding: 10px 12px 12px;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: none;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.dsSwatchHex {
-  font-size: 12px;
+.dsSwatchHexNew {
+  font-size: 11px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
   font-family: monospace;
+  letter-spacing: 0.03em;
 }
 
-.dsSwatchName {
-  font-size: 11px;
+.dsSwatchNameNew {
+  font-size: 10px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
+  margin-top: 3px;
 }
 
-.dsSwatchRole {
-  font-size: 11px;
+.dsSwatchRoleNew {
+  font-size: 10px;
   color: var(--color-text-muted);
-  line-height: 1.3;
+  line-height: 1.4;
 }
+
+.dsSwatchWcag {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2A8A2E;
+  background-color: rgba(42, 138, 46, 0.1);
+  padding: 2px 6px;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+/* ── Legacy swatch (keep for backward compat) ──────── */
+.dsColorGrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.dsSwatch { display: flex; flex-direction: column; gap: 8px; }
+.dsSwatchColor { width: 100%; aspect-ratio: 1; border-radius: 4px; }
+.dsSwatchInfo { display: flex; flex-direction: column; gap: 2px; }
+.dsSwatchHex { font-size: 12px; font-weight: var(--fw-semibold); color: var(--color-text-primary); font-family: monospace; }
+.dsSwatchName { font-size: 11px; font-weight: var(--fw-semibold); color: var(--color-text-primary); }
+.dsSwatchRole { font-size: 11px; color: var(--color-text-muted); line-height: 1.3; }
 
 /* Typography */
 .dsTypeScale {
@@ -503,10 +551,7 @@
 }
 
 .dsTypeSample {
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
 }
 
 /* Buttons */
@@ -533,6 +578,27 @@
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.dsButtonStates {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.dsButtonState {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.dsStateLabel {
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .dsBtnBlue {
@@ -757,57 +823,55 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Icons */
-.dsIconSection {
+/* Spacing tokens */
+.dsSpacingRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.dsSpacingItem {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 32px;
-  background-color: var(--color-surface-light);
-}
-
-.dsIconGroup {
-  display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
+  flex: 1;
 }
 
-.dsIconGroupLabel {
-  font-size: 11px;
-  font-weight: var(--fw-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.dsSpacingBar {
+  width: 100%;
+  background-color: #0165AA;
+  opacity: 0.18;
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+}
+
+.dsSpacingToken {
+  font-size: 9px;
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.dsSpacingPx {
+  font-size: 9px;
   color: var(--color-text-muted);
-  min-width: 140px;
+  font-family: monospace;
+  text-align: center;
 }
 
-.dsIconRow {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.dsIconItem {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 4px;
-  font-size: 18px;
-}
-
-.dsIconImageWrapper {
-  margin-top: 8px;
+/* Icons */
+.dsIconImageClip {
+  overflow: hidden;
 }
 
 .dsIconImage {
   width: 100%;
-  max-width: 600px;
   height: auto;
   display: block;
+  margin-top: -34%;
 }
 
 /* Navigation */
@@ -883,10 +947,15 @@
   color: #fff;
 }
 
+.dsNavImageClip {
+  overflow: hidden;
+}
+
 .dsNavImage {
   width: 100%;
   height: auto;
   display: block;
+  margin-top: -36%;
 }
 
 /* ─── Design principles ─────────────────────────────── */

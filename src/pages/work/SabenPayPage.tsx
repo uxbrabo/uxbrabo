@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import styles from './SabenPayPage.module.css'
 
 const fadeUp = {
@@ -37,6 +38,7 @@ const videos = [
 export function SabenPayPage() {
   return (
     <main className={styles.page}>
+      <SEO title="SabenPay — Direção de Arte" description="Direção de arte e social media para SabenPay." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>

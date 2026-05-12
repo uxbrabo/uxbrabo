@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
 import { MetricCard } from '@/components/casestudy/MetricCard'
 import { BarChart } from '@/components/casestudy/BarChart'
@@ -134,6 +135,7 @@ const designPrinciples = [
 export function CucaCaseStudy() {
   return (
     <main className={styles.page}>
+      <SEO title="Cuca — App de Estudos" description="Case study do app de estudos Cuca, plataforma gamificada de aprendizado." />
 
       {/* ─── HERO ─── */}
       <motion.section
@@ -142,7 +144,7 @@ export function CucaCaseStudy() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={s('hero-cover.png')} alt="" className={styles.heroBg} />
+        <img src={s('hero-cover.png')} alt="" className={styles.heroBg} fetchPriority="high" />
         <div className={styles.heroOverlay} />
 
         <div className={styles.heroContent}>

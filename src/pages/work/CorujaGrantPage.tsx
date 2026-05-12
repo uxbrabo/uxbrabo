@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/layout/Footer'
+import { SEO } from '@/components/SEO'
 import styles from './CorujaGrantPage.module.css'
 
 const fadeUp = {
@@ -39,6 +40,7 @@ const uniformes = [
 export function CorujaGrantPage() {
   return (
     <main className={styles.page}>
+      <SEO title="Coruja Grant — Direção de Arte" description="Direção de arte e criação de mascotes para Coruja Grant." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>

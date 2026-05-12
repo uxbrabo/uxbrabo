@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 import { Footer } from '@/components/layout/Footer'
 import { projects } from '@/data/projects'
 import { artDirectionProjects } from '@/data/artDirection'
+import { SEO } from '@/components/SEO'
 import styles from './WorkPage.module.css'
 
 export function WorkPage() {
   return (
     <main className={styles.page}>
+      <SEO title="Trabalhos" description="Projetos de UX Design, direção de arte e desenvolvimento front-end por Lucas Brabo." />
 
       {/* UX Design */}
       <section className={styles.category} aria-label="UX Design">
@@ -54,6 +56,7 @@ export function WorkPage() {
                 alt={project.title}
                 className={styles.artCardImg}
                 style={{ backgroundColor: project.coverPlaceholder }}
+                loading="lazy"
               />
               <div className={styles.cardOverlay}>
                 <p className={styles.cardTitle}>{project.title}</p>
