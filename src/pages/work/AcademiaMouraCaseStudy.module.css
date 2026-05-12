@@ -1,0 +1,469 @@
+.page {
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+/* ─── Hero ──────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.heroBgImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  margin-inline: auto;
+  padding: 0 var(--container-px) clamp(40px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.heroMeta::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.heroTagline {
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 560px;
+}
+
+.heroLiveLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
+  width: fit-content;
+}
+
+.heroLiveLink:hover {
+  color: var(--color-black);
+  background: var(--color-white);
+  border-color: var(--color-white);
+}
+
+/* ─── Overview strip ────────────────────────────────── */
+.overviewStrip {
+  background-color: var(--color-black);
+}
+
+.overviewInner {
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  padding: 40px var(--container-px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px;
+}
+
+.overviewItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overviewLabel {
+  font-size: 11px;
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.overviewValue {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-white);
+  line-height: var(--lh-tight);
+}
+
+/* ─── Prose ─────────────────────────────────────────── */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+  width: 100%;
+}
+
+.prose strong {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+/* ─── Context stats row ─────────────────────────────── */
+.contextStatsRow {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contextStatItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+}
+
+.contextStatDivider {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.contextStatValue {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+.contextStatTitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+}
+
+.contextStatDesc {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+/* ─── Insight grid ───────────────────────────────────── */
+.insightGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ─── Donut row ──────────────────────────────────────── */
+.donutRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  justify-items: center;
+  padding: 8px 0;
+}
+
+/* ─── Chart block ───────────────────────────────────── */
+.chartBlock {
+  width: 100%;
+}
+
+.chartTitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+  letter-spacing: var(--ls-body);
+}
+
+/* ─── Metrics grid ───────────────────────────────────── */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ─── Module list ────────────────────────────────────── */
+.moduleList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.moduleListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.moduleListNum {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  width: 28px;
+  padding-top: 2px;
+}
+
+.moduleListIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.moduleListContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.moduleListTitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+}
+
+.moduleListDesc {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+/* ─── Gamification banner ────────────────────────────── */
+.gamificationBanner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gamLevel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 36px 32px;
+}
+
+.gamLevelDivider {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.gamLevelBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.gamLevelRange {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -1px;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.gamLevelDesc {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+/* ─── Process timeline ───────────────────────────────── */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  right: 19px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 0;
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 32px;
+}
+
+.timelineNode {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.timelinePhase {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.timelineTitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+}
+
+.timelineDesc {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+.footerWrapper {
+  width: 100%;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donutRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .gamificationBanner {
+    grid-template-columns: 1fr;
+  }
+
+  .gamLevelDivider {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .donutRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .moduleListItem {
+    gap: 20px;
+    padding: 24px 0;
+  }
+
+  .gamLevel {
+    padding: 28px 24px;
+  }
+
+  .contextStatsRow {
+    flex-direction: column;
+  }
+
+  .contextStatDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .contextStatItem {
+    padding: 28px 24px;
+  }
+}

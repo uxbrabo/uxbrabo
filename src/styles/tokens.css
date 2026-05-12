@@ -1,0 +1,70 @@
+:root {
+  /* ─── Colors ─────────────────────────────────────── */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-bg: #fcfcfc;
+  --color-text-primary: #000000;
+  --color-text-muted: rgba(0, 0, 0, 0.5);
+  --color-text-secondary: #979797;
+  --color-surface-light: #f6f6f6;
+  --color-surface-gray: #d9d9d9;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-glass: rgba(255, 255, 255, 0.25);
+
+  /* ─── Typography ────────────────────────────────── */
+  --font-family: 'Sora', sans-serif;
+
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --fs-hero: clamp(56px, 8.33vw, 120px);
+  --fs-contact-hero: clamp(48px, 9.44vw, 136px);
+  --fs-section-num: clamp(80px, 17.36vw, 250px);
+  --fs-h2: clamp(28px, 3.33vw, 48px);
+  --fs-h3: clamp(24px, 2.78vw, 40px);
+  --fs-h4: clamp(20px, 2.22vw, 32px);
+  --fs-h5: 20px;
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-contact-item: clamp(32px, 5vw, 72px);
+
+  --ls-hero: clamp(-3px, -0.42vw, -6px);
+  --ls-contact-hero: clamp(-3px, -0.47vw, -6.8px);
+  --ls-section-num: clamp(-6px, -0.87vw, -12.5px);
+  --ls-h2: -2.4px;
+  --ls-h3: -2px;
+  --ls-h4: -1.6px;
+  --ls-h5: -1px;
+  --ls-logo: -1.2px;
+  --ls-body: -0.8px;
+  --ls-small: -0.7px;
+
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+
+  /* ─── Spacing ────────────────────────────────────── */
+  --container-max: 1200px;
+  --container-px: clamp(24px, 8.33vw, 120px);
+  --navbar-h: 100px;
+  --section-gap: clamp(80px, 11.11vw, 160px);
+  --content-gap: 32px;
+  --card-gap: 24px;
+  --sm-gap: 8px;
+
+  /* ─── Motion ─────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+
+  /* ─── Border ─────────────────────────────────────── */
+  --border-hairline: 1px solid rgba(0, 0, 0, 0.12);
+  --border-black: 1px solid var(--color-black);
+}

@@ -1,0 +1,87 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--laptop-cols, 2), 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ─── Laptop body ──────────────────────────────────── */
+.laptop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen {
+  width: 100%;
+  background: #171717;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 10px 0;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 20px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.camera {
+  width: 5px;
+  height: 5px;
+  background: #2e2e2e;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+}
+
+.viewport {
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Keyboard base ────────────────────────────────── */
+.base {
+  width: 108%;
+  height: 14px;
+  background: linear-gradient(to bottom, #1c1c1c, #242424);
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.notch {
+  width: 28%;
+  height: 4px;
+  background: #111;
+  border-radius: 0 0 4px 4px;
+}
+
+/* ─── Label ────────────────────────────────────────── */
+.label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ─── Responsive ───────────────────────────────────── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

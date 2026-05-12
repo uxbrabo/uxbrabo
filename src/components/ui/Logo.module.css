@@ -1,0 +1,24 @@
+.logo {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-size: 24px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-logo);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.trademark {
+  font-size: 10px;
+  font-weight: var(--fw-regular);
+  color: var(--color-text-primary);
+  margin-top: 4px;
+  line-height: 1;
+}

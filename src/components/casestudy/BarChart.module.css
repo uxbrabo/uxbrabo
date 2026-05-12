@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 200px 1fr 52px;
+  align-items: center;
+  gap: 16px;
+}
+
+.barLabel {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.barTrack {
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  will-change: width;
+}
+
+.barFill.black {
+  background-color: var(--color-black);
+}
+
+.barFill.gray {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.barValue {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .barRow {
+    grid-template-columns: 1fr 48px;
+    grid-template-rows: auto auto;
+  }
+
+  .barLabel {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .barValue {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .barTrack {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

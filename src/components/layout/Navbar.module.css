@@ -1,0 +1,111 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--navbar-h);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--color-glass);
+  transition: background-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  padding-inline: var(--container-px);
+  margin-inline: auto;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-body);
+  color: var(--color-text-primary);
+  transition: opacity var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+
+.navLink:hover {
+  opacity: 0.5;
+}
+
+.navLink.active {
+  font-weight: var(--fw-semibold);
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-text-primary);
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.menuToggle:hover {
+  opacity: 0.5;
+}
+
+/* ─── Mobile menu ──────────────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  top: var(--navbar-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: var(--color-white);
+  padding: 48px var(--container-px);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLink {
+  display: block;
+  padding: 20px 0;
+  font-size: clamp(32px, 8vw, 48px);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-h2);
+  color: var(--color-text-primary);
+  border-bottom: var(--border-hairline);
+  transition: opacity var(--duration-fast);
+}
+
+.mobileLink:hover {
+  opacity: 0.4;
+}
+
+.mobileLink.active {
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+}

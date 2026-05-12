@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_metadata",
+      "mcp__claude_ai_Figma__get_variable_defs",
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Figma__whoami",
+      "mcp__claude_ai_Figma__use_figma",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(find /Users/lucasbrabo -maxdepth 4 -name \"*.png\" ! -path \"*/uxbrabo/assets/*\" ! -path \"*/uxbrabo/public/*\" ! -path \"*/.Trash/*\" ! -path \"*/node_modules/*\" 2>/dev/null | head -20)",
+      "Read(//Users/lucasbrabo/**)",
+      "WebFetch(domain:xd.adobe.com)",
+      "Bash(python3 -)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -m venv /tmp/venv)",
+      "Bash(/tmp/venv/bin/pip install *)",
+      "Bash(/tmp/venv/bin/python3 -)",
+      "Bash(npx vite *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(cp \"/Users/lucasbrabo/Downloads/Comercial Coruja Grant/Comercial Coruja Grant.mp4\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/comercial.mp4)",
+      "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--2.png\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-2.png)",
+      "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--3.jpg\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-3.jpg)",
+      "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--4.jpg\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-4.jpg)",
+      "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--5.jpg\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-5.jpg)",
+      "Bash(file /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*)",
+      "Bash(identify /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.webp /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.png /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.gif)"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  width: 100%;
+}
+
+.trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: opacity var(--duration-fast);
+}
+
+.trigger:hover {
+  opacity: 0.7;
+}
+
+.triggerMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.role {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-h5);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.period {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-extralight);
+  letter-spacing: var(--ls-small);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+  will-change: transform;
+}
+
+.company {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--color-text-muted);
+  line-height: var(--lh-tight);
+}
+
+.body {
+  overflow: hidden;
+}
+
+.description {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+  padding-bottom: 16px;
+  max-width: 520px;
+}

@@ -1,0 +1,198 @@
+.root {
+  position: relative;
+  width: 100%;
+}
+
+/* ─── Nav buttons — top right ───────────────────────── */
+.nav {
+  position: absolute;
+  top: 40px;
+  right: clamp(24px, 5vw, 80px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navCount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 12px;
+  user-select: none;
+}
+
+.navSep {
+  opacity: 0.4;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background var(--duration-fast),
+    border-color var(--duration-fast),
+    transform var(--duration-fast);
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.navBtn:active {
+  transform: scale(0.96);
+}
+
+/* ─── Track + slides ─────────────────────────────────── */
+.track {
+  position: relative;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+/* ─── Content ─────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 48px clamp(24px, 5vw, 80px);
+  gap: 24px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 440px;
+}
+
+.category {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-h3);
+  color: var(--color-white);
+  line-height: var(--lh-tight);
+}
+
+.desc {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-white);
+  line-height: var(--lh-normal);
+  opacity: 0.85;
+}
+
+.ctaLink {
+  text-decoration: none;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 20px 32px;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-body);
+  white-space: nowrap;
+  transition: background-color var(--duration-fast);
+}
+
+.ctaLink:hover .cta {
+  background-color: var(--color-surface-light);
+}
+
+/* ─── Progress bar ────────────────────────────────────── */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  transform-origin: left center;
+  z-index: 10;
+}
+
+/* ─── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .track {
+    height: 600px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .ctaLink {
+    align-self: flex-start;
+  }
+
+  .nav {
+    top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .track {
+    height: 500px;
+  }
+
+  .navBtn {
+    width: 38px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,54 @@
+.page {
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+/* ─── Hero ──────────────────────────────────────────── */
+.hero {
+  padding-top: calc(var(--navbar-h) + 80px);
+  padding-bottom: 60px;
+  padding-inline: var(--container-px);
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: var(--fs-contact-hero);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-contact-hero);
+  line-height: 1.05;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+/* ─── Contact list ──────────────────────────────────── */
+.contactList {
+  padding-inline: var(--container-px);
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  margin-inline: auto;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+.footerWrapper {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .heroTitle {
+    font-size: clamp(36px, 8vw, 96px);
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    text-align: left;
+    padding-top: calc(var(--navbar-h) + 48px);
+    padding-bottom: 40px;
+  }
+
+  .heroTitle {
+    font-size: clamp(32px, 10vw, 64px);
+  }
+}
