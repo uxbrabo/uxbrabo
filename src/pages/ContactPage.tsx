@@ -14,7 +14,7 @@ const contactItems = [
   {
     label: 'Linkedin',
     value: '@uxbrabo',
-    href: 'https://linkedin.com/in/uxbrabo',
+    href: 'https://www.linkedin.com/in/uxbrabo/',
     external: true,
   },
   {

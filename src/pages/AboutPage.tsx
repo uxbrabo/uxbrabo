@@ -71,7 +71,7 @@ export function AboutPage() {
               </p>
               <p>
                 Recife, Pernambuco. Atualmente coordenando mídia na Agência Partem.{' '}
-                <strong>Vamos conversar?</strong>
+                <a href="https://wa.me/5581998286538" target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}><strong>Vamos conversar?</strong></a>
               </p>
             </motion.div>
 

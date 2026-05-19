@@ -11,7 +11,7 @@ const nav = [
 const contacts = [
   { label: 'luckas.brabo@gmail.com', href: 'mailto:luckas.brabo@gmail.com' },
   { label: '+55 81 99828-6538', href: 'https://wa.me/5581998286538' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/lucasbrabo', external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/uxbrabo/', external: true },
 ]
 
 export function Footer() {
