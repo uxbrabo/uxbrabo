@@ -79,7 +79,7 @@ export function AboutPage() {
               <Button
                 variant="filled"
                 href="/assets/curriculo-lucas-brabo.pdf"
-                download="Curriculo-Lucas-Brabo.pdf"
+                download="Curriculo-Lucas-Brabo-2026.pdf"
                 className={styles.cvBtn}
               >
                 Baixe aqui meu CV
