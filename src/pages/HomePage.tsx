@@ -54,7 +54,7 @@ export function HomePage() {
           </motion.h1>
           <motion.p className={styles.heroSubtitle} variants={fadeUp}>
             <strong>Mais de 5 anos transitando entre UX/UI, direção de arte, desenvolvimento front-end e IA integrada ao processo</strong>
-            {' '}— criando produtos que fazem sentido para quem usa e geram resultado para quem investe.
+            {', criando produtos que fazem sentido para quem usa e geram resultado para quem investe.'}
           </motion.p>
 
           {/* Status + CTA */}

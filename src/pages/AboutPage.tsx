@@ -52,7 +52,7 @@ function AboutSection({ letter, label, children }: AboutSectionProps) {
 export function AboutPage() {
   return (
     <main className={styles.page}>
-      <SEO title="Sobre" description="Conheça Lucas Brabo — Designer de Produto e desenvolvedor front-end com mais de 5 anos de experiência em UX/UI, direção de arte e código." />
+      <SEO title="Sobre" description="Conheça Lucas Brabo, Designer de Produto e desenvolvedor front-end com mais de 5 anos de experiência em UX/UI, direção de arte e código." />
       {/* Intro hero */}
       <section className={styles.intro}>
         <div className={styles.introLeft}>
@@ -71,12 +71,12 @@ export function AboutPage() {
             <motion.div className={styles.introBody} variants={fadeUp}>
               <p>
                 Mais de 5 anos transitando entre UX/UI, direção de arte e desenvolvimento
-                front-end — sempre com o mesmo objetivo: criar produtos que fazem sentido
+                front-end, sempre com o mesmo objetivo: criar produtos que fazem sentido
                 para quem usa e geram resultado para quem investe.
               </p>
               <p>
                 Recife, Pernambuco. Atualmente atuando como Diretor de Arte Sênior na Agência
-                Makplan — mas sigo atuando em produto e front-end em paralelo, via projetos
+                Makplan, mas sigo atuando em produto e front-end em paralelo, via projetos
                 freelance e colaborações pontuais.{' '}
                 <a href="https://wa.me/5581998286538" target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}><strong>Vamos conversar?</strong></a>
               </p>
@@ -116,10 +116,10 @@ export function AboutPage() {
       <div className={styles.sections}>
         <AboutSection letter="A/" label="Resumo Profissional">
           <motion.p className={styles.resumeText} variants={fadeUp}>
-            Atuo nas três frentes que moldam um produto digital: <strong>UX/UI</strong> — pesquisa
+            Atuo nas três frentes que moldam um produto digital: <strong>UX/UI</strong>, pesquisa
             com usuários, fluxos, wireframes, protótipos e testes de usabilidade;{' '}
-            <strong>direção de arte</strong> — identidade visual, campanhas e branding; e{' '}
-            <strong>desenvolvimento front-end</strong> — HTML, CSS, JavaScript, React e Vite.
+            <strong>direção de arte</strong>, identidade visual, campanhas e branding; e{' '}
+            <strong>desenvolvimento front-end</strong>, com HTML, CSS, JavaScript, React e Vite.
             Essa combinação me permite ir da ideia ao código sem perder a experiência do usuário
             de vista.
           </motion.p>

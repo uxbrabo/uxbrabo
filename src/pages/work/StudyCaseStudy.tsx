@@ -18,7 +18,7 @@ const s = (name: string) => `/assets/study/${name}`
 /* ─── DATA ───────────────────────────────────────────── */
 
 const enemPainPoints = [
-  { label: 'Falta de consistência — começam mas não mantêm a rotina', value: 82 },
+  { label: 'Falta de consistência: começam mas não mantêm a rotina', value: 82 },
   { label: 'Não sabem onde estão as principais lacunas de conhecimento', value: 74 },
   { label: 'Conteúdo genérico demais, não adaptado ao nível do aluno', value: 68 },
   { label: 'Apps existentes não funcionam bem no mobile', value: 61 },
@@ -28,8 +28,8 @@ const enemPainPoints = [
 const designDecisions = [
   {
     icon: Brain,
-    title: 'BKT — não é só quiz, é ciência',
-    body: 'Bayesian Knowledge Tracing modela a probabilidade real de domínio de cada habilidade. O app recomenda o que estudar com base em impacto real no avanço — não em ordem aleatória.',
+    title: 'BKT: não é só quiz, é ciência',
+    body: 'Bayesian Knowledge Tracing modela a probabilidade real de domínio de cada habilidade. O app recomenda o que estudar com base em impacto real no avanço, não em ordem aleatória.',
   },
   {
     icon: Trophy,
@@ -39,12 +39,12 @@ const designDecisions = [
   {
     icon: Bot,
     title: 'Tutor socrático, não oráculo',
-    body: 'O Tutor IA não entrega respostas — faz perguntas que guiam o aluno a descobri-las. Abordagem baseada em método socrático + ciência cognitiva: aprendizado ativo retém 2-3x mais que leitura passiva.',
+    body: 'O Tutor IA não entrega respostas: faz perguntas que guiam o aluno a descobri-las. Abordagem baseada em método socrático + ciência cognitiva: aprendizado ativo retém 2-3x mais que leitura passiva.',
   },
   {
     icon: Layers,
     title: 'Dark mode first e sistema de cores por matéria',
-    body: 'Interface escura reduz fadiga ocular para sessões noturnas (o horário mais comum de estudo). Cada disciplina tem cor exclusiva — identidade visual e orientação espacial em uma única decisão.',
+    body: 'Interface escura reduz fadiga ocular para sessões noturnas (o horário mais comum de estudo). Cada disciplina tem cor exclusiva: identidade visual e orientação espacial em uma única decisão.',
   },
 ]
 
@@ -59,7 +59,7 @@ const businessDecisions = [
   },
   {
     title: 'Grafo de conhecimento como moat',
-    body: 'O knowledge graph com BKT é o ativo estratégico do produto — quanto mais o aluno usa, mais preciso fica o modelo de lacunas. Dados de aprendizado criam um flywheel de personalização difícil de replicar.',
+    body: 'O knowledge graph com BKT é o ativo estratégico do produto: quanto mais o aluno usa, mais preciso fica o modelo de lacunas. Dados de aprendizado criam um flywheel de personalização difícil de replicar.',
   },
   {
     title: 'B2C como laboratório para B2B',
@@ -86,7 +86,7 @@ const processSteps = [
     number: '03',
     phase: 'Design System',
     title: 'Tokens antes de componentes',
-    description: 'Construí o design system completo: paleta dark-first com 5 cores de área de conhecimento, escala tipográfica, tokens CSS para sombras e espaçamentos. Zero valores hardcoded — dark e light mode adaptativos desde o dia 1.',
+    description: 'Construí o design system completo: paleta dark-first com 5 cores de área de conhecimento, escala tipográfica, tokens CSS para sombras e espaçamentos. Zero valores hardcoded: dark e light mode adaptativos desde o dia 1.',
     methods: ['Design tokens CSS', 'Paleta multi-área', 'Tipografia Space Grotesk', 'Dark/light mode'],
   },
   {
@@ -107,7 +107,7 @@ const processSteps = [
     number: '06',
     phase: 'Entrega',
     title: '14 telas funcionais em semanas',
-    description: 'MVP completo com Home, Mapa de Conhecimento, Quiz Arena, Flashcards, Pomodoro, Hub de Conteúdo, Tutor IA, Conquistas, Tarefas, Perfil e Desempenho — rodando como app nativo no iPhone via Capacitor.',
+    description: 'MVP completo com Home, Mapa de Conhecimento, Quiz Arena, Flashcards, Pomodoro, Hub de Conteúdo, Tutor IA, Conquistas, Tarefas, Perfil e Desempenho, rodando como app nativo no iPhone via Capacitor.',
     methods: ['14 telas funcionais', 'iOS nativo (Capacitor)', 'Animações com propósito', 'Design system completo'],
   },
 ]
@@ -117,7 +117,7 @@ export function StudyCaseStudy() {
   return (
     <main className={styles.page}>
       <SEO
-        title="Study — App EdTech com IA"
+        title="Study, App EdTech com IA"
         description="Como usei IA para conceber, prototipar e entregar um app iOS completo de estudos para o ENEM em semanas."
       />
 
@@ -156,7 +156,7 @@ export function StudyCaseStudy() {
             transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             Plataforma EdTech mobile com IA socrática, mapa de conhecimento adaptativo
-            e gamificação — desenvolvida do conceito ao app iOS nativo em semanas,
+            e gamificação, desenvolvida do conceito ao app iOS nativo em semanas,
             com Claude Code como parceiro de design e desenvolvimento.
           </motion.p>
         </div>
@@ -202,7 +202,7 @@ export function StudyCaseStudy() {
       <CaseSection index="01" label="Contexto" title="Por que o Study existe?">
         <div className={styles.prose}>
           <p>
-            O ENEM é a maior prova do Brasil — <strong>3,9 milhões de candidatos por ano</strong>.
+            O ENEM é a maior prova do Brasil: <strong>3,9 milhões de candidatos por ano</strong>.
             A maioria estuda por conta própria, sem orientação personalizada, sem saber quais
             lacunas têm maior impacto na nota e sem um sistema que os mantenha consistentes ao longo de meses.
           </p>
@@ -216,7 +216,7 @@ export function StudyCaseStudy() {
             O Study surge para ocupar esse espaço: a interseção entre <strong>ciência do aprendizado</strong>
             {' '}(BKT, espaçamento espaçado, método socrático), <strong>design de produto moderno</strong>
             {' '}(dark mode, animações com propósito, feedback imediato) e
-            {' '}<strong>gamificação que cria hábito</strong> — não decoração.
+            {' '}<strong>gamificação que cria hábito</strong>, não decoração.
           </p>
           <p>
             Este é um <strong>projeto autoral</strong>: concebi, desenhei e desenvolvi o Study por
@@ -229,19 +229,19 @@ export function StudyCaseStudy() {
           <div className={styles.contextStatItem}>
             <span className={styles.contextStatValue}>3,9M</span>
             <span className={styles.contextStatTitle}>Candidatos/ano no ENEM</span>
-            <span className={styles.contextStatDesc}>O maior vestibular do mundo — e a maioria estuda sem personalização ou adaptação ao próprio ritmo</span>
+            <span className={styles.contextStatDesc}>O maior vestibular do mundo, e a maioria estuda sem personalização ou adaptação ao próprio ritmo</span>
           </div>
           <div className={styles.contextStatDivider} />
           <div className={styles.contextStatItem}>
             <span className={styles.contextStatValue}>R$9,3bi</span>
             <span className={styles.contextStatTitle}>Mercado EdTech no Brasil</span>
-            <span className={styles.contextStatDesc}>Projeção 2026 — crescimento acelerado mas ainda dominado por produtos de baixa retenção</span>
+            <span className={styles.contextStatDesc}>Projeção 2026: crescimento acelerado mas ainda dominado por produtos de baixa retenção</span>
           </div>
           <div className={styles.contextStatDivider} />
           <div className={styles.contextStatItem}>
             <span className={styles.contextStatValue}>11%</span>
             <span className={styles.contextStatTitle}>Taxa média de retenção em apps de estudo</span>
-            <span className={styles.contextStatDesc}>Depois de 30 dias, 89% dos usuários abandonaram — o problema não é conteúdo, é consistência</span>
+            <span className={styles.contextStatDesc}>Depois de 30 dias, 89% dos usuários abandonaram: o problema não é conteúdo, é consistência</span>
           </div>
         </div>
       </CaseSection>
@@ -251,7 +251,7 @@ export function StudyCaseStudy() {
         <QuoteBlock
           quote="Eu começo a estudar cheio de vontade mas depois de uma semana já perdi o ritmo. Não sei por onde continuar, não sei no que eu tô pior. Fica vago demais."
           author="Estudante do 3º ano, 17 anos"
-          role="Recife, PE — entrevista exploratória"
+          role="Recife, PE, entrevista exploratória"
         />
 
         <div className={styles.problemStatement}>
@@ -267,7 +267,7 @@ export function StudyCaseStudy() {
         <div>
           <p className={styles.chartTitle}>Principais barreiras ao estudo consistente</p>
           <BarChart data={enemPainPoints} unit="%" />
-          <p className={styles.chartSource}>Benchmark de mercado — Pesquisas públicas EdTech BR 2023-2025, n=4.200+</p>
+          <p className={styles.chartSource}>Benchmark de mercado: Pesquisas públicas EdTech BR 2023-2025, n=4.200+</p>
         </div>
       </CaseSection>
 
@@ -281,7 +281,7 @@ export function StudyCaseStudy() {
             </p>
             <p>
               A resposta é: o ciclo de concepção → validação → entrega colapsa de meses para semanas.
-              Não porque a IA substitui o designer — mas porque ela elimina a fricção entre
+              Não porque a IA substitui o designer, mas porque ela elimina a fricção entre
               uma boa ideia e um produto testável.
             </p>
           </div>
@@ -298,8 +298,8 @@ export function StudyCaseStudy() {
             {
               icon: Zap,
               phase: 'Prototipação',
-              before: 'Protótipo no Figma que simula, mas não responde — você nunca sabe se vai funcionar no celular',
-              after: 'Código React funcional gerado com Claude Code — app real no simulador iOS em horas, não semanas',
+              before: 'Protótipo no Figma que simula, mas não responde: você nunca sabe se vai funcionar no celular',
+              after: 'Código React funcional gerado com Claude Code: app real no simulador iOS em horas, não semanas',
             },
             {
               icon: Clock,
@@ -337,12 +337,12 @@ export function StudyCaseStudy() {
         <div className={styles.aiReflection}>
           <p className={styles.aiReflectionLabel}>Reflexão honesta</p>
           <p className={styles.aiReflectionText}>
-            IA não elimina o trabalho de design — elimina a <em>fricção mecânica</em> entre
+            IA não elimina o trabalho de design: elimina a <em>fricção mecânica</em> entre
             pensar e testar. A decisão de usar dark mode first, de estruturar o BKT como
             sistema central ou de tornar o tutor socrático em vez de direto: essas são decisões
             de designer que a IA não toma. O que a IA faz é garantir que, uma vez tomada a
             decisão, ela vira produto em horas.
-            <strong> O designer que usa IA bem não é substituído — se torna 10x mais produtivo.</strong>
+            <strong> O designer que usa IA bem não é substituído: se torna 10x mais produtivo.</strong>
           </p>
         </div>
       </CaseSection>
@@ -361,7 +361,7 @@ export function StudyCaseStudy() {
             <p>
               <strong>14 telas funcionais, design system completo, app nativo iOS.</strong>{' '}
               Um processo tradicional (designer → handoff → dev) levaria 3-4 meses mínimos.
-              Com AI-assisted design, o ciclo completo durou semanas — sem sacrificar qualidade de código ou experiência.
+              Com AI-assisted design, o ciclo completo durou semanas, sem sacrificar qualidade de código ou experiência.
             </p>
           </div>
         </div>
@@ -380,11 +380,11 @@ export function StudyCaseStudy() {
           <p className={styles.screenSetLabel}>Principais telas do produto</p>
           <PhoneMockupGallery
             columns={4}
-            fixedNav
+            noScroll
             screens={[
-              { id: 'home', src: s('home.png'), label: 'Home — Dashboard' },
+              { id: 'home', src: s('home.png'), label: 'Home: Dashboard' },
               { id: 'mapa1', src: s('mapa-matematica.png'), label: 'Mapa de Conhecimento · BKT' },
-              { id: 'ar1', src: s('arena-ranking.png'), label: 'Quiz Arena — Ranking' },
+              { id: 'ar1', src: s('arena-ranking.png'), label: 'Quiz Arena: Ranking' },
               { id: 'fl1', src: s('flashcards.png'), label: 'Flashcards por matéria' },
             ]}
           />
@@ -401,12 +401,12 @@ export function StudyCaseStudy() {
         <div className={styles.tutorLayout}>
           <div className={styles.tutorText}>
             <p>
-              O Tutor IA do Study não responde perguntas — <strong>faz perguntas</strong>.
+              O Tutor IA do Study não responde perguntas: <strong>faz perguntas</strong>.
               Essa decisão contraintuitiva é baseada em décadas de pesquisa em ciência cognitiva:
               o aprendizado ativo (descoberta guiada) retém 2-3x mais do que receber a resposta diretamente.
             </p>
             <p>
-              Quando o aluno pede ajuda com equação do 2º grau, o Tutor não resolve —
+              Quando o aluno pede ajuda com equação do 2º grau, o Tutor não resolve:
               pergunta que métodos ele conhece, pede que identifique os coeficientes,
               guia até a descoberta. A resposta final vem do próprio aluno.
             </p>
@@ -415,7 +415,7 @@ export function StudyCaseStudy() {
               {[
                 { n: '5', label: 'Estágios de aprendizagem', desc: 'Contexto → Conceito → Exemplo → Exercício → Validação' },
                 { n: '3', label: 'Ações rápidas', desc: '"Acertei" · "Preciso de dica" · "Explica diferente"' },
-                { n: '∞', label: 'Progressões adaptativas', desc: 'Nível de dica aumenta gradualmente — nunca entrega a resposta de bandeja' },
+                { n: '∞', label: 'Progressões adaptativas', desc: 'Nível de dica aumenta gradualmente, nunca entrega a resposta de bandeja' },
               ].map((p) => (
                 <div key={p.n} className={styles.tutorPrincipleItem}>
                   <span className={styles.tutorPrincipleN}>{p.n}</span>
@@ -431,9 +431,9 @@ export function StudyCaseStudy() {
           <div className={styles.tutorPhone}>
             <PhoneMockupGallery
               columns={1}
-              fixedNav
+              noScroll
               screens={[
-                { id: 'tutor', src: s('tutor-ia.png'), label: 'Tutor IA — método socrático' },
+                { id: 'tutor', src: s('tutor-ia.png'), label: 'Tutor IA: método socrático' },
               ]}
             />
           </div>
@@ -462,7 +462,7 @@ export function StudyCaseStudy() {
         <QuoteBlock
           quote="O knowledge graph com BKT é o ativo mais valioso: quanto mais o aluno usa, mais o modelo aprende sobre ele. É um flywheel de dados que concorrentes não conseguem copiar do dia para a noite."
           author="Decisão de produto"
-          role="Registro de decisão — Arquitetura do sistema Study"
+          role="Registro de decisão, Arquitetura do sistema Study"
         />
       </CaseSection>
 
@@ -472,7 +472,7 @@ export function StudyCaseStudy() {
           <MetricCard value="14" label="Telas funcionais" description="Home, Mapa, Arena, Flashcards, Foco, Hub, Tutor IA, Conquistas, Tarefas, Perfil, Desempenho e mais" highlight index={0} />
           <MetricCard value="60+" label="Ícones SVG customizados" description="Sistema de ícones próprio com identidade consistente em todas as telas e estados" index={1} />
           <MetricCard value="5" label="Áreas de conhecimento com cores exclusivas" description="Matemática (azul), Linguagens (roxo), Ciências (verde), Humanas (âmbar), Accent (coral)" index={2} />
-          <MetricCard value="100%" label="Dark e light mode adaptativos" description="Zero valores de cor hardcoded — design tokens CSS em todos os componentes via useColors()" highlight index={3} />
+          <MetricCard value="100%" label="Dark e light mode adaptativos" description="Zero valores de cor hardcoded: design tokens CSS em todos os componentes via useColors()" highlight index={3} />
           <MetricCard value="iOS" label="App nativo via Capacitor" description="Build flow completo: React → Vite → Capacitor → WKWebView → iPhone 16 Pro" index={4} />
           <MetricCard value="Semanas" label="Do conceito ao produto rodando" description="Processo tradicional: 3-4 meses. Com AI-assisted design: semanas, sem sacrificar qualidade" index={5} />
         </div>
@@ -485,7 +485,7 @@ export function StudyCaseStudy() {
             {
               n: '1',
               title: 'IA amplifica decisões de design, não as substitui',
-              body: 'Cada decisão de produto — usar BKT, tornar o tutor socrático, criar cores por matéria — foi minha. O Claude acelerou a implementação dessas decisões. O valor do designer está no julgamento, não na execução mecânica.',
+              body: 'Cada decisão de produto (usar BKT, tornar o tutor socrático, criar cores por matéria) foi minha. O Claude acelerou a implementação dessas decisões. O valor do designer está no julgamento, não na execução mecânica.',
             },
             {
               n: '2',
@@ -495,7 +495,7 @@ export function StudyCaseStudy() {
             {
               n: '3',
               title: 'Design system é produto, não custo',
-              body: 'Investir tempo nos tokens CSS no começo (paleta, tipografia, espaçamentos, dark mode) multiplicou a velocidade de todas as telas seguintes. Cada nova tela saiu consistente por padrão — sem revisão.',
+              body: 'Investir tempo nos tokens CSS no começo (paleta, tipografia, espaçamentos, dark mode) multiplicou a velocidade de todas as telas seguintes. Cada nova tela saiu consistente por padrão, sem revisão.',
             },
             {
               n: '4',
@@ -526,7 +526,7 @@ export function StudyCaseStudy() {
         <div className={styles.nextInner}>
           <p className={styles.nextLabel}>Próximo projeto</p>
           <Link to="/trabalho/cuca" className={styles.nextLink}>
-            <span className={styles.nextTitle}>Cuca — Gestão Educacional</span>
+            <span className={styles.nextTitle}>Cuca, Gestão Educacional</span>
             <ArrowUpRight size={24} strokeWidth={1.5} className={styles.nextArrow} />
           </Link>
         </div>

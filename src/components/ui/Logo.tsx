@@ -7,7 +7,7 @@ type LogoProps = {
 
 export function Logo({ onClick }: LogoProps) {
   return (
-    <Link to="/" className={styles.logo} onClick={onClick} aria-label="uxbrabo — home">
+    <Link to="/" className={styles.logo} onClick={onClick} aria-label="uxbrabo, página inicial">
       <span className={styles.wordmark}>uxbrabo</span>
       <span className={styles.trademark} aria-hidden="true">©</span>
     </Link>

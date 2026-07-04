@@ -42,12 +42,12 @@ const insights = [
   {
     icon: Ruler,
     title: 'Tabela de medidas fora do contexto de decisão',
-    body: 'As tabelas existiam, mas estavam enterradas no final da página de produto — desconectadas do momento em que o usuário tentava decidir qual modelo e tamanho comprar.',
+    body: 'As tabelas existiam, mas estavam enterradas no final da página de produto, desconectadas do momento em que o usuário tentava decidir qual modelo e tamanho comprar.',
   },
   {
     icon: AlertTriangle,
     title: 'Tamanho errado = problema clínico',
-    body: 'Uma meia compressiva no tamanho incorreto não é apenas ineficaz — pode causar dano ao paciente. Isso transforma cada compra em uma decisão de alta responsabilidade e alta hesitação.',
+    body: 'Uma meia compressiva no tamanho incorreto não é apenas ineficaz: pode causar dano ao paciente. Isso transforma cada compra em uma decisão de alta responsabilidade e alta hesitação.',
   },
   {
     icon: Stethoscope,
@@ -66,7 +66,7 @@ const calculatorSteps = [
     number: '01',
     title: 'Selecione o modelo',
     description:
-      'O usuário escolhe entre Meias de Compressão ou Ready Wrap e seleciona o modelo específico — BD, AD, AGG, ATQ, AT, entre outros — cada um com indicação clínica diferente.',
+      'O usuário escolhe entre Meias de Compressão ou Ready Wrap e seleciona o modelo específico (BD, AD, AGG, ATQ, AT, entre outros), cada um com indicação clínica diferente.',
     detail:
       'Tooltip integrado explica a diferença entre as linhas para usuários sem conhecimento prévio.',
   },
@@ -102,7 +102,7 @@ const processSteps = [
     phase: 'Definição',
     title: 'Mapear os pontos de medição para cada modelo do catálogo',
     description:
-      'Cada modelo de meia compressiva exige medições em pontos anatômicos específicos — panturrilha, tornozelo, coxa, comprimento da perna. Trabalhamos com o time técnico-médico da Venosan para mapear quais medidas determinam o tamanho em cada produto. Esse mapeamento se tornou a lógica central da calculadora.',
+      'Cada modelo de meia compressiva exige medições em pontos anatômicos específicos: panturrilha, tornozelo, coxa, comprimento da perna. Trabalhamos com o time técnico-médico da Venosan para mapear quais medidas determinam o tamanho em cada produto. Esse mapeamento se tornou a lógica central da calculadora.',
     methods: ['Workshop com time técnico-médico', 'Mapeamento de pontos anatômicos por modelo', 'Definição da lógica de recomendação por tamanho', 'Arquitetura do fluxo em 3 etapas'],
   },
   {
@@ -110,7 +110,7 @@ const processSteps = [
     phase: 'Design',
     title: 'Uma calculadora guiada com ilustrações anatômicas contextuais',
     description:
-      'A solução é um fluxo em 3 passos: seleção do modelo, inserção das medidas com ilustração anatômica mostrando onde medir, e exibição do tamanho recomendado com produtos disponíveis para compra. Responsivo desde o início — profissional de saúde no desktop, paciente no smartphone.',
+      'A solução é um fluxo em 3 passos: seleção do modelo, inserção das medidas com ilustração anatômica mostrando onde medir, e exibição do tamanho recomendado com produtos disponíveis para compra. Responsivo desde o início: profissional de saúde no desktop, paciente no smartphone.',
     methods: ['Wireframes do fluxo stepado', 'Ilustrações anatômicas por grupo de medidas', 'Protótipo interativo (Adobe XD)', 'Design system com identidade Venosan'],
   },
   {
@@ -124,16 +124,16 @@ const processSteps = [
 ]
 
 const screens = [
-  { id: '01', src: v('01.png'), label: 'Etapa 1 — Seleção do modelo' },
-  { id: '02', src: v('02.png'), label: 'Etapa 2 — Guia de medição' },
-  { id: '03', src: v('03.png'), label: 'Etapa 3 — Inserção das medidas' },
-  { id: '04', src: v('04.png'), label: 'Etapa 4 — Recomendação personalizada' },
+  { id: '01', src: v('01.png'), label: 'Etapa 1: Seleção do modelo' },
+  { id: '02', src: v('02.png'), label: 'Etapa 2: Guia de medição' },
+  { id: '03', src: v('03.png'), label: 'Etapa 3: Inserção das medidas' },
+  { id: '04', src: v('04.png'), label: 'Etapa 4: Recomendação personalizada' },
 ]
 
 export function VenosanCaseStudy() {
   return (
     <main className={styles.page}>
-      <SEO title="Venosan — Calculadora de Medidas" description="Case study da calculadora de medidas para meias de compressão Venosan." />
+      <SEO title="Venosan, Calculadora de Medidas" description="Case study da calculadora de medidas para meias de compressão Venosan." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className={styles.hero}>
@@ -164,7 +164,7 @@ export function VenosanCaseStudy() {
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             Ferramenta que recomenda o modelo e tamanho ideais de meia compressiva
-            com base nas medidas do usuário — integrando orientação clínica ao fluxo de compra.
+            com base nas medidas do usuário, integrando orientação clínica ao fluxo de compra.
           </motion.p>
           <motion.a
             href="https://www.venosan.com.br/calculadora"
@@ -194,7 +194,7 @@ export function VenosanCaseStudy() {
             <div className={styles.heroBrowserScreen}>
               <img
                 src={v('home-hero-clean.png')}
-                alt="Venosan — Em dúvida em qual tamanho ideal para você?"
+                alt="Venosan, Em dúvida em qual tamanho ideal para você?"
                 className={styles.heroImage}
                 fetchPriority="high"
               />
@@ -225,10 +225,10 @@ export function VenosanCaseStudy() {
       <CaseSection index="01" label="Contexto" title="Um catálogo de 20+ modelos e uma única pergunta que parava tudo: qual é o meu tamanho?">
         <div className={styles.prose}>
           <p>
-            A Venosan é uma marca de meias de compressão terapêutica com distribuição nacional e um catálogo extenso — mais de <strong>20 modelos diferentes</strong>, divididos entre Meias de Compressão e Ready Wrap, cada um com indicações clínicas específicas e um sistema próprio de medição por pontos anatômicos.
+            A Venosan é uma marca de meias de compressão terapêutica com distribuição nacional e um catálogo extenso: mais de <strong>20 modelos diferentes</strong>, divididos entre Meias de Compressão e Ready Wrap, cada um com indicações clínicas específicas e um sistema próprio de medição por pontos anatômicos.
           </p>
           <p>
-            O produto em si era bem avaliado. O problema estava na jornada de decisão: as páginas existentes exibiam tabelas de medidas estáticas ao final da página, sem orientação sobre quais pontos do corpo medir, sem contexto visual e sem integração com o fluxo de compra. O resultado era abandono, devolução — e risco ao tratamento.
+            O produto em si era bem avaliado. O problema estava na jornada de decisão: as páginas existentes exibiam tabelas de medidas estáticas ao final da página, sem orientação sobre quais pontos do corpo medir, sem contexto visual e sem integração com o fluxo de compra. O resultado era abandono, devolução e risco ao tratamento.
           </p>
         </div>
         <div className={styles.contextStatsRow}>
@@ -253,10 +253,10 @@ export function VenosanCaseStudy() {
       </CaseSection>
 
       {/* ── 02 Problema ──────────────────────────────────── */}
-      <CaseSection index="02" label="Problema" title="Tamanho errado não é um inconveniente — é um problema clínico" tinted>
+      <CaseSection index="02" label="Problema" title="Tamanho errado não é um inconveniente: é um problema clínico" tinted>
         <div className={styles.prose}>
           <p>
-            Meias compressivas são dispositivos terapêuticos. Uma meia no tamanho incorreto não apenas deixa de tratar — pode causar dano ao paciente. Isso transforma cada compra em uma decisão de alta responsabilidade, onde a dúvida é o estado padrão. Sem uma ferramenta de orientação integrada, o abandono e o erro de sizing eram inevitáveis.
+            Meias compressivas são dispositivos terapêuticos. Uma meia no tamanho incorreto não apenas deixa de tratar: pode causar dano ao paciente. Isso transforma cada compra em uma decisão de alta responsabilidade, onde a dúvida é o estado padrão. Sem uma ferramenta de orientação integrada, o abandono e o erro de sizing eram inevitáveis.
           </p>
         </div>
         <div className={styles.insightGrid}>
@@ -315,7 +315,7 @@ export function VenosanCaseStudy() {
       <CaseSection index="04" label="Solução" title="Três perguntas certas para uma resposta precisa" tinted>
         <div className={styles.prose}>
           <p>
-            A calculadora foi projetada para ser o elo entre a dúvida do usuário e a decisão de compra. Ao invés de exibir uma tabela genérica, o sistema conduz o usuário por um fluxo de 3 etapas adaptado ao modelo escolhido — mostrando exatamente quais medidas são necessárias, onde capturá-las e qual tamanho corresponde ao resultado.
+            A calculadora foi projetada para ser o elo entre a dúvida do usuário e a decisão de compra. Ao invés de exibir uma tabela genérica, o sistema conduz o usuário por um fluxo de 3 etapas adaptado ao modelo escolhido, mostrando exatamente quais medidas são necessárias, onde capturá-las e qual tamanho corresponde ao resultado.
           </p>
         </div>
         <div className={styles.flowGrid}>
@@ -347,16 +347,16 @@ export function VenosanCaseStudy() {
       </CaseSection>
 
       {/* ── 06 Telas ─────────────────────────────────────── */}
-      <CaseSection index="06" label="Telas" title="Fluxo de consulta — do modelo à recomendação personalizada" tinted>
+      <CaseSection index="06" label="Telas" title="Fluxo de consulta: do modelo à recomendação personalizada" tinted>
         <div className={styles.prose}>
           <p>
-            A calculadora conduz o usuário em 4 etapas lineares: seleção do modelo, guia visual de medição com referências anatômicas, inserção das medidas e recomendação personalizada de tamanho — integrando orientação clínica diretamente ao fluxo de compra.
+            A calculadora conduz o usuário em 4 etapas lineares: seleção do modelo, guia visual de medição com referências anatômicas, inserção das medidas e recomendação personalizada de tamanho, integrando orientação clínica diretamente ao fluxo de compra.
           </p>
         </div>
         <ScreenGallery
           screens={screens}
           columns={2}
-          caption="4 telas — fluxo completo da calculadora de medidas Venosan"
+          caption="4 telas: fluxo completo da calculadora de medidas Venosan"
         />
       </CaseSection>
 
@@ -364,7 +364,7 @@ export function VenosanCaseStudy() {
       <CaseSection index="07" label="Resultados" title="Menos devoluções, mais confiança na decisão de compra">
         <div className={styles.prose}>
           <p>
-            Nos primeiros 90 dias após o lançamento da calculadora, as devoluções por tamanho incorreto caíram 47%. A taxa de conclusão do fluxo de 3 etapas ficou em 86% — indicando que o processo guiado, mesmo com múltiplos passos, gerou mais engajamento do que a tabela estática que existia antes.
+            Nos primeiros 90 dias após o lançamento da calculadora, as devoluções por tamanho incorreto caíram 47%. A taxa de conclusão do fluxo de 3 etapas ficou em 86%, indicando que o processo guiado, mesmo com múltiplos passos, gerou mais engajamento do que a tabela estática que existia antes.
           </p>
         </div>
 
@@ -397,13 +397,13 @@ export function VenosanCaseStudy() {
       <CaseSection index="08" label="Aprendizados" title="O que esse projeto me ensinou" tinted>
         <div className={styles.prose}>
           <p>
-            Projetar para produtos de saúde exige um nível diferente de atenção à linguagem. A dúvida do usuário não é sobre preferência — é sobre confiança. O sistema precisa <strong>reduzir a incerteza antes de qualquer CTAd</strong>. Qualquer ambiguidade no fluxo de sizing transfere o risco percebido para o usuário, e ele desiste.
+            Projetar para produtos de saúde exige um nível diferente de atenção à linguagem. A dúvida do usuário não é sobre preferência: é sobre confiança. O sistema precisa <strong>reduzir a incerteza antes de qualquer CTAd</strong>. Qualquer ambiguidade no fluxo de sizing transfere o risco percebido para o usuário, e ele desiste.
           </p>
           <p>
-            O mais valioso nesse projeto não foi a interface — foi o mapeamento técnico junto ao time médico. Sem entender quais medidas cada modelo exigia e por quê, seria impossível projetar um fluxo adaptativo correto. <strong>UX de produto técnico começa no domínio, não na tela.</strong>
+            O mais valioso nesse projeto não foi a interface: foi o mapeamento técnico junto ao time médico. Sem entender quais medidas cada modelo exigia e por quê, seria impossível projetar um fluxo adaptativo correto. <strong>UX de produto técnico começa no domínio, não na tela.</strong>
           </p>
           <p>
-            A decisão de mostrar a ilustração anatômica contextual — apenas para os pontos de medição do modelo selecionado — foi validada nos testes como o elemento de maior impacto na confiança do usuário. Não porque era bonita: porque eliminava a pergunta "estou medindo no lugar certo?" no exato momento em que ela surgiria.
+            A decisão de mostrar a ilustração anatômica contextual (apenas para os pontos de medição do modelo selecionado) foi validada nos testes como o elemento de maior impacto na confiança do usuário. Não porque era bonita: porque eliminava a pergunta "estou medindo no lugar certo?" no exato momento em que ela surgiria.
           </p>
         </div>
       </CaseSection>

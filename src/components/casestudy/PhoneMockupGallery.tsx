@@ -6,6 +6,8 @@ type Props = {
   screens: Screen[]
   fixedNav?: boolean
   columns?: 1 | 2 | 3 | 4
+  /** Screenshots already match the device frame exactly — no scroll needed. */
+  noScroll?: boolean
 }
 
 /**
@@ -14,7 +16,7 @@ type Props = {
  * fixedNav mode (Cuca): needs a fixed phone-ratio viewport so the nav bar
  * overlay can stay pinned while the content behind it scrolls.
  */
-export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3 }: Props) {
+export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3, noScroll = false }: Props) {
   return (
     <div
       className={styles.grid}
@@ -25,7 +27,12 @@ export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3 }: P
           <div className={styles.frame}>
             <div className={styles.pill} />
             <div className={fixedNav ? styles.viewportFixed : styles.viewport}>
-              <div className={fixedNav ? styles.scrollAreaFixed : styles.scrollArea}>
+              <div
+                className={[
+                  fixedNav ? styles.scrollAreaFixed : styles.scrollArea,
+                  noScroll && styles.noScroll,
+                ].filter(Boolean).join(' ')}
+              >
                 <img
                   src={screen.src}
                   alt={screen.label}
@@ -33,7 +40,7 @@ export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3 }: P
                   loading="lazy"
                 />
               </div>
-              {!fixedNav && <div className={styles.scrollFade} aria-hidden="true" />}
+              {!fixedNav && !noScroll && <div className={styles.scrollFade} aria-hidden="true" />}
               {fixedNav && (
                 <img
                   src={screen.src}

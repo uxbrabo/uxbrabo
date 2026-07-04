@@ -23,13 +23,13 @@ const overviewItems = [
 export function RosarinhoPage() {
   return (
     <main className={styles.page}>
-      <SEO title="Rosarinho — Direção de Arte" description="Direção de arte e identidade visual para o bairro Rosarinho, Recife." />
+      <SEO title="Rosarinho, Direção de Arte" description="Direção de arte e identidade visual para o bairro Rosarinho, Recife." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
         <img
           src="/assets/rosarinho/capa.png"
-          alt="Rosarinho Prince Vanguard — campanha OOH"
+          alt="Rosarinho Prince Vanguard, campanha OOH"
           className={styles.heroBg}
         />
         <div className={styles.heroOverlay} />
@@ -62,13 +62,13 @@ export function RosarinhoPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              Rosarinho é um bairro. Antes de ser um empreendimento, é um endereço com história — encravado na Zona Norte do Recife, com a vida que pulsa nos mercados, nas igrejas, nas calçadas. Nomear um empreendimento com o nome do bairro é um gesto raro: é escolher <strong>pertencer antes de vender</strong>.
+              Rosarinho é um bairro. Antes de ser um empreendimento, é um endereço com história, encravado na Zona Norte do Recife, com a vida que pulsa nos mercados, nas igrejas, nas calçadas. Nomear um empreendimento com o nome do bairro é um gesto raro: é escolher <strong>pertencer antes de vender</strong>.
             </p>
             <p>
-              O desafio era criar uma identidade capaz de honrar esse nome. <strong>Premium o suficiente para aspirar, próximo o suficiente para pertencer</strong>. O dourado da marca não é ostentação — é a cor de quem construiu algo com cuidado e quer que isso seja visto. O símbolo circular remete à rosa, à origem do nome, ao ciclo completo de um sonho que virou endereço.
+              O desafio era criar uma identidade capaz de honrar esse nome. <strong>Premium o suficiente para aspirar, próximo o suficiente para pertencer</strong>. O dourado da marca não é ostentação: é a cor de quem construiu algo com cuidado e quer que isso seja visto. O símbolo circular remete à rosa, à origem do nome, ao ciclo completo de um sonho que virou endereço.
             </p>
             <p>
-              A campanha foi pensada para quem já conhece o bairro de cor. A tagline <em>"No coração da Zona Norte"</em> não é apenas geolocalização — é <strong>um reconhecimento de identidade</strong>. Para quem cresceu nessa parte da cidade, comprar no Rosarinho Prince Vanguard é uma forma de dizer: eu sou daqui, e agora tenho um lugar à minha altura.
+              A campanha foi pensada para quem já conhece o bairro de cor. A tagline <em>"No coração da Zona Norte"</em> não é apenas geolocalização: é <strong>um reconhecimento de identidade</strong>. Para quem cresceu nessa parte da cidade, comprar no Rosarinho Prince Vanguard é uma forma de dizer: eu sou daqui, e agora tenho um lugar à minha altura.
             </p>
           </motion.div>
         </div>
@@ -89,7 +89,7 @@ export function RosarinhoPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O outdoor foi desenhado para funcionar em movimento — em segundos, lendo de um carro. A estrutura do layout segue uma lógica clara: <strong>emoção à esquerda, informação à direita</strong>. O casal abraçado sobre a skyline do Recife vende o sonho; o produto, o preço e a construtora fecham a argumentação racional. Dois discursos, um único olhar.
+              O outdoor foi desenhado para funcionar em movimento, em segundos, lendo de um carro. A estrutura do layout segue uma lógica clara: <strong>emoção à esquerda, informação à direita</strong>. O casal abraçado sobre a skyline do Recife vende o sonho; o produto, o preço e a construtora fecham a argumentação racional. Dois discursos, um único olhar.
             </p>
           </motion.div>
         </div>
@@ -97,13 +97,13 @@ export function RosarinhoPage() {
           <motion.div variants={fadeUp}>
             <img
               src="/assets/rosarinho/capa.png"
-              alt="Rosarinho — outdoor contra o céu"
+              alt="Rosarinho, outdoor contra o céu"
             />
           </motion.div>
           <motion.div variants={fadeUp}>
             <img
               src="/assets/rosarinho/9b65cd206547997.66ce4a5683123.png"
-              alt="Rosarinho — outdoor em contexto urbano"
+              alt="Rosarinho, outdoor em contexto urbano"
             />
           </motion.div>
         </motion.div>
@@ -124,14 +124,14 @@ export function RosarinhoPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              A planta humanizada traduz o espaço bruto em <strong>vida cotidiana</strong>. Não é um desenho técnico — é uma promessa de como a luz vai entrar pela janela da sala, de como a cozinha vai receber a família no fim de semana. O material de vendas precisa fazer o comprador ver a si mesmo dentro do imóvel antes de assinar qualquer documento.
+              A planta humanizada traduz o espaço bruto em <strong>vida cotidiana</strong>. Não é um desenho técnico: é uma promessa de como a luz vai entrar pela janela da sala, de como a cozinha vai receber a família no fim de semana. O material de vendas precisa fazer o comprador ver a si mesmo dentro do imóvel antes de assinar qualquer documento.
             </p>
           </motion.div>
         </div>
         <motion.div className={styles.fullImg} variants={fadeUp}>
           <img
             src="/assets/rosarinho/pernambucosalvadordesahumpavtipor02-17286787068928.webp"
-            alt="Rosarinho Prince Vanguard — planta humanizada"
+            alt="Rosarinho Prince Vanguard, planta humanizada"
           />
         </motion.div>
       </motion.section>
@@ -151,7 +151,7 @@ export function RosarinhoPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              Os vídeos ampliam o alcance da campanha para o digital — stories, reels e anúncios em vídeo. A animação da marca dá vida ao símbolo circular, reforçando o conceito de <strong>movimento e chegada</strong>. O comercial combina os elementos visuais da campanha impressa com o ritmo do vídeo curto, otimizado para capturar a atenção nos primeiros dois segundos.
+              Os vídeos ampliam o alcance da campanha para o digital: stories, reels e anúncios em vídeo. A animação da marca dá vida ao símbolo circular, reforçando o conceito de <strong>movimento e chegada</strong>. O comercial combina os elementos visuais da campanha impressa com o ritmo do vídeo curto, otimizado para capturar a atenção nos primeiros dois segundos.
             </p>
           </motion.div>
         </div>

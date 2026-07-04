@@ -29,7 +29,7 @@ export const experiences: ExperienceItem[] = [
     company: 'MoveOn · Caju Agência Digital',
     period: '2023 → 2025 · Recife, PE',
     description:
-      'Redesenho completo do Cartão VEM — plataforma de transporte público urbano de Recife — resultando em 40% de aumento na satisfação dos usuários, com introdução de recarga online via Pix sem taxa de conveniência. Desenvolvimento de plataforma para lojistas do Shopping Plaza Recife e reorganização do portal da OAB Pernambuco, priorizando usabilidade, acessibilidade e presença digital.',
+      'Redesenho completo do Cartão VEM, plataforma de transporte público urbano de Recife, que resultou em 40% de aumento na satisfação dos usuários, com introdução de recarga online via Pix sem taxa de conveniência. Desenvolvimento de plataforma para lojistas do Shopping Plaza Recife e reorganização do portal da OAB Pernambuco, priorizando usabilidade, acessibilidade e presença digital.',
   },
   {
     id: 'adequa-arte',
@@ -69,7 +69,7 @@ export const education: EducationItem[] = [
   {
     id: 'ads-unama',
     course: 'Análise e Desenvolvimento de Sistemas',
-    institution: 'UNAMA — Universidade da Amazônia',
+    institution: 'UNAMA (Universidade da Amazônia)',
     year: '2023 · Interrompido',
     description:
       'Graduação com ênfase em desenvolvimento web e mobile, estrutura de dados e engenharia de software.',
@@ -77,7 +77,7 @@ export const education: EducationItem[] = [
   {
     id: 'publicidade-feapa',
     course: 'Bacharelado em Publicidade e Propaganda',
-    institution: 'FEAPA — Faculdade de Ensino Superior do Pará',
+    institution: 'FEAPA (Faculdade de Ensino Superior do Pará)',
     year: '2019 · Concluído',
     description:
       'Formação em comunicação, branding, redação publicitária e gestão de projetos criativos. Base que orienta minha visão sobre como design e narrativa se complementam.',

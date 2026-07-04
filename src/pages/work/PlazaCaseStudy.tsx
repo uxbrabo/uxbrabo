@@ -120,12 +120,12 @@ const insights = [
   {
     icon: ClipboardList,
     title: 'Processo manual e fragmentado',
-    body: 'Cada tipo de solicitação seguia um caminho diferente: formulário físico, planilha compartilhada, pasta de arquivo ou presença no administrativo. Não havia um único canal — havia vários processos desconectados.',
+    body: 'Cada tipo de solicitação seguia um caminho diferente: formulário físico, planilha compartilhada, pasta de arquivo ou presença no administrativo. Não havia um único canal: havia vários processos desconectados.',
   },
   {
     icon: Search,
     title: 'Sem rastreabilidade',
-    body: 'Após entregar um formulário ou registrar uma entrada na planilha, o lojista não tinha como acompanhar o status — gerava idas desnecessárias ao administrativo e retrabalho para a equipe.',
+    body: 'Após entregar um formulário ou registrar uma entrada na planilha, o lojista não tinha como acompanhar o status, o que gerava idas desnecessárias ao administrativo e retrabalho para a equipe.',
   },
   {
     icon: FileText,
@@ -135,7 +135,7 @@ const insights = [
   {
     icon: CreditCard,
     title: 'Crachá com documentação em papel',
-    body: 'Qualquer liberação ou cancelamento de crachá exigia presença física no administrativo com documentação física — interrompendo a operação da loja por horas.',
+    body: 'Qualquer liberação ou cancelamento de crachá exigia presença física no administrativo com documentação física, interrompendo a operação da loja por horas.',
   },
 ]
 
@@ -145,7 +145,7 @@ const processSteps = [
     phase: 'Descoberta',
     title: 'Mapear o fluxo real antes de projetar qualquer tela',
     description:
-      'O ponto de partida foi entender como o processo funcionava na prática: como um lojista abria um chamado? Fazíamos shadowing com a equipe do SAC, acompanhamos o preenchimento de formulários físicos e analisamos 6 meses de registros em planilha. Ficou claro que não havia um único fluxo — havia vários processos paralelos e desconectados, todos manuais.',
+      'O ponto de partida foi entender como o processo funcionava na prática: como um lojista abria um chamado? Fazíamos shadowing com a equipe do SAC, acompanhamos o preenchimento de formulários físicos e analisamos 6 meses de registros em planilha. Ficou claro que não havia um único fluxo: havia vários processos paralelos e desconectados, todos manuais.',
     methods: ['Shadowing com atendentes do SAC', 'Entrevistas com lojistas (n=14)', 'Análise de planilhas e registros físicos', 'Mapeamento do fluxo AS IS'],
   },
   {
@@ -153,7 +153,7 @@ const processSteps = [
     phase: 'Definição',
     title: 'Sete módulos, uma experiência unificada',
     description:
-      'Com base nos fluxos mapeados, definimos os módulos que a plataforma precisaria cobrir. O desafio era agrupar tudo de forma intuitiva para usuários B2B que não são tech-savvy e que acessam o sistema em contexto operacional — às vezes sob pressão, com pouco tempo.',
+      'Com base nos fluxos mapeados, definimos os módulos que a plataforma precisaria cobrir. O desafio era agrupar tudo de forma intuitiva para usuários B2B que não são tech-savvy e que acessam o sistema em contexto operacional, às vezes sob pressão, com pouco tempo.',
     methods: ['Card sorting com lojistas', 'Arquitetura de informação', 'Mapeamento por perfil de usuário', 'Priorização MoSCoW'],
   },
   {
@@ -161,7 +161,7 @@ const processSteps = [
     phase: 'Design',
     title: 'Desktop com sidebar fixa, mobile com drawer',
     description:
-      'O lojista acessa a plataforma do escritório e da loja. Projetamos uma experiência responsiva onde o desktop usa sidebar fixa e o mobile usa menu drawer — mantendo os mesmos fluxos e hierarquia de informação. O design system adotou teal como cor primária, alinhado à identidade do Plaza Shopping.',
+      'O lojista acessa a plataforma do escritório e da loja. Projetamos uma experiência responsiva onde o desktop usa sidebar fixa e o mobile usa menu drawer, mantendo os mesmos fluxos e hierarquia de informação. O design system adotou teal como cor primária, alinhado à identidade do Plaza Shopping.',
     methods: ['Wireframes de baixa fidelidade', 'Protótipo interativo (Adobe XD)', 'Design system completo', 'Layout adaptativo desktop/mobile'],
   },
   {
@@ -175,10 +175,10 @@ const processSteps = [
 ]
 
 const desktopScreens = [
-  { id: 'db',  src: p('dashboard.png'),               label: 'Dashboard — visão geral' },
+  { id: 'db',  src: p('dashboard.png'),               label: 'Dashboard: visão geral' },
   { id: 'ds',  src: p('desktop-solicitacoes.png'),    label: 'Minhas Solicitações' },
   { id: 'dns', src: p('desktop-nova-solicitacao.png'),label: 'Nova Solicitação' },
-  { id: 'dnc', src: p('desktop-nova-categoria.png'),  label: 'Nova Solicitação — Categoria' },
+  { id: 'dnc', src: p('desktop-nova-categoria.png'),  label: 'Nova Solicitação: Categoria' },
   { id: 'dc',  src: p('desktop-circulares.png'),      label: 'Circulares e Informativos' },
   { id: 'dn',  src: p('desktop-notificacoes.png'),    label: 'Notificações Recebidas' },
   { id: 'dcr', src: p('desktop-cracha.png'),          label: 'Liberação de Crachá' },
@@ -194,7 +194,7 @@ const personas = [
   {
     name: 'Patricia Santos',
     avatar: <AvatarPatricia />,
-    role: 'Responsável de loja — Moda',
+    role: 'Responsável de loja · Moda',
     age: '38 anos · Gerente',
     access: 'Acesso completo',
     accessDesc: 'Solicitações, Crachá, Mensalistas, Circulares, Projetos, Notificações e Contatos',
@@ -215,7 +215,7 @@ const personas = [
   {
     name: 'Marcos Oliveira',
     avatar: <AvatarMarcos />,
-    role: 'Supervisor de operações — Alimentação',
+    role: 'Supervisor de operações · Alimentação',
     age: '29 anos · Supervisor',
     access: 'Acesso restrito',
     accessDesc: 'Solicitações, Notificações, Circulares e Informativos, Contatos',
@@ -266,7 +266,7 @@ export function PlazaCaseStudy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            Plataforma web e mobile que substituiu formulários físicos e planilhas do Shopping Plaza Recife —
+            Plataforma web e mobile que substituiu formulários físicos e planilhas do Shopping Plaza Recife:
             chamados, crachás, circulares e mensalistas em um único canal rastreável.
           </motion.p>
         </div>
@@ -277,7 +277,7 @@ export function PlazaCaseStudy() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img src={p('capa.png')} alt="Plaza Shopping — Central do Lojista" className={styles.heroImage} fetchPriority="high" />
+          <img src={p('capa.png')} alt="Plaza Shopping, Central do Lojista" className={styles.heroImage} fetchPriority="high" />
         </motion.div>
       </section>
 
@@ -303,10 +303,10 @@ export function PlazaCaseStudy() {
       <CaseSection index="01" label="Contexto" title="Um shopping com 150 lojas e uma operação ainda no papel">
         <div className={styles.prose}>
           <p>
-            O Shopping Plaza Recife tem mais de <strong>150 lojistas</strong> que dependem diariamente da estrutura operacional do shopping — manutenção, segurança, comunicados, crachás e gestão de vagas de mensalistas. Toda essa comunicação era gerenciada de forma manual: <strong>formulários físicos, planilhas Excel compartilhadas e pastas de arquivo no administrativo</strong>.
+            O Shopping Plaza Recife tem mais de <strong>150 lojistas</strong> que dependem diariamente da estrutura operacional do shopping: manutenção, segurança, comunicados, crachás e gestão de vagas de mensalistas. Toda essa comunicação era gerenciada de forma manual: <strong>formulários físicos, planilhas Excel compartilhadas e pastas de arquivo no administrativo</strong>.
           </p>
           <p>
-            Para abrir um chamado, o lojista precisava preencher um formulário em papel e entregá-lo pessoalmente. Para consultar o status, ia ao administrativo ou aguardava retorno. Não havia rastreabilidade, não havia histórico acessível e a equipe operacional conciliava tudo em planilhas — sem visibilidade em tempo real.
+            Para abrir um chamado, o lojista precisava preencher um formulário em papel e entregá-lo pessoalmente. Para consultar o status, ia ao administrativo ou aguardava retorno. Não havia rastreabilidade, não havia histórico acessível e a equipe operacional conciliava tudo em planilhas, sem visibilidade em tempo real.
           </p>
         </div>
         <div className={styles.contextStatsRow}>
@@ -334,7 +334,7 @@ export function PlazaCaseStudy() {
       <CaseSection index="02" label="Problema" title="Processos paralelos, sem rastreabilidade e sem escala" tinted>
         <div className={styles.prose}>
           <p>
-            Abrir um chamado, liberar um crachá ou consultar uma circular — cada uma dessas ações seguia um fluxo diferente, manual e desconectado. Formulários físicos se perdiam, planilhas ficavam desatualizadas e o lojista não tinha visibilidade alguma após registrar uma solicitação. O problema não era apenas operacional: era de confiança no processo.
+            Abrir um chamado, liberar um crachá ou consultar uma circular: cada uma dessas ações seguia um fluxo diferente, manual e desconectado. Formulários físicos se perdiam, planilhas ficavam desatualizadas e o lojista não tinha visibilidade alguma após registrar uma solicitação. O problema não era apenas operacional: era de confiança no processo.
           </p>
         </div>
         <div className={styles.insightGrid}>
@@ -353,7 +353,7 @@ export function PlazaCaseStudy() {
       <CaseSection index="03" label="Pesquisa" title="14 entrevistas, 6 meses de planilhas e um padrão claro">
         <div className={styles.prose}>
           <p>
-            Conduzimos entrevistas em profundidade com 14 responsáveis de lojas de segmentos variados — alimentação, moda, serviços e âncoras — e sessões de shadowing com a equipe operacional do SAC. Cruzamos os dados qualitativos com a análise de 6 meses de registros em planilha para identificar padrões de volume, tipo de solicitação e tempo de resolução. O resultado revelou um processo operacionalmente insustentável — e completamente invisível para o lojista.
+            Conduzimos entrevistas em profundidade com 14 responsáveis de lojas de segmentos variados (alimentação, moda, serviços e âncoras) e sessões de shadowing com a equipe operacional do SAC. Cruzamos os dados qualitativos com a análise de 6 meses de registros em planilha para identificar padrões de volume, tipo de solicitação e tempo de resolução. O resultado revelou um processo operacionalmente insustentável e completamente invisível para o lojista.
           </p>
         </div>
 
@@ -404,7 +404,7 @@ export function PlazaCaseStudy() {
       <CaseSection index="04" label="Personas" title="Dois perfis, experiências distintas dentro do mesmo sistema" tinted>
         <div className={styles.prose}>
           <p>
-            A plataforma serve dois tipos de usuário com necessidades e permissões diferentes. O <strong>Responsável de loja</strong> tem acesso completo a todos os módulos — incluindo crachás e mensalistas. Os <strong>demais lojistas</strong> têm acesso restrito, sem as funcionalidades administrativas. Essa distinção foi determinante para a arquitetura de navegação.
+            A plataforma serve dois tipos de usuário com necessidades e permissões diferentes. O <strong>Responsável de loja</strong> tem acesso completo a todos os módulos, incluindo crachás e mensalistas. Os <strong>demais lojistas</strong> têm acesso restrito, sem as funcionalidades administrativas. Essa distinção foi determinante para a arquitetura de navegação.
           </p>
         </div>
         <div className={styles.personaDual}>
@@ -459,20 +459,20 @@ export function PlazaCaseStudy() {
       </CaseSection>
 
       {/* ── 06 Telas ─────────────────────────────────────── */}
-      <CaseSection index="06" label="Telas" title="Desktop — sidebar fixa e navegação contextual" tinted>
+      <CaseSection index="06" label="Telas" title="Desktop: sidebar fixa e navegação contextual" tinted>
         <div className={styles.prose}>
           <p>
-            No desktop, a navegação é feita por uma sidebar fixa à esquerda. O header exibe o nome do usuário e acesso rápido ao perfil. A área de conteúdo adapta o layout conforme o módulo — listagem em cards para solicitações, formulário stepado para nova solicitação, e tabela para mensalistas.
+            No desktop, a navegação é feita por uma sidebar fixa à esquerda. O header exibe o nome do usuário e acesso rápido ao perfil. A área de conteúdo adapta o layout conforme o módulo: listagem em cards para solicitações, formulário stepado para nova solicitação, e tabela para mensalistas.
           </p>
         </div>
-        <ScreenGallery screens={desktopScreens} columns={2} caption="12 telas desktop — todos os módulos da Central de Atendimento ao Lojista" />
+        <ScreenGallery screens={desktopScreens} columns={2} caption="12 telas desktop: todos os módulos da Central de Atendimento ao Lojista" />
       </CaseSection>
 
       {/* ── 07 Resultados ────────────────────────────────── */}
       <CaseSection index="07" label="Resultados" title="Produtividade mensurada, operação desburocratizada">
         <div className={styles.prose}>
           <p>
-            Após o lançamento, o volume de deslocamentos ao administrativo e de registros em papel caiu de forma expressiva. Os lojistas passaram a abrir, acompanhar e encerrar solicitações diretamente pela plataforma — sem formulário, sem ida física, sem depender de planilha. A equipe operacional ganhou visibilidade centralizada de todos os chamados em tempo real, com histórico auditável.
+            Após o lançamento, o volume de deslocamentos ao administrativo e de registros em papel caiu de forma expressiva. Os lojistas passaram a abrir, acompanhar e encerrar solicitações diretamente pela plataforma, sem formulário, sem ida física, sem depender de planilha. A equipe operacional ganhou visibilidade centralizada de todos os chamados em tempo real, com histórico auditável.
           </p>
         </div>
 
@@ -506,13 +506,13 @@ export function PlazaCaseStudy() {
       <CaseSection index="08" label="Aprendizados" title="O que esse projeto me ensinou" tinted>
         <div className={styles.prose}>
           <p>
-            Digitalizar um processo manual não é apenas criar uma interface — é primeiro entender <strong>por que o processo manual existe da forma que existe</strong>. Nesse projeto, o formulário físico não era um problema de tecnologia: era um problema de confiança. O lojista precisava de um comprovante tangível de que sua solicitação existia. A plataforma precisou substituir essa sensação, não só o papel.
+            Digitalizar um processo manual não é apenas criar uma interface: é primeiro entender <strong>por que o processo manual existe da forma que existe</strong>. Nesse projeto, o formulário físico não era um problema de tecnologia: era um problema de confiança. O lojista precisava de um comprovante tangível de que sua solicitação existia. A plataforma precisou substituir essa sensação, não só o papel.
           </p>
           <p>
-            Projetar para B2B interno exige calibrar o nível certo de complexidade. O lojista não escolhe usar a plataforma — ele é orientado a usar. Isso significa que a <strong>curva de adoção precisa ser quase zero</strong>: fluxos óbvios, linguagem do contexto operacional e zero dependência de treinamento formal.
+            Projetar para B2B interno exige calibrar o nível certo de complexidade. O lojista não escolhe usar a plataforma: ele é orientado a usar. Isso significa que a <strong>curva de adoção precisa ser quase zero</strong>: fluxos óbvios, linguagem do contexto operacional e zero dependência de treinamento formal.
           </p>
           <p>
-            A decisão de manter dois perfis de acesso distintos foi validada nos testes: quando o menu mostrava funcionalidades que o usuário não podia usar, a taxa de erro aumentava. <strong>Menos opções visíveis = menos confusão</strong>. A interface precisa refletir exatamente o que aquele usuário pode fazer — nem mais, nem menos. Essa separação foi a decisão de arquitetura mais impactante do projeto.
+            A decisão de manter dois perfis de acesso distintos foi validada nos testes: quando o menu mostrava funcionalidades que o usuário não podia usar, a taxa de erro aumentava. <strong>Menos opções visíveis = menos confusão</strong>. A interface precisa refletir exatamente o que aquele usuário pode fazer, nem mais, nem menos. Essa separação foi a decisão de arquitetura mais impactante do projeto.
           </p>
         </div>
       </CaseSection>

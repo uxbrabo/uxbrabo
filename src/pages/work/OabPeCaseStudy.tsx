@@ -25,7 +25,7 @@ const insights = [
   {
     n: '01',
     title: 'Três públicos, uma mesma porta de entrada',
-    body: 'O site precisava servir simultaneamente ao advogado registrado buscando serviços, ao estudante acompanhando o Exame de Ordem e à imprensa buscando notícias. Cada perfil tinha comportamentos e objetivos radicalmente diferentes — e o menu anterior tratava todos da mesma forma.',
+    body: 'O site precisava servir simultaneamente ao advogado registrado buscando serviços, ao estudante acompanhando o Exame de Ordem e à imprensa buscando notícias. Cada perfil tinha comportamentos e objetivos radicalmente diferentes, mas o menu anterior tratava todos da mesma forma.',
   },
   {
     n: '02',
@@ -35,7 +35,7 @@ const insights = [
   {
     n: '03',
     title: 'Conteúdo sem organização temporal',
-    body: 'Notícias, galeria de eventos e vídeos da TV OAB-PE coexistiam sem separação clara. Um evento de posse de novos advogados aparecia misturado a uma nota pública e a um vídeo institucional — sem filtro, sem categorização, sem busca eficiente.',
+    body: 'Notícias, galeria de eventos e vídeos da TV OAB-PE coexistiam sem separação clara. Um evento de posse de novos advogados aparecia misturado a uma nota pública e a um vídeo institucional, sem filtro, sem categorização, sem busca eficiente.',
   },
   {
     n: '04',
@@ -80,7 +80,7 @@ export function OabPeCaseStudy() {
     <main className={styles.page}>
       <SEO
         title="OAB Pernambuco"
-        description="Redesign do portal institucional da OAB-PE — arquitetura de informação, design responsivo e organização de 15+ serviços para a Ordem dos Advogados do Brasil, Seccional Pernambuco."
+        description="Redesign do portal institucional da OAB-PE, com arquitetura de informação, design responsivo e organização de 15+ serviços para a Ordem dos Advogados do Brasil, Seccional Pernambuco."
       />
 
       {/* ════════════════════════════════════════════════
@@ -101,7 +101,7 @@ export function OabPeCaseStudy() {
 
           <motion.p className={styles.heroSub} {...fade(0.5)}>
             Redesign completo do portal institucional da Ordem dos Advogados
-            do Brasil, Seccional Pernambuco — arquitetura de informação,
+            do Brasil, Seccional Pernambuco, com arquitetura de informação,
             design responsivo e organização de 15+ serviços para a advocacia pernambucana.
           </motion.p>
 
@@ -121,10 +121,10 @@ export function OabPeCaseStudy() {
           {[
             { k: 'Cliente',    v: 'OAB Pernambuco' },
             { k: 'Meu papel',  v: 'UI Designer · Front-end' },
-            { k: 'Plataforma', v: 'Web — Desktop & Mobile' },
+            { k: 'Plataforma', v: 'Web · Desktop & Mobile' },
             { k: 'Público',    v: 'Advogados, estudantes, imprensa' },
             { k: 'Subseções',  v: '28 municípios de PE' },
-            { k: 'Status',     v: 'Lançado — no ar' },
+            { k: 'Status',     v: 'Lançado · no ar' },
           ].map((i) => (
             <div key={i.k} className={styles.metaItem}>
               <span className={styles.metaKey}>{i.k}</span>
@@ -147,7 +147,7 @@ export function OabPeCaseStudy() {
             },
             {
               label: 'O que eu fiz',
-              text: 'Redesign completo do portal — arquitetura de informação, componentes de UI, layout responsivo, integração com TV/YouTube, seção de notícias e galeria de eventos, e cobertura digital das 28 subseções pernambucanas.',
+              text: 'Redesign completo do portal, com arquitetura de informação, componentes de UI, layout responsivo, integração com TV/YouTube, seção de notícias e galeria de eventos, e cobertura digital das 28 subseções pernambucanas.',
             },
             {
               label: 'Impacto',
@@ -178,10 +178,10 @@ export function OabPeCaseStudy() {
         <div className={styles.contextGrid}>
           <div className={styles.contextMain}>
             <p className={styles.prose}>
-              A OAB Pernambuco (CNPJ 09.791.484/0001-09) representa a advocacia pernambucana em suas 28 subseções pelo estado, com sede na Rua Imperador Dom Pedro II, no centro do Recife. É o principal órgão de representação, regulação e defesa da categoria no estado — e o site é o canal central entre a instituição e todos os advogados registrados, estudantes de direito e público em geral.
+              A OAB Pernambuco (CNPJ 09.791.484/0001-09) representa a advocacia pernambucana em suas 28 subseções pelo estado, com sede na Rua Imperador Dom Pedro II, no centro do Recife. É o principal órgão de representação, regulação e defesa da categoria no estado. O site é o canal central entre a instituição e todos os advogados registrados, estudantes de direito e público em geral.
             </p>
             <p className={styles.prose}>
-              O desafio não era apenas visual. Era de <strong>arquitetura de informação</strong>: como organizar uma estrutura com 8 categorias de navegação, mais de 40 páginas, 15 serviços distintos, TV com 50+ vídeos, galeria de eventos, 28 subseções e 5 integrações externas — de forma que qualquer usuário chegasse ao que precisa em poucos cliques, independente do dispositivo.
+              O desafio não era apenas visual. Era de <strong>arquitetura de informação</strong>: como organizar uma estrutura com 8 categorias de navegação, mais de 40 páginas, 15 serviços distintos, TV com 50+ vídeos, galeria de eventos, 28 subseções e 5 integrações externas, de forma que qualquer usuário chegasse ao que precisa em poucos cliques, independente do dispositivo.
             </p>
             <p className={styles.prose}>
               <strong>Objetivos de negócio:</strong> modernizar a presença digital da OAB-PE, reduzir o volume de dúvidas e solicitações que chegavam por telefone e garantir que serviços críticos (anuidade, movimentação, certificado digital) fossem acessíveis sem fricção.
@@ -229,7 +229,7 @@ export function OabPeCaseStudy() {
               <li>Quem são os usuários e o que cada perfil precisa fazer no portal?</li>
               <li>Quais serviços geram mais dúvidas e chamadas de suporte?</li>
               <li>Como usuários mobile chegam e navegam no site atual?</li>
-              <li>Qual conteúdo é mais acessado — e qual está inacessível sem saber onde procurar?</li>
+              <li>Qual conteúdo é mais acessado, e qual está inacessível sem saber onde procurar?</li>
             </ul>
 
             <p className={styles.colTitle} style={{ marginTop: 32 }}>Métodos utilizados</p>
@@ -264,7 +264,7 @@ export function OabPeCaseStudy() {
         </div>
 
         <div className={styles.quoteBlock}>
-          <p className={styles.quoteText}>"A advocacia pernambucana merece um portal que funcione como ela — presente em todo o estado, acessível a qualquer hora, sem burocracia para chegar ao que precisa."</p>
+          <p className={styles.quoteText}>"A advocacia pernambucana merece um portal que funcione como ela: presente em todo o estado, acessível a qualquer hora, sem burocracia para chegar ao que precisa."</p>
           <p className={styles.quoteAuthor}>Diretriz do projeto</p>
         </div>
       </section>
@@ -342,7 +342,7 @@ export function OabPeCaseStudy() {
           DESIGN — DELIVER
       ════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionTinted}`}>
-        <SectionHeader phase="Design & Entrega" title="O que foi construído — seção por seção" />
+        <SectionHeader phase="Design & Entrega" title="O que foi construído, seção por seção" />
 
         <div className={styles.deliverList}>
           {deliverables.map((d, i) => (
@@ -387,12 +387,12 @@ export function OabPeCaseStudy() {
             },
             {
               title: 'Separação de conteúdo por tipo, não por data',
-              desc: 'Notícias, galeria de eventos e TV OAB-PE são três naturezas de conteúdo diferentes. Mantê-los em seções distintas — em vez de um feed único — permite que cada público vá direto ao que consome habitualmente, sem scrollar por tudo.',
+              desc: 'Notícias, galeria de eventos e TV OAB-PE são três naturezas de conteúdo diferentes. Mantê-los em seções distintas, em vez de um feed único, permite que cada público vá direto ao que consome habitualmente, sem scrollar por tudo.',
               tag: 'IA',
             },
             {
               title: 'Banners responsivos com proporções distintas',
-              desc: 'Desktop usa 1440×570px (paisagem ampla), mobile usa 375×510px (quase retrato). A troca de imagem por breakpoint garante foco no assunto — sem cortes indesejados ou rostos cortados na versão mobile.',
+              desc: 'Desktop usa 1440×570px (paisagem ampla), mobile usa 375×510px (quase retrato). A troca de imagem por breakpoint garante foco no assunto, sem cortes indesejados ou rostos cortados na versão mobile.',
               tag: 'Visual',
             },
             {
@@ -414,7 +414,7 @@ export function OabPeCaseStudy() {
           RESULTADOS
       ════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionTinted}`}>
-        <SectionHeader phase="Resultados" title="Portal no ar — o que foi entregue" />
+        <SectionHeader phase="Resultados" title="Portal no ar: o que foi entregue" />
 
         <div className={styles.tableWrapper}>
           <table className={styles.beforeAfterTable}>
@@ -439,7 +439,7 @@ export function OabPeCaseStudy() {
                 },
                 {
                   d: 'Conteúdo de vídeo',
-                  before: 'Sem seção dedicada — YouTube externo',
+                  before: 'Sem seção dedicada (YouTube externo)',
                   after: 'TV OAB-PE com 50+ vídeos integrados e categorizados no portal',
                 },
                 {
@@ -479,7 +479,7 @@ export function OabPeCaseStudy() {
           <div className={styles.learningBlock}>
             <p className={styles.learningTitle}>Institucional é o UX mais invisível</p>
             <p className={styles.learningText}>
-              Em portais institucionais, o sucesso se mede pela ausência de fricção, não por engajamento. O usuário não quer interagir com o site — quer encontrar o que precisa e sair. Isso moldou cada decisão de IA: hierarquia de serviços, separação de tipos de conteúdo e acesso direto na homepage foram todas respostas ao comportamento de "chego, clico, saio".
+              Em portais institucionais, o sucesso se mede pela ausência de fricção, não por engajamento. O usuário não quer interagir com o site: quer encontrar o que precisa e sair. Isso moldou cada decisão de IA: hierarquia de serviços, separação de tipos de conteúdo e acesso direto na homepage foram todas respostas ao comportamento de "chego, clico, saio".
             </p>
           </div>
           <div className={styles.learningBlock}>
@@ -491,7 +491,7 @@ export function OabPeCaseStudy() {
           <div className={styles.learningBlock}>
             <p className={styles.learningTitle}>Conteúdo recorrente precisa de sistema, não de layout</p>
             <p className={styles.learningText}>
-              Juramentos de novos advogados acontecem toda semana. Notícias saem diariamente. A TV acumula vídeos todo mês. Projetar para conteúdo dinâmico significa garantir que o componente funcione com 5 itens e com 500 — e que a adição de um novo álbum de galeria não quebre o ritmo visual da página.
+              Juramentos de novos advogados acontecem toda semana. Notícias saem diariamente. A TV acumula vídeos todo mês. Projetar para conteúdo dinâmico significa garantir que o componente funcione com 5 itens e com 500, e que a adição de um novo álbum de galeria não quebre o ritmo visual da página.
             </p>
           </div>
         </div>

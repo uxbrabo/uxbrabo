@@ -25,7 +25,7 @@ export const projects: Project[] = [
     category: 'UX DESIGN',
     year: '2024',
     description:
-      'Plataforma de capacitação da rede de distribuição da Moura — trilhas de desenvolvimento, gamificação com pontos e moedas, loja de brindes e relatórios para gestores.',
+      'Plataforma de capacitação da rede de distribuição da Moura, com trilhas de desenvolvimento, gamificação com pontos e moedas, loja de brindes e relatórios para gestores.',
     coverPlaceholder: '#0B1533',
     coverImage: '/assets/academia-moura/hero.png',
     coverMockup: 'browser',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     category: 'UX DESIGN',
     year: '2024',
     description:
-      'Portal digital do Vale Eletrônico Metropolitano — sistema de bilhetagem eletrônica do transporte público da Região Metropolitana do Recife.',
+      'Portal digital do Vale Eletrônico Metropolitano, sistema de bilhetagem eletrônica do transporte público da Região Metropolitana do Recife.',
     coverPlaceholder: '#E75B32',
     coverImage: '/assets/vem/capa.png',
     coverMockup: 'browser',
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     category: 'UX DESIGN',
     year: '2024',
     description:
-      'Plataforma web e mobile de atendimento ao lojista do Shopping Plaza Recife — solicitações, crachás, circulares e gestão de mensalistas em um só lugar.',
+      'Plataforma web e mobile de atendimento ao lojista do Shopping Plaza Recife, reunindo solicitações, crachás, circulares e gestão de mensalistas em um só lugar.',
     coverPlaceholder: '#00A896',
     coverImage: '/assets/plaza/capa.png',
     coverMockup: 'browser',
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     category: 'AI-ASSISTED DESIGN',
     year: '2025',
     description:
-      'App EdTech mobile-first para o ENEM com IA socrática, mapa de conhecimento adaptativo (BKT) e gamificação — concebido, prototipado e entregue como app iOS nativo com Claude Code.',
+      'App EdTech mobile-first para o ENEM com IA socrática, mapa de conhecimento adaptativo (BKT) e gamificação, concebido, prototipado e entregue como app iOS nativo com Claude Code.',
     coverPlaceholder: '#0a0a0a',
     coverImage: '/assets/study/home.png',
     coverMockup: 'phone',
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     category: 'UX DESIGN',
     year: '2024',
     description:
-      'Redesign completo do portal institucional da Ordem dos Advogados do Brasil, Seccional Pernambuco — arquitetura de informação, design responsivo e organização de 15+ serviços para a advocacia pernambucana.',
+      'Redesign completo do portal institucional da Ordem dos Advogados do Brasil, Seccional Pernambuco, com arquitetura de informação, design responsivo e organização de 15+ serviços para a advocacia pernambucana.',
     coverPlaceholder: '#05122e',
     coverImage: '',
     hidden: true,

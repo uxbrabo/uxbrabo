@@ -38,7 +38,7 @@ const videos = [
 export function SabenPayPage() {
   return (
     <main className={styles.page}>
-      <SEO title="SabenPay — Direção de Arte" description="Direção de arte e social media para SabenPay." />
+      <SEO title="SabenPay, Direção de Arte" description="Direção de arte e social media para SabenPay." />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
@@ -76,7 +76,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O Saben Pay nasce como um <strong>banco digital focado em simplificar pagamentos</strong> — uma plataforma que quer democratizar o acesso a serviços financeiros com a fluidez dos maiores players do mercado. O desafio era criar uma identidade que comunicasse inovação e confiança sem cair nos clichês visuais do setor financeiro tradicional.
+              O Saben Pay nasce como um <strong>banco digital focado em simplificar pagamentos</strong>, uma plataforma que quer democratizar o acesso a serviços financeiros com a fluidez dos maiores players do mercado. O desafio era criar uma identidade que comunicasse inovação e confiança sem cair nos clichês visuais do setor financeiro tradicional.
             </p>
             <p>
               O briefing pedia uma marca <strong>acessível mas premium</strong>, capaz de competir visualmente com fintechs globais e ao mesmo tempo falar com o usuário brasileiro. A solução precisava funcionar do cartão físico ao post de redes sociais, do app mobile ao outdoor.
@@ -100,10 +100,10 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O <strong>asterisco (*)</strong> foi escolhido como símbolo central da marca. Em tipografia, o asterisco remete a "nota de rodapé" — algo que merece atenção especial. No universo financeiro, ressignificamos isso como <strong>convergência de possibilidades</strong>: um ponto de encontro onde soluções, pessoas e transações se conectam.
+              O <strong>asterisco (*)</strong> foi escolhido como símbolo central da marca. Em tipografia, o asterisco remete a "nota de rodapé", algo que merece atenção especial. No universo financeiro, ressignificamos isso como <strong>convergência de possibilidades</strong>: um ponto de encontro onde soluções, pessoas e transações se conectam.
             </p>
             <p>
-              O verde limão <strong>#C5E84A</strong> é uma ruptura deliberada. O setor financeiro é dominado por azuis e verdes-escuros que comunicam segurança mas sufocam a diferenciação. A escolha de um verde elétrico posiciona o Saben Pay como <strong>fresh, moderno e acessível</strong> — sem abrir mão da seriedade garantida pelo preto e pelo branco.
+              O verde limão <strong>#C5E84A</strong> é uma ruptura deliberada. O setor financeiro é dominado por azuis e verdes-escuros que comunicam segurança mas sufocam a diferenciação. A escolha de um verde elétrico posiciona o Saben Pay como <strong>fresh, moderno e acessível</strong>, sem abrir mão da seriedade garantida pelo preto e pelo branco.
             </p>
           </motion.div>
         </div>
@@ -130,7 +130,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O site foi desenhado para <strong>converter pela clareza</strong>. Espaço em branco generoso, hierarquia tipográfica limpa e a tagline "Seu dinheiro no caminho certo" posicionada como o primeiro e único elemento de leitura acima da dobra. A fotografia em preto e branco de uma estrada aberta reforça a metáfora de <strong>direção e progresso</strong> — o verde dos CTAs aparece como único elemento cromático, guiando o olhar do usuário.
+              O site foi desenhado para <strong>converter pela clareza</strong>. Espaço em branco generoso, hierarquia tipográfica limpa e a tagline "Seu dinheiro no caminho certo" posicionada como o primeiro e único elemento de leitura acima da dobra. A fotografia em preto e branco de uma estrada aberta reforça a metáfora de <strong>direção e progresso</strong>. O verde dos CTAs aparece como único elemento cromático, guiando o olhar do usuário.
             </p>
           </motion.div>
         </div>
@@ -138,13 +138,13 @@ export function SabenPayPage() {
           <motion.div className={styles.mockupDesktop} variants={fadeUp}>
             <img
               src="/assets/saben/662ccd228869183.685ab4758c944.png"
-              alt="Website Saben Pay — desktop"
+              alt="Website Saben Pay, desktop"
             />
           </motion.div>
           <motion.div className={styles.mockupMobile} variants={fadeUp}>
             <img
               src="/assets/saben/810775228869183.685ab4758fb7b.png"
-              alt="Website Saben Pay — mobile"
+              alt="Website Saben Pay, mobile"
             />
           </motion.div>
         </motion.div>
@@ -165,7 +165,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O sistema de posts foi desenvolvido em <strong>dois registros complementares</strong>. O registro institucional usa o verde limão em fundo sólido com tipografia bold e o asterisco como elemento gráfico principal — direto, memorável, reconhecível no feed. O registro lifestyle humaniza a marca com <strong>fotografias reais de pessoas</strong> usando serviços financeiros no cotidiano, com o logo discreto assinando o conteúdo.
+              O sistema de posts foi desenvolvido em <strong>dois registros complementares</strong>. O registro institucional usa o verde limão em fundo sólido com tipografia bold e o asterisco como elemento gráfico principal: direto, memorável, reconhecível no feed. O registro lifestyle humaniza a marca com <strong>fotografias reais de pessoas</strong> usando serviços financeiros no cotidiano, com o logo discreto assinando o conteúdo.
             </p>
           </motion.div>
         </div>
@@ -193,7 +193,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              A adaptação para mídia exterior exigiu simplificação máxima. Em um outdoor, você tem <strong>3 segundos</strong> de atenção. A solução: tagline grande, rosto humano e logo limpo. A ausência de elementos decorativos é intencional — cada centímetro do espaço é usado para converter a atenção em lembrança de marca.
+              A adaptação para mídia exterior exigiu simplificação máxima. Em um outdoor, você tem <strong>3 segundos</strong> de atenção. A solução: tagline grande, rosto humano e logo limpo. A ausência de elementos decorativos é intencional: cada centímetro do espaço é usado para converter a atenção em lembrança de marca.
             </p>
           </motion.div>
         </div>
@@ -220,7 +220,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              Os cartões de visita foram projetados em <strong>fundo escuro com impressão diferenciada</strong> — o asterisco aparece em relevo no verso, comunicando atenção ao detalhe que a marca promete aos seus usuários. O contraste entre o cartão escuro e o logo em spot transmite <strong>exclusividade e confiança</strong> — exatamente o posicionamento desejado para um banco digital que quer ser levado a sério.
+              Os cartões de visita foram projetados em <strong>fundo escuro com impressão diferenciada</strong>: o asterisco aparece em relevo no verso, comunicando atenção ao detalhe que a marca promete aos seus usuários. O contraste entre o cartão escuro e o logo em spot transmite <strong>exclusividade e confiança</strong>, exatamente o posicionamento desejado para um banco digital que quer ser levado a sério.
             </p>
           </motion.div>
         </div>
@@ -247,7 +247,7 @@ export function SabenPayPage() {
           </motion.div>
           <motion.div className={styles.prose} variants={fadeUp}>
             <p>
-              O asterisco ganhou vida em animações pensadas para <strong>stories, reels e anúncios em vídeo</strong>. O movimento parte sempre do centro para as pontas — expansão, crescimento, abertura de possibilidades. A linguagem de motion segue o mesmo princípio da identidade: <strong>clean, direto e com o verde como acento</strong>.
+              O asterisco ganhou vida em animações pensadas para <strong>stories, reels e anúncios em vídeo</strong>. O movimento parte sempre do centro para as pontas: expansão, crescimento, abertura de possibilidades. A linguagem de motion segue o mesmo princípio da identidade: <strong>clean, direto e com o verde como acento</strong>.
             </p>
           </motion.div>
         </div>

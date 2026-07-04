@@ -61,7 +61,7 @@ const processSteps = [
     number: '01',
     phase: 'Descoberta',
     title: 'Entender o ecossistema do transporte público',
-    description: 'Mapeei a jornada completa de quem usa o VEM — da compra do cartão à recarga e ao embarque. Analisei o portal existente, os terminais físicos, o atendimento presencial e os canais concorrentes (CittaMobi, RecargaPay) para entender onde o digital podia reduzir fricção.',
+    description: 'Mapeei a jornada completa de quem usa o VEM: da compra do cartão à recarga e ao embarque. Analisei o portal existente, os terminais físicos, o atendimento presencial e os canais concorrentes (CittaMobi, RecargaPay) para entender onde o digital podia reduzir fricção.',
     methods: ['Desk Research', 'Análise do sistema atual', 'Entrevistas exploratórias (n=12)', 'Shadowing em terminais'],
   },
   {
@@ -82,21 +82,21 @@ const processSteps = [
     number: '04',
     phase: 'Ideação',
     title: 'Design system acessível como base',
-    description: 'Antes de qualquer tela, construí um design system com foco em acessibilidade WCAG AA — contraste de cor, tamanho de toque, tipografia legível. Para um serviço público usado por toda a população, acessibilidade não é diferencial, é requisito.',
+    description: 'Antes de qualquer tela, construí um design system com foco em acessibilidade WCAG AA: contraste de cor, tamanho de toque, tipografia legível. Para um serviço público usado por toda a população, acessibilidade não é diferencial, é requisito.',
     methods: ['Design System', 'Acessibilidade WCAG AA', 'Wireframes low-fi', 'Design Principles'],
   },
   {
     number: '05',
     phase: 'Design',
     title: 'Responsivo e claro para todos',
-    description: 'Projetei cada tela em desktop e mobile simultaneamente. A linguagem foi pensada para usuários com baixa familiaridade digital — ações com nomes diretos, feedback visual em cada etapa, sem jargão técnico. O objetivo: qualquer pessoa consegue recarregar em menos de 3 minutos.',
+    description: 'Projetei cada tela em desktop e mobile simultaneamente. A linguagem foi pensada para usuários com baixa familiaridade digital: ações com nomes diretos, feedback visual em cada etapa, sem jargão técnico. O objetivo: qualquer pessoa consegue recarregar em menos de 3 minutos.',
     methods: ['Protótipo hi-fi (Desktop + Mobile)', 'Linguagem simples (Plain language)', 'Estados de UI completos', 'WCAG AA'],
   },
   {
     number: '06',
     phase: 'Validação',
     title: 'Testar com quem mais precisa',
-    description: 'Priorizei usuários com menor familiaridade digital nos testes — trabalhadores e pessoas idosas. SUS Score subiu de 36 para 82. O maior ganho foi na recarga online: 100% dos participantes concluíram o fluxo sem ajuda, contra 38% no sistema anterior.',
+    description: 'Priorizei usuários com menor familiaridade digital nos testes: trabalhadores e pessoas idosas. SUS Score subiu de 36 para 82. O maior ganho foi na recarga online: 100% dos participantes concluíram o fluxo sem ajuda, contra 38% no sistema anterior.',
     methods: ['Testes moderados (n=14)', 'Maze (n=24)', 'SUS Score', 'Think Aloud', 'Inclusão de usuários 50+'],
   },
 ]
@@ -115,19 +115,19 @@ const researchInsights = [
   {
     icon: Smartphone,
     title: 'Celular é a única tela que importa',
-    body: '84% dos usuários acessam serviços públicos pelo smartphone. A maioria não tem computador em casa — o mobile não é uma versão secundária, é o produto principal.',
+    body: '84% dos usuários acessam serviços públicos pelo smartphone. A maioria não tem computador em casa: o mobile não é uma versão secundária, é o produto principal.',
   },
   {
     icon: Building2,
     title: 'Empregadores gerenciam cartões no papel',
-    body: 'Empresas que fornecem VEM Trabalhador controlavam os cartões por planilha e telefone. Nenhuma interface de gestão em lote existia — processo manual, lento e propenso a erro.',
+    body: 'Empresas que fornecem VEM Trabalhador controlavam os cartões por planilha e telefone. Nenhuma interface de gestão em lote existia: processo manual, lento e propenso a erro.',
   },
 ]
 
 const designPrinciples = [
   { title: 'Serviço público, experiência privada', body: 'O usuário não deveria perceber diferença entre usar o VEM digital e qualquer app de banco moderno. Ser público não é desculpa para UX ruim.' },
   { title: 'Zero jargão', body: 'Nenhum usuário sabe o que é "bilhetagem eletrônica" no cotidiano. Botões dizem o que fazem: "Recarregar meu cartão", não "Transacionar crédito".' },
-  { title: 'Mobile como produto principal', body: 'Cada tela foi projetada primeiro para o celular. O desktop foi consequência — não o contrário como era antes.' },
+  { title: 'Mobile como produto principal', body: 'Cada tela foi projetada primeiro para o celular. O desktop foi consequência, não o contrário como era antes.' },
   { title: 'Acessibilidade sem concessões', body: 'WCAG AA em todos os componentes. Tamanho mínimo de toque de 44px, contraste 4.5:1, fluxos funcionais com leitores de tela. O VEM Livre Acesso exige isso.' },
 ]
 
@@ -135,7 +135,7 @@ const designPrinciples = [
 export function VemCaseStudy() {
   return (
     <main className={styles.page}>
-      <SEO title="VEM — Cartão Inteligente" description="Case study do app VEM, cartão de benefícios inteligente para colaboradores." />
+      <SEO title="VEM, Cartão Inteligente" description="Case study do app VEM, cartão de benefícios inteligente para colaboradores." />
 
       {/* ─── HERO ─── */}
       <section className={styles.hero}>
@@ -165,7 +165,7 @@ export function VemCaseStudy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            Portal digital do Vale Eletrônico Metropolitano — o cartão inteligente
+            Portal digital do Vale Eletrônico Metropolitano: o cartão inteligente
             do transporte público da Região Metropolitana do Recife, projetado para
             que qualquer pessoa consiga recarregar, solicitar e gerenciar seu cartão
             sem sair de casa.
@@ -198,7 +198,7 @@ export function VemCaseStudy() {
         <div className={styles.overviewInner}>
           {[
             { label: 'Meu papel', value: 'Lead UX/UI Designer' },
-            { label: 'Plataforma', value: 'Web — Desktop & Mobile' },
+            { label: 'Plataforma', value: 'Web · Desktop & Mobile' },
             { label: 'Duração', value: '5 meses' },
             { label: 'Time', value: '1 Designer · 4 Devs · 1 PM' },
             { label: 'Entregáveis', value: 'Research · Design System · 60+ telas · Handoff' },
@@ -215,7 +215,7 @@ export function VemCaseStudy() {
       <CaseSection index="01" label="Contexto" title="O cartão que move Recife">
         <div className={styles.prose}>
           <p>
-            O VEM — Vale Eletrônico Metropolitano — é o sistema de bilhetagem
+            O VEM (Vale Eletrônico Metropolitano) é o sistema de bilhetagem
             eletrônica do transporte público da <strong>Região Metropolitana do Recife</strong>.
             É o cartão que substitui o dinheiro em espécie para pagar passagens de ônibus
             e BRT, facilitando a integração entre linhas e eliminando o troco.
@@ -226,8 +226,8 @@ export function VemCaseStudy() {
             e Infantil (gratuito até 6 anos). Cada um com regras, públicos e fluxos distintos.
           </p>
           <p>
-            O desafio foi projetar um portal digital que atendesse todos esses perfis —
-            do estudante de 15 anos ao trabalhador de 58 — com clareza, acessibilidade e
+            O desafio foi projetar um portal digital que atendesse todos esses perfis,
+            do estudante de 15 anos ao trabalhador de 58, com clareza, acessibilidade e
             sem depender do posto de atendimento na Rua da Soledade para resolver problemas simples.
           </p>
         </div>
@@ -236,7 +236,7 @@ export function VemCaseStudy() {
           <div className={styles.contextStatItem}>
             <span className={styles.contextStatValue}>5</span>
             <span className={styles.contextStatTitle}>Tipos de cartão</span>
-            <span className={styles.contextStatDesc}>Comum, Estudante, Trabalhador, Livre Acesso e Infantil — cada um com regras e fluxos próprios</span>
+            <span className={styles.contextStatDesc}>Comum, Estudante, Trabalhador, Livre Acesso e Infantil, cada um com regras e fluxos próprios</span>
           </div>
           <div className={styles.contextStatDivider} />
           <div className={styles.contextStatItem}>
@@ -248,7 +248,7 @@ export function VemCaseStudy() {
           <div className={styles.contextStatItem}>
             <span className={styles.contextStatValue}>84%</span>
             <span className={styles.contextStatTitle}>Acesso via smartphone</span>
-            <span className={styles.contextStatDesc}>O portal anterior não era responsivo — o canal mais usado pela população estava sem suporte</span>
+            <span className={styles.contextStatDesc}>O portal anterior não era responsivo: o canal mais usado pela população estava sem suporte</span>
           </div>
         </div>
       </CaseSection>
@@ -265,7 +265,7 @@ export function VemCaseStudy() {
           <p className={styles.psLabel}>Problem Statement</p>
           <p className={styles.psText}>
             Usuários do VEM precisam gerenciar um serviço essencial para o seu dia a dia, mas
-            o portal digital é <strong>inacessível, confuso e não responsivo</strong> — forçando
+            o portal digital é <strong>inacessível, confuso e não responsivo</strong>, forçando
             quem mais precisa de conveniência (trabalhadores, estudantes, pessoas com deficiência)
             a perder tempo em filas em postos físicos para resolver problemas que deveriam
             ter solução com três toques no celular.
@@ -317,7 +317,7 @@ export function VemCaseStudy() {
         <div className={styles.personaDual}>
           <div className={styles.persona}>
             <div className={styles.personaHeader}>
-              <p className={styles.psLabel}>Persona 1 — usuário do VEM Estudante</p>
+              <p className={styles.psLabel}>Persona 1: usuário do VEM Estudante</p>
               <h3 className={styles.personaName}>Mariana Santos</h3>
               <p className={styles.personaRole}>17 anos · Estudante do ensino médio · Olinda, PE</p>
             </div>
@@ -345,7 +345,7 @@ export function VemCaseStudy() {
 
           <div className={styles.persona}>
             <div className={styles.personaHeader}>
-              <p className={styles.psLabel}>Persona 2 — usuário do VEM Trabalhador</p>
+              <p className={styles.psLabel}>Persona 2: usuário do VEM Trabalhador</p>
               <h3 className={styles.personaName}>José Carlos</h3>
               <p className={styles.personaRole}>48 anos · Operador de caixa · Caruaru, PE</p>
             </div>
@@ -390,11 +390,11 @@ export function VemCaseStudy() {
         >
           <div className={styles.wireframeLabel}>
             <span>Wireframes</span>
-            <span>Visão geral da arquitetura — 20+ telas estruturadas antes do hi-fi</span>
+            <span>Visão geral da arquitetura: 20+ telas estruturadas antes do hi-fi</span>
           </div>
           <img
             src={v('wireframe.png')}
-            alt="Wireframes do portal VEM — visão geral de todas as telas"
+            alt="Wireframes do portal VEM, visão geral de todas as telas"
             className={styles.wireframeImg}
           />
         </motion.div>
@@ -404,7 +404,7 @@ export function VemCaseStudy() {
       <CaseSection index="05" label="Design System" title="Acessibilidade como fundação">
         <div className={styles.prose} style={{ maxWidth: 720 }}>
           <p>
-            Antes de projetar qualquer tela, construí o design system completo do VEM do zero —
+            Antes de projetar qualquer tela, construí o design system completo do VEM do zero:
             paleta de cores com contraste WCAG AA, escala tipográfica, sistema de botões com todos
             os estados, biblioteca de ícones e componentes documentados para handoff. Com 60+ telas
             em desktop e mobile, consistência não é opcional.
@@ -488,7 +488,7 @@ export function VemCaseStudy() {
               { label: 'H3', size: '20px', weight: '700', color: '#333333', sample: 'Solicitar segunda via' },
               { label: 'Body', size: '16px', weight: '400', color: '#69615C', sample: 'Recarregue seu cartão VEM de qualquer lugar, a qualquer hora.' },
               { label: 'Small', size: '14px', weight: '400', color: '#69615C', sample: 'Válido para todos os tipos de cartão VEM' },
-              { label: 'Caption', size: '12px', weight: '400', color: '#69615C', sample: 'VEM — Vale Eletrônico Metropolitano · Recife, PE' },
+              { label: 'Caption', size: '12px', weight: '400', color: '#69615C', sample: 'VEM, Vale Eletrônico Metropolitano · Recife, PE' },
             ].map((t) => (
               <div key={t.label} className={styles.dsTypeRow}>
                 <span className={styles.dsTypeLabel}>{t.label}</span>
@@ -509,7 +509,7 @@ export function VemCaseStudy() {
           <p className={styles.dsSectionTitle}>Sistema de botões & estados</p>
           <div className={styles.dsButtonSection}>
             <div className={styles.dsButtonGroup}>
-              <span className={styles.dsButtonGroupLabel}>Primário — Azul</span>
+              <span className={styles.dsButtonGroupLabel}>Primário: Azul</span>
               <div className={styles.dsButtonStates}>
                 <div className={styles.dsButtonState}>
                   <button className={styles.dsBtnBlue}>Acessar</button>
@@ -559,7 +559,7 @@ export function VemCaseStudy() {
 
         {/* Desktop */}
         <div className={styles.screenSet}>
-          <p className={styles.screenSetLabel}>Desktop — principais telas</p>
+          <p className={styles.screenSetLabel}>Desktop: principais telas</p>
           <LaptopMockupGallery
             columns={4}
             screens={[
@@ -573,7 +573,7 @@ export function VemCaseStudy() {
 
         {/* Mobile */}
         <div className={styles.screenSet}>
-          <p className={styles.screenSetLabel}>Mobile — mesmas jornadas</p>
+          <p className={styles.screenSetLabel}>Mobile: mesmas jornadas</p>
           <PhoneMockupGallery
             columns={2}
             screens={[
@@ -587,7 +587,7 @@ export function VemCaseStudy() {
 
         {/* Heuristic */}
         <div className={styles.heuristicTable}>
-          <p className={styles.chartTitle}>Avaliação heurística — antes × depois (Nielsen, 0-10)</p>
+          <p className={styles.chartTitle}>Avaliação heurística: antes × depois (Nielsen, 0-10)</p>
           <div className={styles.htHeader}>
             <span>Heurística</span>
             <span>Antes</span>
@@ -617,7 +617,7 @@ export function VemCaseStudy() {
             <p className={styles.testBlockTitle}>Metodologia</p>
             <p className={styles.testBlockBody}>
               2 rodadas de testes moderados (7 participantes cada) + 1 não-moderada via Maze (24 participantes).
-              Foco em usuários com baixa familiaridade digital — trabalhadores, estudantes e usuários acima de 50 anos,
+              Foco em usuários com baixa familiaridade digital: trabalhadores, estudantes e usuários acima de 50 anos,
               todos testando pelo celular.
             </p>
           </div>
@@ -647,18 +647,18 @@ export function VemCaseStudy() {
         <div className={styles.susScore}>
           <div className={styles.susItem}>
             <span className={styles.susValue}>36</span>
-            <span className={styles.susLabel}>SUS Score — Antes<br /><small>"Inaceitável"</small></span>
+            <span className={styles.susLabel}>SUS Score: Antes<br /><small>"Inaceitável"</small></span>
           </div>
           <div className={styles.susArrow}>→</div>
           <div className={[styles.susItem, styles.susHighlight].join(' ')}>
             <span className={styles.susValue}>82</span>
-            <span className={styles.susLabel}>SUS Score — Depois<br /><small>"Bom" (acima da média de 68)</small></span>
+            <span className={styles.susLabel}>SUS Score: Depois<br /><small>"Bom" (acima da média de 68)</small></span>
           </div>
         </div>
 
         <QuoteBlock
           quote="Consegui recarregar pelo celular pela primeira vez. Nunca tinha conseguido antes. Não preciso mais pedir para meu filho fazer por mim."
-          author="Participante #11 — Teste de usabilidade"
+          author="Participante #11, Teste de usabilidade"
           role="Dona de casa, usuária do VEM Comum, 54 anos"
         />
       </CaseSection>
@@ -666,12 +666,12 @@ export function VemCaseStudy() {
       {/* ─── 08 · RESULTADOS ─── */}
       <CaseSection index="08" label="Resultados e Impacto" title="O que mudou de verdade" tinted>
         <div className={styles.metricsGrid}>
-          <MetricCard value="82" label="SUS Score final" description="De 36 para 82 — de 'inaceitável' para 'bom' em duas rodadas de iteração" highlight index={0} />
-          <MetricCard value="92%" label="Taxa de conclusão de tarefas" description="Contra 44% no sistema anterior — nos mesmos perfis de usuário" index={1} />
-          <MetricCard value="+222%" label="NPS do produto" description="De 22 para 71 — usuários que antes recomendavam não usar passaram a recomendar" highlight index={2} />
-          <MetricCard value="100%" label="Recarga concluída nos testes" description="Todos os participantes completaram a recarga sem ajuda — vs. 38% antes" index={3} />
+          <MetricCard value="82" label="SUS Score final" description="De 36 para 82, de 'inaceitável' para 'bom' em duas rodadas de iteração" highlight index={0} />
+          <MetricCard value="92%" label="Taxa de conclusão de tarefas" description="Contra 44% no sistema anterior, nos mesmos perfis de usuário" index={1} />
+          <MetricCard value="+222%" label="NPS do produto" description="De 22 para 71: usuários que antes recomendavam não usar passaram a recomendar" highlight index={2} />
+          <MetricCard value="100%" label="Recarga concluída nos testes" description="Todos os participantes completaram a recarga sem ajuda (vs. 38% antes)" index={3} />
           <MetricCard value="60+" label="Telas entregues" description="Desktop e Mobile com design system acessível e documentação completa de handoff" index={4} />
-          <MetricCard value="WCAG AA" label="Acessibilidade" description="Conformidade total — especialmente crítico para o VEM Livre Acesso" index={5} />
+          <MetricCard value="WCAG AA" label="Acessibilidade" description="Conformidade total, especialmente crítico para o VEM Livre Acesso" index={5} />
         </div>
 
         <div className={styles.donutRow}>
@@ -695,7 +695,7 @@ export function VemCaseStudy() {
             {
               n: '1',
               title: 'Serviço público exige empatia dobrada',
-              body: 'Usuários de serviços essenciais não têm a opção de "usar outro app". O peso de errar é maior — e a responsabilidade de acertar também. Pesquisa com usuários vulneráveis é inegociável.',
+              body: 'Usuários de serviços essenciais não têm a opção de "usar outro app". O peso de errar é maior, e a responsabilidade de acertar também. Pesquisa com usuários vulneráveis é inegociável.',
             },
             {
               n: '2',
@@ -710,7 +710,7 @@ export function VemCaseStudy() {
             {
               n: '4',
               title: 'Acessibilidade desde o design system',
-              body: 'Resolver acessibilidade no design system evitou retrabalho em cada tela. Contraste, tamanho de toque e hierarquia visual foram decisões tomadas uma vez — e valeram para as 60+ telas.',
+              body: 'Resolver acessibilidade no design system evitou retrabalho em cada tela. Contraste, tamanho de toque e hierarquia visual foram decisões tomadas uma vez, e valeram para as 60+ telas.',
             },
           ].map((l, i) => (
             <motion.div key={l.n} className={styles.learning} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}>
@@ -731,7 +731,7 @@ export function VemCaseStudy() {
           <div className={styles.nextContent}>
             <p className={styles.nextLabel}>Próximo projeto</p>
             <motion.a href="/trabalho/cuca" className={styles.nextLink} whileHover={{ x: 6 }} transition={{ duration: 0.2 }}>
-              <span className={styles.nextTitle}>Cuca App — Plataforma de aprendizagem</span>
+              <span className={styles.nextTitle}>Cuca App, Plataforma de aprendizagem</span>
               <ArrowUpRight size={32} strokeWidth={1} />
             </motion.a>
           </div>

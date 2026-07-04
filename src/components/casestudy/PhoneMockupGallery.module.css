@@ -5,6 +5,7 @@
   align-items: flex-start;
   gap: 32px;
   width: 100%;
+  container-type: inline-size;
 }
 
 .item {
@@ -15,13 +16,19 @@
 }
 
 /* ─── Phone frame ─────────────────────────────────────
-   The frame itself carries the 375×740 ratio against an explicit height,
-   so its width is derived with no circular flex/aspect-ratio dependency.
-   Content inside just fills whatever concrete box results. ── */
+   The frame carries the 375×740 ratio against an explicit height, so width
+   is derived with no circular flex/aspect-ratio dependency. Height is the
+   smallest of: a viewport-relative cap, a flat cap, and whatever height
+   lets --phone-cols frames actually fit the row's width (via container
+   query units, so it reacts to real available width, not just vh). ── */
 .frame {
   display: flex;
   flex-direction: column;
-  height: min(66vh, 620px);
+  height: min(
+    66vh,
+    620px,
+    calc((100cqw - (var(--phone-cols, 3) - 1) * 32px) / var(--phone-cols, 3) * 1.9733)
+  );
   aspect-ratio: 375 / 740;
   background: #141414;
   border-radius: 30px;
@@ -86,6 +93,20 @@
 
 .scrollAreaFixed::-webkit-scrollbar {
   display: none;
+}
+
+/* Screenshot already matches the frame exactly — no scroll, just fill.
+   Background matches the bezel so any tiny letterbox gap (if the real
+   image isn't pixel-exact to 375×740) blends in instead of showing white. */
+.noScroll {
+  overflow: hidden !important;
+  background-color: #141414;
+}
+
+.noScroll .img {
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .img {

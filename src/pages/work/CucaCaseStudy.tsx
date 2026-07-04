@@ -111,7 +111,7 @@ const researchInsights = [
   {
     icon: Trophy,
     title: 'Competição saudável é motivadora',
-    body: '76% dos entrevistados disseram que estudariam mais se pudessem comparar seu desempenho com amigos — o fundamento da Arena de Quizzes.',
+    body: '76% dos entrevistados disseram que estudariam mais se pudessem comparar seu desempenho com amigos: o fundamento da Arena de Quizzes.',
   },
   {
     icon: Smartphone,
