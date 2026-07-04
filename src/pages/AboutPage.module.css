@@ -171,6 +171,24 @@
   width: 100%;
 }
 
+/* Shorter windows (laptop screens, non-maximized browser) — shrink the
+   hero so title + text + CV button fit in view without scrolling. */
+@media (max-height: 820px) {
+  .intro {
+    min-height: auto;
+    padding-top: calc(var(--navbar-h) + 24px);
+    padding-bottom: 32px;
+  }
+
+  .introStack {
+    gap: 28px;
+  }
+
+  .photo {
+    height: clamp(280px, 58vh, 560px);
+  }
+}
+
 @media (max-width: 900px) {
   .intro {
     grid-template-columns: 1fr;

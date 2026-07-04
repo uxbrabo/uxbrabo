@@ -34,6 +34,14 @@
   width: 100%;
 }
 
+/* Shorter windows — shrink hero so all contact items fit without scrolling */
+@media (max-height: 820px) {
+  .hero {
+    padding-top: calc(var(--navbar-h) + 32px);
+    padding-bottom: 24px;
+  }
+}
+
 @media (max-width: 900px) {
   .heroTitle {
     font-size: clamp(36px, 8vw, 96px);

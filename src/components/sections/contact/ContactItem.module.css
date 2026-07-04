@@ -50,3 +50,16 @@
     word-break: break-all;
   }
 }
+
+/* Shorter windows — tighter row padding + smaller value so all 3 items
+   plus the hero fit within view without scrolling. */
+@media (max-height: 820px) {
+  .inner {
+    padding: 22px 0;
+    gap: 10px;
+  }
+
+  .value {
+    font-size: clamp(28px, 4vw, 52px);
+  }
+}
