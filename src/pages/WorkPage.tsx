@@ -1,9 +1,20 @@
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Footer } from '@/components/layout/Footer'
 import { projects } from '@/data/projects'
 import { artDirectionProjects } from '@/data/artDirection'
 import { SEO } from '@/components/SEO'
 import styles from './WorkPage.module.css'
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+}
 
 export function WorkPage() {
   return (
@@ -15,27 +26,45 @@ export function WorkPage() {
         <div className={styles.categoryHeader}>
           <p className={styles.categoryLabel}>UX Design</p>
         </div>
-        <div className={styles.grid}>
-          {projects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/trabalho/${project.slug}`}
-              className={styles.card}
-              aria-label={`Ver projeto ${project.title}`}
-            >
-              <img
-                src={project.coverImage}
-                alt={project.title}
-                className={styles.cardImg}
-                style={{ backgroundColor: project.coverPlaceholder }}
-              />
-              <div className={styles.cardOverlay}>
-                <p className={styles.cardTitle}>{project.title}</p>
-                <p className={styles.cardMeta}>{project.subtitle} · {project.year}</p>
-              </div>
-            </Link>
+        <motion.div
+          className={styles.grid}
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-10%' }}
+        >
+          {projects.filter((p) => !p.hidden).map((project, i) => (
+            <motion.div key={project.id} variants={fadeUp}>
+              <Link
+                to={`/trabalho/${project.slug}`}
+                className={styles.card}
+                aria-label={`Ver projeto ${project.title}`}
+              >
+                {project.coverImage ? (
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    className={styles.cardImg}
+                    style={{ backgroundColor: project.coverPlaceholder }}
+                    loading={i === 0 ? undefined : 'lazy'}
+                    fetchPriority={i === 0 ? 'high' : undefined}
+                  />
+                ) : (
+                  <div
+                    className={styles.cardImg}
+                    style={{ backgroundColor: project.coverPlaceholder }}
+                  />
+                )}
+                <div className={styles.cardOverlay}>
+                  <p className={styles.cardTitle}>{project.title}</p>
+                  <p className={styles.cardMeta}>{project.subtitle} · {project.year}</p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Direção de Arte */}
@@ -43,28 +72,44 @@ export function WorkPage() {
         <div className={styles.categoryHeader}>
           <p className={styles.categoryLabel}>Direção de Arte</p>
         </div>
-        <div className={styles.artGrid}>
+        <motion.div
+          className={styles.artGrid}
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-10%' }}
+        >
           {artDirectionProjects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/arte/${project.slug}`}
-              className={styles.card}
-              aria-label={`Ver projeto ${project.title}`}
-            >
-              <img
-                src={project.coverImage}
-                alt={project.title}
-                className={styles.artCardImg}
-                style={{ backgroundColor: project.coverPlaceholder }}
-                loading="lazy"
-              />
-              <div className={styles.cardOverlay}>
-                <p className={styles.cardTitle}>{project.title}</p>
-                <p className={styles.cardMeta}>{project.category} · {project.year}</p>
-              </div>
-            </Link>
+            <motion.div key={project.id} variants={fadeUp}>
+              <Link
+                to={`/arte/${project.slug}`}
+                className={styles.card}
+                aria-label={`Ver projeto ${project.title}`}
+              >
+                {project.coverImage ? (
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    className={styles.artCardImg}
+                    style={{ backgroundColor: project.coverPlaceholder }}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    className={styles.artCardImg}
+                    style={{ backgroundColor: project.coverPlaceholder }}
+                  />
+                )}
+                <div className={styles.cardOverlay}>
+                  <p className={styles.cardTitle}>{project.title}</p>
+                  <p className={styles.cardMeta}>{project.category} · {project.year}</p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <div className={styles.footerWrapper}>

@@ -1,6 +1,8 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(var(--laptop-cols, 2), 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 40px;
   width: 100%;
 }
@@ -12,16 +14,24 @@
   gap: 12px;
 }
 
-/* ─── Laptop body ──────────────────────────────────── */
+/* ─── Laptop body ─────────────────────────────────────
+   The 1440×720 ratio lives on .laptop against an explicit height, so width
+   is derived with no circular flex/aspect-ratio dependency. Screen and base
+   just fill the resulting concrete box. ── */
 .laptop {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: min(32vh, 280px);
+  aspect-ratio: 1440 / 860;
 }
 
 .screen {
   width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   background: #171717;
   border-radius: 10px 10px 0 0;
   padding: 10px 10px 0;
@@ -34,26 +44,59 @@
 .camera {
   width: 5px;
   height: 5px;
+  flex-shrink: 0;
   background: #2e2e2e;
   border-radius: 50%;
   margin: 0 auto 8px;
 }
 
 .viewport {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  position: relative;
   border-radius: 4px 4px 0 0;
   overflow: hidden;
+  background-color: #171717;
+}
+
+.scrollArea {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scrollArea::-webkit-scrollbar {
+  display: none;
 }
 
 .img {
   width: 100%;
   height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
+}
+
+.scrollFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0), rgba(23, 23, 23, 0.5));
+  pointer-events: none;
 }
 
 /* ─── Keyboard base ────────────────────────────────── */
 .base {
   width: 108%;
   height: 14px;
+  flex-shrink: 0;
   background: linear-gradient(to bottom, #1c1c1c, #242424);
   border-radius: 0 0 6px 6px;
   display: flex;
@@ -81,7 +124,7 @@
 
 /* ─── Responsive ───────────────────────────────────── */
 @media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .laptop {
+    height: min(26vh, 220px);
   }
 }

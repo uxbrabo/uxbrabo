@@ -16,6 +16,11 @@ const stagger = {
   show: { transition: { staggerChildren: 0.1 } },
 }
 
+const stack = [
+  'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Vite',
+  'Framer Motion', 'Figma', 'Claude Code',
+]
+
 type AboutSectionProps = {
   letter: string
   label: string
@@ -70,8 +75,13 @@ export function AboutPage() {
                 para quem usa e geram resultado para quem investe.
               </p>
               <p>
-                Recife, Pernambuco. Atualmente coordenando mídia na Agência Partem.{' '}
+                Recife, Pernambuco. Atualmente atuando como Diretor de Arte Sênior na Agência
+                Makplan — mas sigo atuando em produto e front-end em paralelo, via projetos
+                freelance e colaborações pontuais.{' '}
                 <a href="https://wa.me/5581998286538" target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}><strong>Vamos conversar?</strong></a>
+              </p>
+              <p>
+                Trabalho com IA integrada ao processo, não como atalho, mas como ferramenta de raciocínio. Uso Claude para estruturar problemas complexos e Claude Code para prototipar com código real quando o Figma não dá conta da interação.
               </p>
             </motion.div>
 
@@ -93,7 +103,6 @@ export function AboutPage() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          aria-hidden="true"
         >
           <img
             src="/assets/lucas-brabo.png"
@@ -114,6 +123,13 @@ export function AboutPage() {
             Essa combinação me permite ir da ideia ao código sem perder a experiência do usuário
             de vista.
           </motion.p>
+          <motion.ul className={styles.stackList} variants={stagger} aria-label="Stack técnica">
+            {stack.map((item) => (
+              <motion.li key={item} className={styles.stackTag} variants={fadeUp}>
+                {item}
+              </motion.li>
+            ))}
+          </motion.ul>
         </AboutSection>
 
         {/* B — Experiência */}

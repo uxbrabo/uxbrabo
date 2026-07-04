@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Bus, MapPin, Smartphone, Building2 } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
@@ -103,22 +103,22 @@ const processSteps = [
 
 const researchInsights = [
   {
-    icon: '🚌',
+    icon: Bus,
     title: 'Saldo invisível = embaraço na catraca',
     body: '74% dos entrevistados já passaram pela situação de ter o cartão recusado na catraca sem saber o saldo. Além do constrangimento, gera atraso e desconfiança no sistema.',
   },
   {
-    icon: '📍',
+    icon: MapPin,
     title: 'Posto de atendimento como único recurso',
     body: '61% que tentaram usar o portal digital desistiram no meio do processo. O posto presencial na Soledade virou muleta por falta de alternativa digital funcional.',
   },
   {
-    icon: '📱',
+    icon: Smartphone,
     title: 'Celular é a única tela que importa',
     body: '84% dos usuários acessam serviços públicos pelo smartphone. A maioria não tem computador em casa — o mobile não é uma versão secundária, é o produto principal.',
   },
   {
-    icon: '🏢',
+    icon: Building2,
     title: 'Empregadores gerenciam cartões no papel',
     body: 'Empresas que fornecem VEM Trabalhador controlavam os cartões por planilha e telefone. Nenhuma interface de gestão em lote existia — processo manual, lento e propenso a erro.',
   },
@@ -138,31 +138,32 @@ export function VemCaseStudy() {
       <SEO title="VEM — Cartão Inteligente" description="Case study do app VEM, cartão de benefícios inteligente para colaboradores." />
 
       {/* ─── HERO ─── */}
-      <motion.section
-        className={styles.hero}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img src={v('capa.png')} alt="" className={styles.heroBgImg} fetchPriority="high" />
-        <div className={styles.heroOverlay} />
-
+      <section className={styles.hero}>
         <div className={styles.heroContent}>
           <motion.div
             className={styles.heroMeta}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <span>UX Design · UI Design · Web Responsivo</span>
             <span>2024</span>
           </motion.div>
 
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Vem
+          </motion.h1>
+
           <motion.p
             className={styles.heroTagline}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             Portal digital do Vale Eletrônico Metropolitano — o cartão inteligente
             do transporte público da Região Metropolitana do Recife, projetado para
@@ -176,12 +177,21 @@ export function VemCaseStudy() {
             className={styles.heroLiveLink}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             Ver projeto no ar →
           </motion.a>
         </div>
-      </motion.section>
+
+        <motion.div
+          className={styles.heroImageWrap}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img src={v('capa.png')} alt="Portal VEM em desktop e mobile" className={styles.heroImage} fetchPriority="high" />
+        </motion.div>
+      </section>
 
       {/* ─── OVERVIEW STRIP ─── */}
       <div className={styles.overviewStrip}>
@@ -516,40 +526,6 @@ export function VemCaseStudy() {
               </div>
             </div>
             <div className={styles.dsButtonGroup}>
-              <span className={styles.dsButtonGroupLabel}>Primário — Laranja</span>
-              <div className={styles.dsButtonStates}>
-                <div className={styles.dsButtonState}>
-                  <button className={styles.dsBtnOrange}>Saiba mais</button>
-                  <span className={styles.dsStateLabel}>Padrão</span>
-                </div>
-                <div className={styles.dsButtonState}>
-                  <button className={styles.dsBtnOrangeHover}>Saiba mais</button>
-                  <span className={styles.dsStateLabel}>Hover</span>
-                </div>
-                <div className={styles.dsButtonState}>
-                  <button className={styles.dsBtnDisabled} disabled>Saiba mais</button>
-                  <span className={styles.dsStateLabel}>Desabilitado</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.dsButtonGroup}>
-              <span className={styles.dsButtonGroupLabel}>Ações de lista</span>
-              <div className={styles.dsActionRow}>
-                <div className={styles.dsActionItem} style={{ backgroundColor: '#E75B32' }}>
-                  <span>Definir como cartão principal</span>
-                  <span className={styles.dsActionIcon}>›</span>
-                </div>
-                <div className={styles.dsActionItem} style={{ backgroundColor: '#0165AA' }}>
-                  <span>Recarregar via chat online</span>
-                  <span className={styles.dsActionIcon}>›</span>
-                </div>
-                <div className={styles.dsActionItem} style={{ backgroundColor: '#D3532E' }}>
-                  <span>Bloqueio / Desbloqueio</span>
-                  <span className={styles.dsActionIcon}>›</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.dsButtonGroup}>
               <span className={styles.dsButtonGroupLabel}>Status badges</span>
               <div className={styles.dsStatusRow}>
                 <span className={styles.dsBadgeSuccess}>● Concluído</span>
@@ -557,85 +533,6 @@ export function VemCaseStudy() {
                 <span className={styles.dsBadgeError}>● Cancelado</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── CARDS ── */}
-        <div className={styles.dsBlock}>
-          <p className={styles.dsSectionTitle}>Componentes de card</p>
-          <div className={styles.dsCardGrid}>
-            {/* Card cartão físico */}
-            <div className={styles.dsCardPhysical} style={{ background: 'linear-gradient(135deg, #E75B32, #D3532E)' }}>
-              <div className={styles.dsCardLogo}>vem</div>
-              <div className={styles.dsCardBottom}>
-                <span className={styles.dsCardType}>VEM Estudante</span>
-                <span className={styles.dsCardNumber}>•••• 4821</span>
-              </div>
-            </div>
-            <div className={styles.dsCardPhysical} style={{ background: 'linear-gradient(135deg, #0165AA, #259EDE)' }}>
-              <div className={styles.dsCardLogo}>vem</div>
-              <div className={styles.dsCardBottom}>
-                <span className={styles.dsCardType}>VEM Trabalhador</span>
-                <span className={styles.dsCardNumber}>•••• 7304</span>
-              </div>
-            </div>
-            {/* Feature card */}
-            <div className={styles.dsCardFeature}>
-              <div className={styles.dsCardFeatureLogo}>vem</div>
-              <p className={styles.dsCardFeatureTitle}>Solicitação da 1ª e novas vias</p>
-              <button className={styles.dsCardFeatureCta}>Saiba mais →</button>
-            </div>
-            {/* News card */}
-            <div className={styles.dsCardNews}>
-              <p className={styles.dsCardNewsTitle}>Novo horário de funcionamento do posto de atendimento SAC</p>
-              <span className={styles.dsCardNewsDate}>16 de fevereiro de 2024</span>
-            </div>
-          </div>
-        </div>
-
-        {/* ── ESPAÇAMENTO ── */}
-        <div className={styles.dsBlock}>
-          <p className={styles.dsSectionTitle}>Tokens de espaçamento — base 4px</p>
-          <div className={styles.dsSpacingRow}>
-            {[
-              { token: 'space-1', px: 4 },
-              { token: 'space-2', px: 8 },
-              { token: 'space-3', px: 12 },
-              { token: 'space-4', px: 16 },
-              { token: 'space-6', px: 24 },
-              { token: 'space-8', px: 32 },
-              { token: 'space-10', px: 40 },
-              { token: 'space-12', px: 48 },
-              { token: 'space-16', px: 64 },
-              { token: 'space-20', px: 80 },
-            ].map((s) => (
-              <div key={s.token} className={styles.dsSpacingItem}>
-                <div className={styles.dsSpacingBar} style={{ height: Math.round(s.px * 1.1) }} />
-                <span className={styles.dsSpacingToken}>{s.token}</span>
-                <span className={styles.dsSpacingPx}>{s.px}px</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── ÍCONES ── */}
-        <div className={styles.dsBlock}>
-          <p className={styles.dsSectionTitle}>Biblioteca de ícones</p>
-          <div className={styles.dsIconImageClip}>
-            <img
-              src={v('ds-icones.png')}
-              alt="Biblioteca de ícones VEM"
-              className={styles.dsIconImage}
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-        {/* ── HEADER & FOOTER ── */}
-        <div className={styles.dsBlock}>
-          <p className={styles.dsSectionTitle}>Navegação — Header & Footer</p>
-          <div className={styles.dsNavImageClip}>
-            <img src={v('ds-header-footer.png')} alt="Header e footer do VEM" className={styles.dsNavImage} />
           </div>
         </div>
 
@@ -662,48 +559,28 @@ export function VemCaseStudy() {
 
         {/* Desktop */}
         <div className={styles.screenSet}>
-          <p className={styles.screenSetLabel}>Desktop</p>
+          <p className={styles.screenSetLabel}>Desktop — principais telas</p>
           <LaptopMockupGallery
-            columns={3}
+            columns={4}
             screens={[
-              { id: 'home-d',   src: v('home-desktop.png'),                 label: 'Home' },
-              { id: 'login-d',  src: v('login-desktop.png'),                label: 'Login' },
-              { id: 'pv-d',     src: v('para-voce-desktop.png'),            label: 'Para Você' },
-              { id: 'pe-d',     src: v('para-empresas-desktop.png'),        label: 'Para Empresas' },
-              { id: 'cpf-d',    src: v('cadastro-cpf-desktop.png'),         label: 'Cadastro CPF' },
-              { id: 'cnpj-d',   src: v('cadastro-cnpj-desktop.png'),        label: 'Cadastro CNPJ' },
-              { id: 'cart-d',   src: v('cartoes-desktop.png'),              label: 'Meus Cartões' },
-              { id: 'anal-d',   src: v('cartoes-analise-desktop.png'),      label: 'Análise de uso' },
-              { id: 'pix-d',    src: v('cartoes-receber-pix-desktop.png'),  label: 'Recarga PIX' },
-              { id: 'pv-desk',  src: v('primeira-via-desktop.png'),         label: 'Solicitar cartão' },
-              { id: 'blq-d',    src: v('cartoes-bloqueio-desktop.png'),     label: 'Bloqueio' },
-              { id: 'nv-d',     src: v('cartoes-nova-via-desktop.png'),     label: 'Segunda Via' },
-              { id: 'err-d',    src: v('erro-desktop.png'),                 label: 'Erro' },
-              { id: 'man-d',    src: v('manutencao-desktop.png'),           label: 'Manutenção' },
+              { id: 'home-d',  src: v('home-desktop.png'),                label: 'Home' },
+              { id: 'cart-d',  src: v('cartoes-desktop.png'),              label: 'Meus Cartões' },
+              { id: 'pix-d',   src: v('cartoes-receber-pix-desktop.png'),  label: 'Recarga PIX' },
+              { id: 'pv-desk', src: v('primeira-via-desktop.png'),         label: 'Solicitar cartão' },
             ]}
           />
         </div>
 
         {/* Mobile */}
         <div className={styles.screenSet}>
-          <p className={styles.screenSetLabel}>Mobile</p>
+          <p className={styles.screenSetLabel}>Mobile — mesmas jornadas</p>
           <PhoneMockupGallery
-            columns={4}
+            columns={2}
             screens={[
-              { id: 'home-m',  src: v('home-mobile.png'),                  label: 'Home' },
-              { id: 'login-m', src: v('login-mobile.png'),                 label: 'Login' },
-              { id: 'pv-m',    src: v('para-voce-mobile.png'),             label: 'Para Você' },
-              { id: 'pe-m',    src: v('para-empresas-mobile.png'),         label: 'Para Empresas' },
-              { id: 'cpf-m',   src: v('cadastro-cpf-mobile.png'),          label: 'Cadastro CPF' },
-              { id: 'cnpj-m',  src: v('cadastro-cnpj-mobile.png'),         label: 'Cadastro CNPJ' },
-              { id: 'cart-m',  src: v('cartoes-mobile.png'),               label: 'Meus Cartões' },
-              { id: 'anal-m',  src: v('cartoes-analise-mobile.png'),       label: 'Análise de uso' },
-              { id: 'pix-m',   src: v('cartoes-receber-pix-mobile.png'),   label: 'Recarga PIX' },
-              { id: 'pv-mob',  src: v('primeira-via-mobile.png'),          label: 'Solicitar cartão' },
-              { id: 'blq-m',   src: v('cartoes-bloqueio-mobile.png'),      label: 'Bloqueio' },
-              { id: 'nv-m',    src: v('cartoes-nova-via-mobile.png'),      label: 'Segunda Via' },
-              { id: 'err-m',   src: v('erro-mobile.png'),                  label: 'Erro' },
-              { id: 'man-m',   src: v('manutencao-mobile.png'),            label: 'Manutenção' },
+              { id: 'home-m', src: v('home-mobile.png'),                 label: 'Home' },
+              { id: 'cart-m', src: v('cartoes-mobile.png'),               label: 'Meus Cartões' },
+              { id: 'pix-m',  src: v('cartoes-receber-pix-mobile.png'),   label: 'Recarga PIX' },
+              { id: 'pv-mob', src: v('primeira-via-mobile.png'),          label: 'Solicitar cartão' },
             ]}
           />
         </div>

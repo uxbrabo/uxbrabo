@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import { Navbar } from '@/components/layout/Navbar'
 import { HomePage } from '@/pages/HomePage'
 import { WorkPage } from '@/pages/WorkPage'
@@ -14,6 +14,9 @@ import { SabenPayPage } from '@/pages/work/SabenPayPage'
 import { CorujaGrantPage } from '@/pages/work/CorujaGrantPage'
 import { BellyrisiPage } from '@/pages/work/BellyrisiPage'
 import { RosarinhoPage } from '@/pages/work/RosarinhoPage'
+import { OabPeCaseStudy } from '@/pages/work/OabPeCaseStudy'
+import { StudyCaseStudy } from '@/pages/work/StudyCaseStudy'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 
 const pageVariants = {
@@ -40,9 +43,9 @@ export function App() {
   useScrollToTop()
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Navbar />
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"
@@ -148,8 +151,32 @@ export function App() {
               </AnimatedPage>
             }
           />
+          <Route
+            path="/trabalho/oab-pe"
+            element={
+              <AnimatedPage>
+                <OabPeCaseStudy />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/trabalho/study"
+            element={
+              <AnimatedPage>
+                <StudyCaseStudy />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <AnimatedPage>
+                <NotFoundPage />
+              </AnimatedPage>
+            }
+          />
         </Routes>
       </AnimatePresence>
-    </>
+    </MotionConfig>
   )
 }

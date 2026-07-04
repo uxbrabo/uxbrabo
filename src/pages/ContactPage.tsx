@@ -36,7 +36,7 @@ export function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          Olá!&nbsp;&nbsp;;) Diz ai&nbsp;...
+          Olá!&nbsp;&nbsp;;) Diz ai&nbsp;…
         </motion.h1>
       </section>
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ClipboardList, Search, FileText, CreditCard } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
@@ -117,22 +118,22 @@ const afterData = [
 
 const insights = [
   {
-    icon: '📋',
+    icon: ClipboardList,
     title: 'Processo manual e fragmentado',
     body: 'Cada tipo de solicitação seguia um caminho diferente: formulário físico, planilha compartilhada, pasta de arquivo ou presença no administrativo. Não havia um único canal — havia vários processos desconectados.',
   },
   {
-    icon: '🔍',
+    icon: Search,
     title: 'Sem rastreabilidade',
     body: 'Após entregar um formulário ou registrar uma entrada na planilha, o lojista não tinha como acompanhar o status — gerava idas desnecessárias ao administrativo e retrabalho para a equipe.',
   },
   {
-    icon: '📄',
+    icon: FileText,
     title: 'Circulares sem confirmação de leitura',
     body: 'Comunicados importantes chegavam por WhatsApp, e-mail avulso ou papel impresso. O shopping não tinha garantia de que a informação chegou ao responsável certo.',
   },
   {
-    icon: '🪪',
+    icon: CreditCard,
     title: 'Crachá com documentação em papel',
     body: 'Qualquer liberação ou cancelamento de crachá exigia presença física no administrativo com documentação física — interrompendo a operação da loja por horas.',
   },
@@ -238,35 +239,47 @@ export function PlazaCaseStudy() {
       <SEO title="Shopping Plaza" description="Case study do redesign digital do Shopping Plaza." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      <motion.section
-        className={styles.hero}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img src={p('capa.png')} alt="Plaza Shopping — Central do Lojista" className={styles.heroBgImg} fetchPriority="high" />
-        <div className={styles.heroOverlay} />
+      <section className={styles.hero}>
         <div className={styles.heroContent}>
           <motion.div
             className={styles.heroMeta}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <span>UX Design · UI Design</span>
             <span>2024</span>
           </motion.div>
+
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Plaza
+          </motion.h1>
+
           <motion.p
             className={styles.heroTagline}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             Plataforma web e mobile que substituiu formulários físicos e planilhas do Shopping Plaza Recife —
             chamados, crachás, circulares e mensalistas em um único canal rastreável.
           </motion.p>
         </div>
-      </motion.section>
+
+        <motion.div
+          className={styles.heroImageWrap}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img src={p('capa.png')} alt="Plaza Shopping — Central do Lojista" className={styles.heroImage} fetchPriority="high" />
+        </motion.div>
+      </section>
 
       {/* ── Overview strip ───────────────────────────────── */}
       <div className={styles.overviewStrip}>

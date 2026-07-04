@@ -16,18 +16,10 @@ export type EducationItem = {
 
 export const experiences: ExperienceItem[] = [
   {
-    id: 'partem-coordenador',
-    role: 'Coordenador de Mídia',
-    company: 'Agência Partem',
-    period: '2026 → Presente · Recife, PE',
-    description:
-      'Coordenação estratégica de mídia e gestão direta das equipes de criação e redação, com foco especial nos projetos do Sebrae-PE. Responsável por garantir que entregas finais unam criatividade com os objetivos de negócio de cada cliente — atuando no planejamento de campanhas digitais, direção criativa do time e alinhamento direto com clientes institucionais.',
-  },
-  {
     id: 'makplan-arte',
     role: 'Diretor de Arte Sênior',
     company: 'Agência Makplan',
-    period: '2025 → 2026 · Recife, PE',
+    period: '2025 → Presente · Recife, PE',
     description:
       'Desenvolvimento de KVs e campanhas sazonais para o Shopping Costa Dourada, criação de identidades e peças para eventos institucionais da Prefeitura de Sertânia e direção de arte para campanhas de captação de alunos da Berlitz, com foco em performance e posicionamento digital.',
   },

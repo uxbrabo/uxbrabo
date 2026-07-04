@@ -1,0 +1,288 @@
+.track {
+  position: relative;
+  width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: var(--card-gap);
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  padding-inline: var(--container-px);
+  margin-inline: auto;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+/* ─── Left — text ─────────────────────────────────────── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 440px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.index {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  padding-right: 12px;
+}
+
+.textStage {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+}
+
+.textAnim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  will-change: opacity, transform;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-h2);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+
+.description {
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-regular);
+  color: rgba(0, 0, 0, 0.6);
+  line-height: var(--lh-normal);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 16px 32px;
+  margin-top: 8px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  transition: background-color 220ms ease, color 220ms ease, box-shadow 220ms ease;
+}
+
+.cta:hover {
+  background-color: transparent;
+  color: var(--color-black);
+  box-shadow: inset 0 0 0 1.5px var(--color-black);
+}
+
+/* ─── Right — image ───────────────────────────────────── */
+.imageCol {
+  position: relative;
+  height: min(68vh, 620px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  will-change: opacity, transform;
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.16));
+}
+
+.imagePlaceholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: opacity, transform;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.14);
+}
+
+/* ─── Phone mockup (for projects whose cover is a raw screenshot) ───── */
+.mockupWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: opacity, transform;
+}
+
+.mockupFrame {
+  position: relative;
+  height: 92%;
+  aspect-ratio: 9 / 19.5;
+  background-color: #1a1a1a;
+  border-radius: 32px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mockupPill {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 8px;
+  background-color: #0a0a0a;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.mockupImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+  display: block;
+}
+
+/* ─── Browser mockup (for web projects whose cover is a raw screenshot) ── */
+.browserFrame {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.16),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.browserBar {
+  flex-shrink: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 14px;
+  background-color: var(--color-surface-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.browserDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.browserScreen {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.browserImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ─── Progress dots ───────────────────────────────────── */
+.dots {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.dot:hover {
+  border-color: var(--color-text-primary);
+}
+
+.dot[data-active='true'] {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  transform: scale(1.35);
+}
+
+/* ─── Scroll hint ─────────────────────────────────────── */
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sticky {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    padding-block: calc(var(--navbar-h) + 32px) 40px;
+    gap: 32px;
+  }
+
+  .imageCol {
+    order: -1;
+    height: clamp(260px, 42vh, 420px);
+    width: 100%;
+  }
+
+  .textCol {
+    max-width: 100%;
+  }
+
+  .dots {
+    display: none;
+  }
+}

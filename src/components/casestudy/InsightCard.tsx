@@ -1,14 +1,15 @@
+import type { LucideProps } from 'lucide-react'
 import { motion } from 'framer-motion'
 import styles from './InsightCard.module.css'
 
 type InsightCardProps = {
-  icon: string
+  icon: React.ComponentType<LucideProps>
   title: string
   body: string
   index?: number
 }
 
-export function InsightCard({ icon, title, body, index = 0 }: InsightCardProps) {
+export function InsightCard({ icon: Icon, title, body, index = 0 }: InsightCardProps) {
   return (
     <motion.div
       className={styles.card}
@@ -17,7 +18,7 @@ export function InsightCard({ icon, title, body, index = 0 }: InsightCardProps) 
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
     >
-      <span className={styles.icon} aria-hidden="true">{icon}</span>
+      <Icon className={styles.icon} aria-hidden="true" size={24} strokeWidth={1.5} />
       <h4 className={styles.title}>{title}</h4>
       <p className={styles.body}>{body}</p>
     </motion.div>

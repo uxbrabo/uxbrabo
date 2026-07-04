@@ -1,7 +1,9 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(var(--phone-cols, 3), 1fr);
-  gap: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
   width: 100%;
 }
 
@@ -12,11 +14,17 @@
   gap: 14px;
 }
 
-/* ─── Phone frame ──────────────────────────────────── */
+/* ─── Phone frame ─────────────────────────────────────
+   The frame itself carries the 375×740 ratio against an explicit height,
+   so its width is derived with no circular flex/aspect-ratio dependency.
+   Content inside just fills whatever concrete box results. ── */
 .frame {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: min(66vh, 620px);
+  aspect-ratio: 375 / 740;
   background: #141414;
-  border-radius: 40px;
+  border-radius: 30px;
   padding: 10px;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.07),
@@ -25,80 +33,79 @@
 }
 
 .pill {
-  width: 52px;
-  height: 5px;
+  width: 22%;
+  height: 6px;
+  flex-shrink: 0;
   background: #2c2c2c;
   border-radius: 3px;
   margin: 4px auto 8px;
 }
 
-/* ─── Viewport ─────────────────────────────────────── */
+/* ─── Viewport — fills whatever's left inside the already-sized frame ── */
 .viewport {
-  border-radius: 30px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* used only when fixedNav=true (Cuca) — needs fixed height for overlay */
-.viewportFixed {
-  border-radius: 30px;
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 9 / 19.5;
-}
-
-/* ─── Normal mode ──────────────────────────────────── */
-.img {
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  animation: scrollScreen 60s ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
 }
 
-.imgStatic {
+.scrollArea {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scrollArea::-webkit-scrollbar {
+  display: none;
+}
+
+/* fixedNav mode — same fill behavior, nav overlay pins to its bottom */
+.viewportFixed {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollAreaFixed {
+  position: absolute;
+  inset: 0;
+  bottom: 11%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scrollAreaFixed::-webkit-scrollbar {
+  display: none;
+}
+
+.img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-@keyframes scrollScreen {
-  0%   { object-position: center top; }
-  15%  { object-position: center top; }
-  80%  { object-position: center bottom; }
-  92%  { object-position: center bottom; }
-  100% { object-position: center top; }
+/* Hints that there's more content below without blocking the scroll itself */
+.scrollFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.55));
+  pointer-events: none;
 }
 
 /* ─── Fixed nav mode ───────────────────────────────── */
-.scrollArea {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 11%;
-  overflow: hidden;
-}
-
-.imgFixed {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  animation: scrollScreenFixed 60s ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
-}
-
-/* stops at ~78% so nav bar never enters the scroll area */
-@keyframes scrollScreenFixed {
-  0%   { object-position: center top; }
-  15%  { object-position: center top; }
-  78%  { object-position: center 78%; }
-  90%  { object-position: center 78%; }
-  100% { object-position: center top; }
-}
-
 .navBarOverlay {
   position: absolute;
   bottom: 0;
@@ -108,6 +115,7 @@
   height: 11%;
   object-fit: cover;
   object-position: center bottom;
+  pointer-events: none;
 }
 
 /* ─── Label ────────────────────────────────────────── */
@@ -122,13 +130,10 @@
 /* ─── Responsive ───────────────────────────────────── */
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-}
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .frame {
+    height: min(56vh, 480px);
   }
 }

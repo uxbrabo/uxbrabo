@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Ruler, AlertTriangle, Stethoscope, RefreshCw } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
@@ -39,22 +40,22 @@ const afterData = [
 
 const insights = [
   {
-    icon: '📏',
+    icon: Ruler,
     title: 'Tabela de medidas fora do contexto de decisão',
     body: 'As tabelas existiam, mas estavam enterradas no final da página de produto — desconectadas do momento em que o usuário tentava decidir qual modelo e tamanho comprar.',
   },
   {
-    icon: '⚠️',
+    icon: AlertTriangle,
     title: 'Tamanho errado = problema clínico',
     body: 'Uma meia compressiva no tamanho incorreto não é apenas ineficaz — pode causar dano ao paciente. Isso transforma cada compra em uma decisão de alta responsabilidade e alta hesitação.',
   },
   {
-    icon: '🩺',
+    icon: Stethoscope,
     title: 'Dois públicos, uma mesma dúvida',
     body: 'Profissionais de saúde e pacientes finais compartilham a mesma incerteza: qual modelo e tamanho é o certo para esse caso? O site não diferenciava nem orientava nenhum dos dois.',
   },
   {
-    icon: '🔄',
+    icon: RefreshCw,
     title: 'Devoluções por tamanho eram sistêmicas',
     body: 'O suporte recebia reclamações recorrentes de tamanho incorreto. Sem uma ferramenta de orientação integrada ao fluxo de compra, o erro de sizing era inevitável e repetitivo.',
   },
@@ -135,29 +136,32 @@ export function VenosanCaseStudy() {
       <SEO title="Venosan — Calculadora de Medidas" description="Case study da calculadora de medidas para meias de compressão Venosan." />
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      <motion.section
-        className={styles.hero}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img src={v('capa.png')} alt="Venosan — Calculadora de Medidas" className={styles.heroBgImg} fetchPriority="high" />
-        <div className={styles.heroOverlay} />
+      <section className={styles.hero}>
         <div className={styles.heroContent}>
           <motion.div
             className={styles.heroMeta}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <span>UX Design · UI Design</span>
             <span>2024</span>
           </motion.div>
+
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Venosan
+          </motion.h1>
+
           <motion.p
             className={styles.heroTagline}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             Ferramenta que recomenda o modelo e tamanho ideais de meia compressiva
             com base nas medidas do usuário — integrando orientação clínica ao fluxo de compra.
@@ -169,12 +173,35 @@ export function VenosanCaseStudy() {
             className={styles.heroLiveLink}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             Ver projeto no ar →
           </motion.a>
         </div>
-      </motion.section>
+
+        <motion.div
+          className={styles.heroImageWrap}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className={styles.heroBrowser}>
+            <div className={styles.heroBrowserBar}>
+              <span className={styles.heroBrowserDot} />
+              <span className={styles.heroBrowserDot} />
+              <span className={styles.heroBrowserDot} />
+            </div>
+            <div className={styles.heroBrowserScreen}>
+              <img
+                src={v('home-hero-clean.png')}
+                alt="Venosan — Em dúvida em qual tamanho ideal para você?"
+                className={styles.heroImage}
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+        </motion.div>
+      </section>
 
       {/* ── Overview strip ───────────────────────────────── */}
       <div className={styles.overviewStrip}>

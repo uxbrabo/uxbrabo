@@ -26,7 +26,9 @@
       "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--4.jpg\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-4.jpg)",
       "Bash(cp \"/Users/lucasbrabo/Downloads/CORUJA-E.C--5.jpg\" /Users/lucasbrabo/uxbrabo/public/assets/coruja-grant/uniforme-5.jpg)",
       "Bash(file /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*)",
-      "Bash(identify /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.webp /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.png /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.gif)"
+      "Bash(identify /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.webp /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.png /Users/lucasbrabo/uxbrabo/public/assets/bellyrisi/*.gif)",
+      "Bash(npx eslint *)",
+      "Bash(kill -9 8231)"
     ]
   }
 }

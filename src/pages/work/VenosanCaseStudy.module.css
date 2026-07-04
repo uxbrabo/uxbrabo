@@ -5,45 +5,90 @@
 
 /* ─── Hero ──────────────────────────────────────────── */
 .hero {
-  position: relative;
-  width: 100%;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: var(--card-gap);
+  padding-top: var(--navbar-h);
+  padding-inline: var(--container-px);
+  padding-bottom: 48px;
+  max-width: calc(var(--container-max) + var(--container-px) * 2);
+  margin-inline: auto;
+  background-color: var(--color-white);
+}
+
+.heroContent {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  gap: 20px;
+  max-width: 460px;
+}
+
+.heroImageWrap {
+  position: relative;
+  height: min(70vh, 640px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImagePlain {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.16));
+}
+
+/* Browser mockup — real hero banner crop, 1440×824, no lorem ipsum */
+.heroBrowser {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1440 / 824;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.16),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.heroBrowserBar {
+  flex-shrink: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 14px;
+  background-color: var(--color-surface-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.heroBrowserDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.heroBrowserScreen {
+  position: relative;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
 }
 
-.heroBgImg {
-  position: absolute;
-  inset: 0;
+.heroImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
-}
-
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.45) 45%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: calc(var(--container-max) + var(--container-px) * 2);
-  margin-inline: auto;
-  padding: 0 var(--container-px) clamp(40px, 5vw, 64px);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: block;
 }
 
 .heroMeta {
@@ -54,7 +99,7 @@
   font-weight: var(--fw-regular);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
 }
 
 .heroMeta::before {
@@ -66,12 +111,20 @@
   flex-shrink: 0;
 }
 
+.heroTitle {
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-h2);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: 1.05;
+}
+
 .heroTagline {
-  font-size: clamp(15px, 1.8vw, 20px);
+  font-size: var(--fs-body-lg);
   font-weight: var(--fw-regular);
   line-height: var(--lh-normal);
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 560px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .heroLiveLink {
@@ -82,22 +135,24 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-primary);
   padding: 10px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
   width: fit-content;
 }
 
 .heroLiveLink:hover {
-  color: var(--color-black);
-  background: var(--color-white);
-  border-color: var(--color-white);
+  color: var(--color-white);
+  background: var(--color-black);
+  border-color: var(--color-black);
 }
 
 /* ─── Overview strip ────────────────────────────────── */
 .overviewStrip {
-  background-color: var(--color-black);
+  background-color: var(--color-surface-light);
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
 }
 
 .overviewInner {
@@ -120,13 +175,13 @@
   font-weight: var(--fw-regular);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted);
 }
 
 .overviewValue {
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   line-height: var(--lh-tight);
 }
 
@@ -307,6 +362,24 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: calc(var(--navbar-h) + 32px);
+    padding-bottom: 40px;
+    gap: 32px;
+  }
+
+  .heroImageWrap {
+    order: -1;
+    height: clamp(260px, 45vw, 420px);
+    width: 100%;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
   .insightGrid {
     grid-template-columns: 1fr;
   }

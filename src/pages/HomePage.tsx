@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Footer } from '@/components/layout/Footer'
-import { ProjectScrollCard } from '@/components/sections/home/ProjectScrollCard'
+import { ProjectsShowcase } from '@/components/sections/home/ProjectsShowcase'
+import { ScrollHint } from '@/components/ui/ScrollHint'
 import { projects } from '@/data/projects'
 import { SEO } from '@/components/SEO'
 import styles from './HomePage.module.css'
@@ -18,6 +19,17 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 }
 
+const titleStagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+}
+
+const maskLine = {
+  hidden: { y: '110%' },
+  show: { y: '0%', transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+}
+
+const titleWords = ['Designer', 'de', 'Produto']
 
 export function HomePage() {
   return (
@@ -31,11 +43,17 @@ export function HomePage() {
           initial="hidden"
           animate="show"
         >
-          <motion.h1 className={styles.heroTitle} variants={fadeUp}>
-            Designer de Produto
+          <motion.h1 className={styles.heroTitle} variants={titleStagger} aria-label="Designer de Produto">
+            {titleWords.map((word, i) => (
+              <span className={styles.maskWrap} key={i} aria-hidden="true">
+                <motion.span className={styles.maskInner} variants={maskLine}>
+                  {word}
+                </motion.span>
+              </span>
+            ))}
           </motion.h1>
           <motion.p className={styles.heroSubtitle} variants={fadeUp}>
-            <strong>Mais de 5 anos transitando entre UX/UI, direção de arte e desenvolvimento front-end</strong>
+            <strong>Mais de 5 anos transitando entre UX/UI, direção de arte, desenvolvimento front-end e IA integrada ao processo</strong>
             {' '}— criando produtos que fazem sentido para quem usa e geram resultado para quem investe.
           </motion.p>
 
@@ -43,7 +61,7 @@ export function HomePage() {
           <motion.div className={styles.heroStatusRow} variants={fadeUp}>
             <div className={styles.heroStatus}>
               <span className={styles.heroStatusDot} aria-hidden="true" />
-              Disponível para novos projetos
+              Aberto a projetos remotos · PJ
             </div>
             <Link to="/contato" className={styles.heroCtaBtn}>
               Fale comigo
@@ -53,25 +71,11 @@ export function HomePage() {
         </motion.div>
 
         {/* Scroll hint — bottom of hero */}
-        <motion.div
-          className={styles.heroScrollHint}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          aria-hidden="true"
-        >
-          <div className={styles.heroScrollMouse}>
-            <div className={styles.heroScrollWheel} />
-          </div>
-        </motion.div>
+        <ScrollHint className={styles.heroScrollHint} />
       </section>
 
       {/* Projects */}
-      <section className={styles.projects} aria-label="Projetos em destaque">
-        {projects.map((project, i) => (
-          <ProjectScrollCard key={project.id} project={project} index={i} />
-        ))}
-      </section>
+      <ProjectsShowcase projects={projects.filter((p) => !p.hidden)} />
 
       {/* Footer */}
       <div className={styles.footerWrapper}>

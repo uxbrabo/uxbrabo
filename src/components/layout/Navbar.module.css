@@ -79,6 +79,7 @@
   padding: 48px var(--container-px);
   display: flex;
   flex-direction: column;
+  overscroll-behavior: contain;
 }
 
 .mobileLink {

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Map, Trophy, Users, BarChart2, Navigation, Film, Radio, TrendingUp, Gift, ClipboardList } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
@@ -39,22 +40,22 @@ const afterData = [
 
 const insights = [
   {
-    icon: '🗺️',
+    icon: Map,
     title: 'Capacitação sem escala geográfica',
     body: 'Treinamentos presenciais chegavam apenas às capitais e grandes centros. Distribuidores em cidades menores — responsáveis por parcela significativa das vendas — ficavam meses sem atualização de produto ou técnica de vendas.',
   },
   {
-    icon: '🏆',
+    icon: Trophy,
     title: 'Sem incentivo para ir além do básico',
     body: 'Sem um mecanismo de reconhecimento, distribuidores e revendedores completavam apenas o conteúdo exigido. Não havia nenhuma razão para explorar cursos complementares ou aprofundar conhecimento.',
   },
   {
-    icon: '👥',
+    icon: Users,
     title: 'Dois perfis com necessidades distintas',
     body: 'Distribuidores gerenciam estoques e logística — precisam de gestão financeira e visão operacional. Revendedores estão na ponta de vendas — precisam de técnica comercial e fidelização de cliente. A capacitação tratava os dois da mesma forma.',
   },
   {
-    icon: '📊',
+    icon: BarChart2,
     title: 'Gestão no escuro',
     body: 'Gerentes regionais não tinham como saber quais membros da rede foram treinados, o que absorveram ou como isso impactava o desempenho. Decisões de suporte e incentivo eram baseadas em intuição.',
   },
@@ -62,32 +63,32 @@ const insights = [
 
 const modules = [
   {
-    icon: '🛤️',
+    icon: Navigation,
     title: 'Trilhas de Desenvolvimento',
     desc: '5 trilhas temáticas — Varejo Automotivo, Financeiro, Vendas, Marketing e Pessoas — com progressão sequencial e certificado ao concluir.',
   },
   {
-    icon: '🎬',
+    icon: Film,
     title: 'Cursos e Aulas em Vídeo',
     desc: 'Biblioteca de cursos em vídeo com tabs de Quiz, Material de Apoio, Dúvidas Frequentes e Avaliações integradas ao mesmo fluxo.',
   },
   {
-    icon: '📡',
+    icon: Radio,
     title: 'Conexão Revenda',
     desc: 'Hub de conteúdo especializado para revendedores — vídeos curtos de técnica de vendas, fidelização e gestão de clientes no ponto de venda.',
   },
   {
-    icon: '📈',
+    icon: TrendingUp,
     title: 'Meu Progresso',
     desc: 'Painel pessoal com pontos, moedas e classificação Bronze/Prata/Ouro. Extrato de movimentações e regras de gamificação com transparência total.',
   },
   {
-    icon: '🎁',
+    icon: Gift,
     title: 'Loja de Brindes',
     desc: 'Catálogo de itens resgatáveis com moedas acumuladas — brindes com a identidade Moura que reforçam pertencimento à rede.',
   },
   {
-    icon: '📋',
+    icon: ClipboardList,
     title: 'Relatórios',
     desc: 'Painel administrativo para gestores com visibilidade de engajamento, conclusão por membro, desempenho por trilha e evolução da rede.',
   },
@@ -336,23 +337,26 @@ export function AcademiaMouraCaseStudy() {
           </p>
         </div>
         <div className={styles.moduleList}>
-          {modules.map((mod, i) => (
-            <motion.div
-              key={mod.title}
-              className={styles.moduleListItem}
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span className={styles.moduleListNum}>0{i + 1}</span>
-              <span className={styles.moduleListIcon}>{mod.icon}</span>
-              <div className={styles.moduleListContent}>
-                <h3 className={styles.moduleListTitle}>{mod.title}</h3>
-                <p className={styles.moduleListDesc}>{mod.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+          {modules.map((mod, i) => {
+            const Icon = mod.icon
+            return (
+              <motion.div
+                key={mod.title}
+                className={styles.moduleListItem}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <span className={styles.moduleListNum}>0{i + 1}</span>
+                <span className={styles.moduleListIcon}><Icon size={20} strokeWidth={1.5} aria-hidden="true" /></span>
+                <div className={styles.moduleListContent}>
+                  <h3 className={styles.moduleListTitle}>{mod.title}</h3>
+                  <p className={styles.moduleListDesc}>{mod.desc}</p>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
         <Divider />

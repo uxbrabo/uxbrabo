@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/study-hero.png --window-size=1440,900 --hide-scrollbars http://localhost:3000/trabalho/study)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(npm run dev > /tmp/vite-dev.log 2>&1 & *)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
+    ]
+  }
+}

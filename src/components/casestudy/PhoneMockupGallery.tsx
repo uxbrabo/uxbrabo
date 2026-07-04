@@ -4,49 +4,42 @@ type Screen = { id: string; src: string; label: string }
 
 type Props = {
   screens: Screen[]
-  animated?: boolean
   fixedNav?: boolean
-  columns?: 2 | 3 | 4
+  columns?: 1 | 2 | 3 | 4
 }
 
-export function PhoneMockupGallery({ screens, animated = false, fixedNav = false, columns = 3 }: Props) {
+/**
+ * Default mode: the frame hugs the screenshot's real proportions — no crop,
+ * no blank filler. Very long pages just cap at a max height and scroll.
+ * fixedNav mode (Cuca): needs a fixed phone-ratio viewport so the nav bar
+ * overlay can stay pinned while the content behind it scrolls.
+ */
+export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3 }: Props) {
   return (
     <div
       className={styles.grid}
       style={{ '--phone-cols': columns } as React.CSSProperties}
     >
-      {screens.map((screen, i) => (
-        <figure
-          key={screen.id}
-          className={styles.item}
-          style={animated ? { '--delay': `${i * 1.3}s` } as React.CSSProperties : undefined}
-        >
+      {screens.map((screen) => (
+        <figure key={screen.id} className={styles.item}>
           <div className={styles.frame}>
             <div className={styles.pill} />
             <div className={fixedNav ? styles.viewportFixed : styles.viewport}>
-              {fixedNav ? (
-                <>
-                  <div className={styles.scrollArea}>
-                    <img
-                      src={screen.src}
-                      alt={screen.label}
-                      className={animated ? styles.imgFixed : styles.imgStatic}
-                      loading="lazy"
-                    />
-                  </div>
-                  <img
-                    src={screen.src}
-                    alt=""
-                    aria-hidden
-                    className={styles.navBarOverlay}
-                    loading="lazy"
-                  />
-                </>
-              ) : (
+              <div className={fixedNav ? styles.scrollAreaFixed : styles.scrollArea}>
                 <img
                   src={screen.src}
                   alt={screen.label}
-                  className={animated ? styles.img : styles.imgStatic}
+                  className={styles.img}
+                  loading="lazy"
+                />
+              </div>
+              {!fixedNav && <div className={styles.scrollFade} aria-hidden="true" />}
+              {fixedNav && (
+                <img
+                  src={screen.src}
+                  alt=""
+                  aria-hidden="true"
+                  className={styles.navBarOverlay}
                   loading="lazy"
                 />
               )}

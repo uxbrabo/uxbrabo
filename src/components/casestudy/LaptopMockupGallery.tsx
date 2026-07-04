@@ -11,12 +11,15 @@ export function LaptopMockupGallery({ screens, columns = 2 }: { screens: Screen[
             <div className={styles.screen}>
               <div className={styles.camera} />
               <div className={styles.viewport}>
-                <img
-                  src={screen.src}
-                  alt={screen.label}
-                  className={styles.img}
-                  loading="lazy"
-                />
+                <div className={styles.scrollArea}>
+                  <img
+                    src={screen.src}
+                    alt={screen.label}
+                    className={styles.img}
+                    loading="lazy"
+                  />
+                </div>
+                <div className={styles.scrollFade} aria-hidden="true" />
               </div>
             </div>
             <div className={styles.base}>

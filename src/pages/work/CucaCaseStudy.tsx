@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, BarChart2, Trophy, Smartphone, Users } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
@@ -103,22 +104,22 @@ const processSteps = [
 
 const researchInsights = [
   {
-    icon: '📊',
+    icon: BarChart2,
     title: 'Progresso invisível = abandono',
     body: '78% dos alunos não sabiam quanto haviam estudado nem qual era sua taxa de acerto. Sem visualizar evolução, a motivação despenca em menos de 2 semanas.',
   },
   {
-    icon: '🏆',
+    icon: Trophy,
     title: 'Competição saudável é motivadora',
     body: '76% dos entrevistados disseram que estudariam mais se pudessem comparar seu desempenho com amigos — o fundamento da Arena de Quizzes.',
   },
   {
-    icon: '📱',
+    icon: Smartphone,
     title: 'Mobile é o único canal real',
     body: '81% do estudo acontecia via smartphone, em sessões curtas (10-15 min). A experiência precisava ser otimizada para o polegar e para a atenção fragmentada.',
   },
   {
-    icon: '👨‍👩‍👧',
+    icon: Users,
     title: 'Família quer participar',
     body: '68% dos pais disseram querer acompanhar o progresso dos filhos, mas as plataformas existentes não ofereciam visibilidade — o que originou o Portal da Família.',
   },
@@ -138,38 +139,36 @@ export function CucaCaseStudy() {
       <SEO title="Cuca — App de Estudos" description="Case study do app de estudos Cuca, plataforma gamificada de aprendizado." />
 
       {/* ─── HERO ─── */}
-      <motion.section
-        className={styles.hero}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img src={s('hero-cover.png')} alt="" className={styles.heroBg} fetchPriority="high" />
-        <div className={styles.heroOverlay} />
-
-        <div className={styles.heroContent}>
-          <motion.div
-            className={styles.heroMeta}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
+      <section className={styles.hero}>
+        <motion.div
+          className={styles.heroCopy}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className={styles.heroMeta}>
             <span>UX Design · Product Design · iOS & Android</span>
             <span>2025</span>
-          </motion.div>
+          </p>
 
-          <motion.p
-            className={styles.heroTagline}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <h1 className={styles.heroTitle}>Cuca</h1>
+
+          <p className={styles.heroTagline}>
             Plataforma de aprendizagem que une gamificação, Tutor Virtual com IA
             e acompanhamento familiar para transformar o estudo numa rotina que
             alunos realmente querem manter.
-          </motion.p>
-        </div>
-      </motion.section>
+          </p>
+        </motion.div>
+
+        <motion.div
+          className={styles.heroImageWrap}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img src={s('hero-cover.png')} alt="Tela principal do Cuca" className={styles.heroImage} fetchPriority="high" />
+        </motion.div>
+      </section>
 
       {/* ─── OVERVIEW STRIP ─── */}
       <div className={styles.overviewStrip}>
@@ -338,6 +337,10 @@ export function CucaCaseStudy() {
           {processSteps.map((step, i) => (
             <ProcessStep key={step.number} {...step} index={i} />
           ))}
+        </div>
+        <div className={styles.aiNote}>
+          <p className={styles.aiNoteLabel}>IA no processo</p>
+          <p className={styles.aiNoteText}>Neste projeto usei o Claude como parceiro de raciocínio nas etapas de arquitetura e fluxos. Jogava hipóteses, ele questionava, eu decidia. Na parte de prototipação, gerei código real das telas com Claude Code, o que me permitiu testar interações no browser em vez de simular no Figma. O resultado foi um ciclo de validação mais rápido e decisões mais embasadas.</p>
         </div>
       </CaseSection>
 
@@ -576,10 +579,10 @@ export function CucaCaseStudy() {
           <Divider />
           <div className={styles.nextContent}>
             <p className={styles.nextLabel}>Próximo projeto</p>
-            <motion.a href="/trabalho/venosan" className={styles.nextLink} whileHover={{ x: 6 }} transition={{ duration: 0.2 }}>
+            <Link to="/trabalho/venosan" className={styles.nextLink}>
               <span className={styles.nextTitle}>Venosan — Calculadora de meias compressivas</span>
               <ArrowUpRight size={32} strokeWidth={1} />
-            </motion.a>
+            </Link>
           </div>
         </div>
       </section>
