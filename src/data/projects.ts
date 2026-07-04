@@ -84,8 +84,9 @@ export const projects: Project[] = [
     description:
       'App EdTech mobile-first para o ENEM com IA socrática, mapa de conhecimento adaptativo (BKT) e gamificação, concebido, prototipado e entregue como app iOS nativo com Claude Code.',
     coverPlaceholder: '#0a0a0a',
-    coverImage: '/assets/study/home.png',
+    coverImage: '/assets/study/card-cover.png',
     coverMockup: 'phone',
+    mockupImage: '/assets/study/home.png',
   },
   {
     id: 'cuca',
