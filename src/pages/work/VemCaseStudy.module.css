@@ -101,7 +101,7 @@
 
 /* ─── Overview strip ────────────────────────────────── */
 .overviewStrip {
-  background-color: var(--color-surface-light);
+  background-color: transparent;
   border-top: var(--border-hairline);
   border-bottom: var(--border-hairline);
 }
@@ -148,11 +148,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-size: var(--fs-body-lg);
+  font-size: 17px;
   font-weight: var(--fw-regular);
-  line-height: var(--lh-normal);
-  color: var(--color-text-muted);
+  line-height: 1.7;
+  color: rgba(16, 16, 16, 0.82);
   width: 100%;
+  max-width: 680px;
 }
 
 .prose strong {
@@ -233,11 +234,13 @@
 }
 
 .chartTitle {
-  font-size: var(--fs-body);
-  font-weight: var(--fw-semibold);
-  color: var(--color-text-primary);
+  font-family: var(--case-mono);
+  font-size: 13px;
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  color: var(--case-muted);
   margin-bottom: 24px;
-  letter-spacing: var(--ls-body);
+  letter-spacing: 0.08em;
 }
 
 .chartSource {
@@ -295,7 +298,7 @@
 }
 
 .persona {
-  background-color: var(--color-surface-light);
+  background-color: transparent;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -1179,7 +1182,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   padding: 48px;
-  background-color: var(--color-surface-light);
+  background-color: transparent;
 }
 
 /* ─── Learnings ─────────────────────────────────────── */
@@ -1223,7 +1226,7 @@
 
 /* ─── Next project ──────────────────────────────────── */
 .nextProject {
-  background-color: var(--color-surface-light);
+  background-color: transparent;
 }
 
 .nextInner {

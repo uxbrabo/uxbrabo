@@ -9,6 +9,34 @@
   padding: 0;
 }
 
+section[id],
+div[id] {
+  scroll-margin-top: var(--navbar-h);
+}
+
+/* ─── Case study theme (apresentação Rachel-style) ──── */
+:root {
+  --case-serif: var(--font-family);
+  --case-mono: var(--font-family);
+  --case-ink: #101010;
+  --case-muted: rgba(16, 16, 16, 0.55);
+  --case-bg: #ffffff;
+}
+
+.case-theme {
+  background-color: var(--case-bg);
+  color: var(--case-ink);
+}
+
+.case-theme h1,
+.case-theme h2,
+.case-theme h3 {
+  font-family: var(--case-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--case-ink);
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -123,4 +151,68 @@ ol {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── Case study: neutraliza caixas → editorial (fundo branco) ── */
+.case-theme [class*="contextStatsRow"] {
+  border: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 32px !important;
+}
+.case-theme [class*="contextStatItem"] {
+  padding: 22px 0 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.14) !important;
+}
+.case-theme [class*="contextStatDivider"] { display: none !important; }
+.case-theme [class*="contextStatValue"] {
+  font-family: var(--case-serif) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--case-ink) !important;
+}
+.case-theme [class*="contextStatTitle"] {
+  font-family: var(--case-mono) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--case-ink) !important;
+}
+
+/* Cards de princípios, tldr, decisão, negócio, aprendizado, personas → sem moldura */
+.case-theme [class*="principleCard"],
+.case-theme [class*="tldrCard"],
+.case-theme [class*="decisionCard"],
+.case-theme [class*="businessCard"],
+.case-theme [class*="learning"],
+.case-theme [class*="persona"],
+.case-theme [class*="aiStep"],
+.case-theme [class*="reqCol"],
+.case-theme [class*="testBlock"],
+.case-theme [class*="methodBox"],
+.case-theme [class*="gamLevel"],
+.case-theme [class*="moduleListItem"],
+.case-theme [class*="businessGrid"],
+.case-theme [class*="insightGrid"],
+.case-theme [class*="tldrGrid"],
+.case-theme [class*="requirementsGrid"],
+.case-theme [class*="aiStepsRow"],
+.case-theme [class*="tutorPrinciples"],
+.case-theme [class*="gamificationBanner"],
+.case-theme [class*="researchMethods"],
+.case-theme [class*="susScore"],
+.case-theme [class*="susItem"],
+.case-theme [class*="metricsGrid"],
+.case-theme [class*="processGrid"] {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Divisores internos de caixas viram régua fina superior editorial */
+.case-theme [class*="reqCol"],
+.case-theme [class*="testBlock"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

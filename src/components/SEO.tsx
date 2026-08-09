@@ -6,7 +6,7 @@ type Props = {
 }
 
 const BASE = 'Lucas Brabo, Designer de Produto'
-const BASE_DESC = 'Mais de 5 anos transitando entre UX/UI, direção de arte e desenvolvimento front-end, criando produtos que fazem sentido para quem usa.'
+const BASE_DESC = 'Designer de Produto com experiência em UX/UI e uma trajetória entre comunicação, direção de arte e design de produtos digitais.'
 
 const personJsonLd = {
   '@context': 'https://schema.org',

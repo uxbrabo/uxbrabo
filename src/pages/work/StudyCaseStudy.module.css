@@ -169,7 +169,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-size: 17px;
+  font-weight: var(--fw-regular);
+  line-height: 1.7;
+  color: rgba(16, 16, 16, 0.82);
   width: 100%;
+  max-width: 680px;
 }
 
 .prose p {
@@ -258,12 +263,13 @@
 
 /* ─── Chart labels ───────────────────────────────────── */
 .chartTitle {
-  font-size: var(--fs-small);
-  font-weight: var(--fw-medium);
-  letter-spacing: 0.06em;
+  font-family: var(--case-mono);
+  font-size: 13px;
+  font-weight: var(--fw-regular);
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 16px;
+  color: var(--case-muted);
+  margin-bottom: 24px;
+  letter-spacing: 0.08em;
 }
 
 .chartSource {

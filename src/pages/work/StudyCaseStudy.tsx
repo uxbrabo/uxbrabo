@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Bot, Zap, Brain, Trophy, Clock, Layers, Sparkles } from 'lucide-react'
+import { ArrowUpRight, Bot, Zap, Brain, Trophy, Clock, Layers } from 'lucide-react'
 import { Footer } from '@/components/layout/Footer'
 import { SEO } from '@/components/SEO'
 import { CaseSection } from '@/components/casestudy/CaseSection'
+import { CaseLayout, CaseHero, CaseMeta } from '@/components/casestudy/CaseLayout'
 import { MetricCard } from '@/components/casestudy/MetricCard'
-import { BarChart } from '@/components/casestudy/BarChart'
 import { QuoteBlock } from '@/components/casestudy/QuoteBlock'
 import { ProcessStep } from '@/components/casestudy/ProcessStep'
 import { InsightCard } from '@/components/casestudy/InsightCard'
@@ -16,14 +16,6 @@ import styles from './StudyCaseStudy.module.css'
 const s = (name: string) => `/assets/study/${name}`
 
 /* ─── DATA ───────────────────────────────────────────── */
-
-const enemPainPoints = [
-  { label: 'Falta de consistência: começam mas não mantêm a rotina', value: 82 },
-  { label: 'Não sabem onde estão as principais lacunas de conhecimento', value: 74 },
-  { label: 'Conteúdo genérico demais, não adaptado ao nível do aluno', value: 68 },
-  { label: 'Apps existentes não funcionam bem no mobile', value: 61 },
-  { label: 'Ausência de feedback imediato sobre o aprendizado', value: 57 },
-]
 
 const designDecisions = [
   {
@@ -120,86 +112,26 @@ export function StudyCaseStudy() {
         title="Study, App EdTech com IA"
         description="Como usei IA para conceber, prototipar e entregar um app iOS completo de estudos para o ENEM em semanas."
       />
+      <CaseLayout sections={['Visão Geral', 'Resultados', 'Observações Iniciais', 'IA no Processo', 'Processo de Design', 'Decisões de Design', 'Tutor IA', 'Decisões de Negócio', 'Reflexão']}>
 
       {/* ─── HERO ─── */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <motion.div
-            className={styles.heroBadgeRow}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className={styles.heroBadge}>
-              <Bot size={14} strokeWidth={1.5} />
-              <span>AI-Assisted Product Design</span>
-            </div>
-            <div className={[styles.heroBadge, styles.heroBadgeMuted].join(' ')}>
-              <Sparkles size={14} strokeWidth={1.5} />
-              <span>Projeto autoral</span>
-            </div>
-          </motion.div>
+      <CaseHero
+        eyebrow="Study • Projeto autoral · 2025"
+        title="Um app de estudos para o ENEM com IA socrática, do conceito ao iOS em semanas"
+        image={{ src: s('home.png'), alt: 'Tela principal do Study' }}
+      />
 
-          <motion.h1
-            className={styles.heroTitle}
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Study
-          </motion.h1>
+      <CaseMeta
+        items={[
+          { label: 'Meu papel', value: 'Product Designer + Dev' },
+          { label: 'Período', value: 'Projeto autoral · 2025' },
+          { label: 'Stack', value: 'React · Capacitor · Framer Motion' },
+          { label: 'Habilidades', value: 'Product Design · Front-end · IA no processo' },
+        ]}
+      />
 
-          <motion.p
-            className={styles.heroTagline}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Plataforma EdTech mobile com IA socrática, mapa de conhecimento adaptativo
-            e gamificação, desenvolvida do conceito ao app iOS nativo em semanas,
-            com Claude Code como parceiro de design e desenvolvimento.
-          </motion.p>
-        </div>
-
-        <motion.div
-          className={styles.heroScreens}
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className={styles.heroPhoneStack}>
-            {[s('home.png'), s('mapa-matematica.png'), s('arena-ranking.png')].map((src, i) => (
-              <div key={i} className={styles.heroPhone}>
-                <div className={styles.heroPhoneFrame}>
-                  <div className={styles.heroPhonePill} />
-                  <img src={src} alt="" className={styles.heroPhoneImg} loading={i === 0 ? 'eager' : 'lazy'} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* ─── OVERVIEW STRIP ─── */}
-      <div className={styles.overviewStrip}>
-        <div className={styles.overviewInner}>
-          {[
-            { label: 'Meu papel', value: 'Product Designer + Dev' },
-            { label: 'Plataforma', value: 'iOS (Capacitor + React)' },
-            { label: 'Contexto', value: 'Projeto autoral' },
-            { label: 'Stack', value: 'React · Framer Motion · Tailwind' },
-            { label: 'IA no processo', value: 'Claude Code (design + código)' },
-          ].map((item) => (
-            <div key={item.label} className={styles.overviewItem}>
-              <span className={styles.overviewLabel}>{item.label}</span>
-              <span className={styles.overviewValue}>{item.value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ─── 01 · CONTEXTO ─── */}
-      <CaseSection index="01" label="Contexto" title="Por que o Study existe?">
+      {/* ─── 01 · VISÃO GERAL ─── */}
+      <CaseSection index="01" label="Visão Geral" title="Por que o Study existe?">
         <div className={styles.prose}>
           <p>
             O ENEM é a maior prova do Brasil: <strong>3,9 milhões de candidatos por ano</strong>.
@@ -233,46 +165,56 @@ export function StudyCaseStudy() {
           </div>
           <div className={styles.contextStatDivider} />
           <div className={styles.contextStatItem}>
-            <span className={styles.contextStatValue}>R$9,3bi</span>
-            <span className={styles.contextStatTitle}>Mercado EdTech no Brasil</span>
-            <span className={styles.contextStatDesc}>Projeção 2026: crescimento acelerado mas ainda dominado por produtos de baixa retenção</span>
+            <span className={styles.contextStatValue}>Mobile</span>
+            <span className={styles.contextStatTitle}>Primeiro dispositivo do estudante</span>
+            <span className={styles.contextStatDesc}>O celular é onde o aluno realmente estuda, e a maioria dos apps não é pensada para ele</span>
           </div>
           <div className={styles.contextStatDivider} />
           <div className={styles.contextStatItem}>
-            <span className={styles.contextStatValue}>11%</span>
-            <span className={styles.contextStatTitle}>Taxa média de retenção em apps de estudo</span>
-            <span className={styles.contextStatDesc}>Depois de 30 dias, 89% dos usuários abandonaram: o problema não é conteúdo, é consistência</span>
+            <span className={styles.contextStatValue}>Hábito</span>
+            <span className={styles.contextStatTitle}>O desafio central</span>
+            <span className={styles.contextStatDesc}>Manter a consistência ao longo de meses é mais difícil do que encontrar conteúdo</span>
           </div>
         </div>
       </CaseSection>
 
-      {/* ─── 02 · O PROBLEMA ─── */}
-      <CaseSection index="02" label="O Problema" title="Estudar é difícil. Manter o hábito é ainda mais." tinted>
-        <QuoteBlock
-          quote="Eu começo a estudar cheio de vontade mas depois de uma semana já perdi o ritmo. Não sei por onde continuar, não sei no que eu tô pior. Fica vago demais."
-          author="Estudante do 3º ano, 17 anos"
-          role="Recife, PE, entrevista exploratória"
-        />
-
-        <div className={styles.problemStatement}>
-          <p className={styles.psLabel}>Problem Statement</p>
-          <p className={styles.psText}>
-            Estudantes do ENEM abandonam rotinas de estudo não por falta de conteúdo disponível,
-            mas porque <strong>não visualizam suas lacunas reais, não recebem direção personalizada
-            e não têm nenhum sistema que os recompense por consistência</strong>.
-            O mercado tem muitas plataformas de conteúdo; falta uma plataforma de hábito.
-          </p>
-        </div>
-
-        <div>
-          <p className={styles.chartTitle}>Principais barreiras ao estudo consistente</p>
-          <BarChart data={enemPainPoints} unit="%" />
-          <p className={styles.chartSource}>Benchmark de mercado: Pesquisas públicas EdTech BR 2023-2025, n=4.200+</p>
+      {/* ─── 02 · RESULTADOS ─── */}
+      <CaseSection index="02" label="Resultados" title="O que foi entregue" tinted>
+        <div className={styles.metricsGrid}>
+          <MetricCard value="14" label="Telas funcionais" description="Home, Mapa, Arena, Flashcards, Foco, Hub, Tutor IA, Conquistas, Tarefas, Perfil, Desempenho e mais" highlight index={0} />
+          <MetricCard value="60+" label="Ícones SVG customizados" description="Sistema de ícones próprio com identidade consistente em todas as telas e estados" index={1} />
+          <MetricCard value="5" label="Áreas de conhecimento com cores exclusivas" description="Matemática (azul), Linguagens (roxo), Ciências (verde), Humanas (âmbar), Accent (coral)" index={2} />
+          <MetricCard value="100%" label="Dark e light mode adaptativos" description="Zero valores de cor hardcoded: design tokens CSS em todos os componentes via useColors()" highlight index={3} />
+          <MetricCard value="iOS" label="App nativo via Capacitor" description="Build flow completo: React → Vite → Capacitor → WKWebView → iPhone 16 Pro" index={4} />
+          <MetricCard value="Semanas" label="Do conceito ao produto rodando" description="Processo tradicional: 3-4 meses. Com AI-assisted design: semanas, sem sacrificar qualidade" index={5} />
         </div>
       </CaseSection>
 
-      {/* ─── 03 · IA NO PROCESSO ─── */}
-      <CaseSection index="03" label="IA no Processo" title="Como o Claude Code transformou meu workflow">
+      {/* ─── 03 · OBSERVAÇÕES INICIAIS ─── */}
+      <CaseSection index="03" label="Observações Iniciais" title="Estudar é difícil. Manter o hábito é ainda mais.">
+        <div className={styles.problemStatement}>
+          <p className={styles.psLabel}>A hipótese que orientou o produto</p>
+          <p className={styles.psText}>
+            Muitos estudantes do ENEM abandonam rotinas de estudo não por falta de conteúdo
+            disponível, mas porque <strong>não visualizam suas lacunas reais, não recebem direção
+            personalizada e não têm um sistema que os recompense por consistência</strong>.
+            O mercado tem muitas plataformas de conteúdo; a proposta do Study é ser uma
+            plataforma de hábito.
+          </p>
+        </div>
+
+        <div className={styles.prose}>
+          <p>
+            A partir dessa hipótese, defini as barreiras que o produto deveria atacar: a
+            dificuldade de manter consistência, a falta de clareza sobre onde estão as maiores
+            lacunas de conhecimento, o conteúdo genérico demais e a ausência de feedback imediato
+            sobre o aprendizado.
+          </p>
+        </div>
+      </CaseSection>
+
+      {/* ─── 04 · IA NO PROCESSO ─── */}
+      <CaseSection index="04" label="IA no Processo" title="Como o Claude Code transformou meu workflow" tinted>
         <div className={styles.aiProcessHero}>
           <div className={styles.aiProcessText}>
             <p className={styles.aiProcessLead}>
@@ -347,8 +289,8 @@ export function StudyCaseStudy() {
         </div>
       </CaseSection>
 
-      {/* ─── 04 · PROCESSO ─── */}
-      <CaseSection index="04" label="Processo" title="De zero ao app iOS nativo" tinted>
+      {/* ─── 05 · PROCESSO DE DESIGN ─── */}
+      <CaseSection index="05" label="Processo de Design" title="De zero ao app iOS nativo">
         <div className={styles.processGrid}>
           {processSteps.map((step, i) => (
             <ProcessStep key={step.number} {...step} index={i} />
@@ -367,8 +309,8 @@ export function StudyCaseStudy() {
         </div>
       </CaseSection>
 
-      {/* ─── 05 · DECISÕES DE DESIGN ─── */}
-      <CaseSection index="05" label="Decisões de Design" title="Cada decisão tem uma razão">
+      {/* ─── 06 · DECISÕES DE DESIGN ─── */}
+      <CaseSection index="06" label="Decisões de Design" title="Cada decisão tem uma razão" tinted>
         <div className={styles.insightGrid}>
           {designDecisions.map((d, i) => (
             <InsightCard key={d.title} icon={d.icon} title={d.title} body={d.body} index={i} />
@@ -396,8 +338,8 @@ export function StudyCaseStudy() {
         </div>
       </CaseSection>
 
-      {/* ─── 06 · TUTOR IA ─── */}
-      <CaseSection index="06" label="Tutor IA" title="Socrático por design, não por acidente" tinted>
+      {/* ─── 07 · TUTOR IA ─── */}
+      <CaseSection index="07" label="Tutor IA" title="Socrático por design, não por acidente">
         <div className={styles.tutorLayout}>
           <div className={styles.tutorText}>
             <p>
@@ -440,8 +382,8 @@ export function StudyCaseStudy() {
         </div>
       </CaseSection>
 
-      {/* ─── 07 · DECISÕES DE NEGÓCIO ─── */}
-      <CaseSection index="07" label="Decisões de Negócio" title="Produto que pensa como empresa">
+      {/* ─── 08 · DECISÕES DE NEGÓCIO ─── */}
+      <CaseSection index="08" label="Decisões de Negócio" title="Produto que pensa como empresa" tinted>
         <div className={styles.businessGrid}>
           {businessDecisions.map((d, i) => (
             <motion.div
@@ -466,20 +408,8 @@ export function StudyCaseStudy() {
         />
       </CaseSection>
 
-      {/* ─── 08 · RESULTADOS ─── */}
-      <CaseSection index="08" label="Resultados" title="O que foi entregue" tinted>
-        <div className={styles.metricsGrid}>
-          <MetricCard value="14" label="Telas funcionais" description="Home, Mapa, Arena, Flashcards, Foco, Hub, Tutor IA, Conquistas, Tarefas, Perfil, Desempenho e mais" highlight index={0} />
-          <MetricCard value="60+" label="Ícones SVG customizados" description="Sistema de ícones próprio com identidade consistente em todas as telas e estados" index={1} />
-          <MetricCard value="5" label="Áreas de conhecimento com cores exclusivas" description="Matemática (azul), Linguagens (roxo), Ciências (verde), Humanas (âmbar), Accent (coral)" index={2} />
-          <MetricCard value="100%" label="Dark e light mode adaptativos" description="Zero valores de cor hardcoded: design tokens CSS em todos os componentes via useColors()" highlight index={3} />
-          <MetricCard value="iOS" label="App nativo via Capacitor" description="Build flow completo: React → Vite → Capacitor → WKWebView → iPhone 16 Pro" index={4} />
-          <MetricCard value="Semanas" label="Do conceito ao produto rodando" description="Processo tradicional: 3-4 meses. Com AI-assisted design: semanas, sem sacrificar qualidade" index={5} />
-        </div>
-      </CaseSection>
-
-      {/* ─── 09 · APRENDIZADOS ─── */}
-      <CaseSection index="09" label="Aprendizados" title="O que esse projeto me ensinou">
+      {/* ─── 09 · REFLEXÃO ─── */}
+      <CaseSection index="09" label="Reflexão" title="O que esse projeto me ensinou">
         <div className={styles.learningGrid}>
           {[
             {
@@ -525,12 +455,13 @@ export function StudyCaseStudy() {
       <section className={styles.nextProject}>
         <div className={styles.nextInner}>
           <p className={styles.nextLabel}>Próximo projeto</p>
-          <Link to="/trabalho/cuca" className={styles.nextLink}>
-            <span className={styles.nextTitle}>Cuca, Gestão Educacional</span>
+          <Link to="/trabalho/vem" className={styles.nextLink}>
+            <span className={styles.nextTitle}>VEM, Mobilidade urbana</span>
             <ArrowUpRight size={24} strokeWidth={1.5} className={styles.nextArrow} />
           </Link>
         </div>
       </section>
+      </CaseLayout>
 
       <Divider />
       <Footer />

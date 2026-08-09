@@ -13,7 +13,9 @@
 
 .categoryHeader {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 16px;
   padding: 24px var(--container-px) 20px;
   max-width: calc(var(--container-max) + var(--container-px) * 2);
   margin-inline: auto;
@@ -26,6 +28,14 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+.categoryNote {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+  opacity: 0.7;
 }
 
 /* ─── Grid ───────────────────────────────────────────── */

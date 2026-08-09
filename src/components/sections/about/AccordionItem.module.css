@@ -87,3 +87,35 @@
   padding-bottom: 16px;
   max-width: 520px;
 }
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0 0 16px;
+  margin: 0;
+  max-width: 520px;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 2px solid var(--color-border, rgba(120, 120, 120, 0.25));
+}
+
+.projectTitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+}
+
+.projectDesc {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}

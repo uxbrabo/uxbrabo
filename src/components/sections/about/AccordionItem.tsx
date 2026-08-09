@@ -9,9 +9,10 @@ type AccordionItemProps = {
   company: string
   period: string
   description?: string
+  projects?: { title: string; description: string }[]
 }
 
-export function AccordionItem({ role, company, period, description }: AccordionItemProps) {
+export function AccordionItem({ role, company, period, description, projects }: AccordionItemProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -40,7 +41,7 @@ export function AccordionItem({ role, company, period, description }: AccordionI
       </button>
 
       <AnimatePresence initial={false}>
-        {open && description && (
+        {open && (description || projects) && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
@@ -48,7 +49,17 @@ export function AccordionItem({ role, company, period, description }: AccordionI
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className={styles.body}
           >
-            <p className={styles.description}>{description}</p>
+            {description && <p className={styles.description}>{description}</p>}
+            {projects && projects.length > 0 && (
+              <ul className={styles.projectList}>
+                {projects.map((p) => (
+                  <li key={p.title} className={styles.projectItem}>
+                    <span className={styles.projectTitle}>{p.title}</span>
+                    <span className={styles.projectDesc}>{p.description}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

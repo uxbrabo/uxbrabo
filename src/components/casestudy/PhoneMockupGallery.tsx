@@ -13,7 +13,7 @@ type Props = {
 /**
  * Default mode: the frame hugs the screenshot's real proportions — no crop,
  * no blank filler. Very long pages just cap at a max height and scroll.
- * fixedNav mode (Cuca): needs a fixed phone-ratio viewport so the nav bar
+ * fixedNav mode: needs a fixed phone-ratio viewport so the nav bar
  * overlay can stay pinned while the content behind it scrolls.
  */
 export function PhoneMockupGallery({ screens, fixedNav = false, columns = 3, noScroll = false }: Props) {

@@ -5,11 +5,9 @@ import { HomePage } from '@/pages/HomePage'
 import { WorkPage } from '@/pages/WorkPage'
 import { AboutPage } from '@/pages/AboutPage'
 import { ContactPage } from '@/pages/ContactPage'
-import { CucaCaseStudy } from '@/pages/work/CucaCaseStudy'
 import { VemCaseStudy } from '@/pages/work/VemCaseStudy'
 import { PlazaCaseStudy } from '@/pages/work/PlazaCaseStudy'
 import { VenosanCaseStudy } from '@/pages/work/VenosanCaseStudy'
-import { AcademiaMouraCaseStudy } from '@/pages/work/AcademiaMouraCaseStudy'
 import { SabenPayPage } from '@/pages/work/SabenPayPage'
 import { CorujaGrantPage } from '@/pages/work/CorujaGrantPage'
 import { BellyrisiPage } from '@/pages/work/BellyrisiPage'
@@ -80,26 +78,10 @@ export function App() {
             }
           />
           <Route
-            path="/trabalho/cuca"
-            element={
-              <AnimatedPage>
-                <CucaCaseStudy />
-              </AnimatedPage>
-            }
-          />
-          <Route
             path="/trabalho/vem"
             element={
               <AnimatedPage>
                 <VemCaseStudy />
-              </AnimatedPage>
-            }
-          />
-          <Route
-            path="/trabalho/academia-moura"
-            element={
-              <AnimatedPage>
-                <AcademiaMouraCaseStudy />
               </AnimatedPage>
             }
           />

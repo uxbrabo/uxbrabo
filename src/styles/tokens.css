@@ -12,7 +12,8 @@
   --color-glass: rgba(255, 255, 255, 0.25);
 
   /* ─── Typography ────────────────────────────────── */
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'Instrument Sans', sans-serif;
+  --font-family-logo: 'Inter', sans-serif;
 
   --fw-extralight: 200;
   --fw-light: 300;

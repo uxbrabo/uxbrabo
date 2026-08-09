@@ -5,14 +5,15 @@
   right: 0;
   z-index: 100;
   height: var(--navbar-h);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background-color: var(--color-glass);
+  background-color: transparent;
   transition: background-color var(--duration-base) var(--ease-out),
+    backdrop-filter var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out);
 }
 
 .navbar.scrolled {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }

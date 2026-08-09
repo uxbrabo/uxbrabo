@@ -17,8 +17,8 @@ const stagger = {
 }
 
 const stack = [
-  'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Vite',
-  'Framer Motion', 'Figma', 'Claude Code',
+  'Figma', 'Adobe XD', 'FigJam', 'Miro', 'Notion',
+  'HTML', 'CSS', 'JavaScript', 'React', 'Git', 'SQL',
 ]
 
 type AboutSectionProps = {
@@ -52,7 +52,7 @@ function AboutSection({ letter, label, children }: AboutSectionProps) {
 export function AboutPage() {
   return (
     <main className={styles.page}>
-      <SEO title="Sobre" description="Conheça Lucas Brabo, Designer de Produto e desenvolvedor front-end com mais de 5 anos de experiência em UX/UI, direção de arte e código." />
+      <SEO title="Sobre" description="Conheça Lucas Brabo, Designer de Produto com experiência em UX/UI e uma trajetória entre comunicação, direção de arte e design de produtos digitais." />
       {/* Intro hero */}
       <section className={styles.intro}>
         <div className={styles.introLeft}>
@@ -64,24 +64,31 @@ export function AboutPage() {
           >
             <motion.h1 className={styles.introTitle} variants={fadeUp}>
               Hey :) Sou Lucas,
-              <br />designer de produto
-              <br />e diretor de arte
+              <br />Designer de Produto
+              <br />(UX/UI)
             </motion.h1>
 
             <motion.div className={styles.introBody} variants={fadeUp}>
               <p>
-                Mais de 5 anos transitando entre UX/UI, direção de arte e desenvolvimento
-                front-end, sempre com o mesmo objetivo: criar produtos que fazem sentido
-                para quem usa e geram resultado para quem investe.
+                Sou Designer de Produto com experiência em UX/UI e uma trajetória
+                construída entre comunicação, direção de arte e design de produtos
+                digitais. Nos últimos anos direcionei minha atuação para o
+                desenvolvimento de produtos: criação de interfaces, definição de fluxos,
+                arquitetura de informação, prototipagem em alta fidelidade e handoff para
+                desenvolvimento.
               </p>
               <p>
-                Recife, Pernambuco. Atualmente atuando como Diretor de Arte Sênior na Agência
-                Makplan, mas sigo atuando em produto e front-end em paralelo, via projetos
-                freelance e colaborações pontuais.{' '}
+                Na Caju, colaborei com equipes multidisciplinares em projetos de UX/UI,
+                sempre buscando equilibrar necessidades do negócio e experiência do
+                usuário. Atualmente desenvolvo o Study, um aplicativo educacional para o
+                mercado brasileiro, onde atuo de ponta a ponta na concepção do produto.{' '}
                 <a href="https://wa.me/5581998286538" target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}><strong>Vamos conversar?</strong></a>
               </p>
               <p>
-                Trabalho com IA integrada ao processo, não como atalho, mas como ferramenta de raciocínio. Uso Claude para estruturar problemas complexos e Claude Code para prototipar com código real quando o Figma não dá conta da interação.
+                Minha formação em Publicidade e Propaganda complementa minha visão de
+                produto, permitindo conectar objetivos de negócio, comunicação e
+                experiência do usuário. Também atuo com direção de arte, um repertório
+                extra que soma na hora de pensar interface e comunicação visual.
               </p>
             </motion.div>
 
@@ -116,12 +123,13 @@ export function AboutPage() {
       <div className={styles.sections}>
         <AboutSection letter="A/" label="Resumo Profissional">
           <motion.p className={styles.resumeText} variants={fadeUp}>
-            Atuo nas três frentes que moldam um produto digital: <strong>UX/UI</strong>, pesquisa
-            com usuários, fluxos, wireframes, protótipos e testes de usabilidade;{' '}
-            <strong>direção de arte</strong>, identidade visual, campanhas e branding; e{' '}
-            <strong>desenvolvimento front-end</strong>, com HTML, CSS, JavaScript, React e Vite.
-            Essa combinação me permite ir da ideia ao código sem perder a experiência do usuário
-            de vista.
+            Meu foco é <strong>Design de Produto (UX/UI)</strong>: pesquisa com usuários,
+            definição de fluxos, arquitetura de informação, wireframes, protótipos de alta
+            fidelidade e handoff para desenvolvimento. Tenho conhecimento em{' '}
+            <strong>HTML, CSS, JavaScript, React, Git e SQL</strong>, o que facilita a
+            colaboração com equipes de desenvolvimento durante todo o processo. Minha vivência
+            em <strong>direção de arte</strong> soma um repertório extra de identidade visual e
+            comunicação.
           </motion.p>
           <motion.ul className={styles.stackList} variants={stagger} aria-label="Stack técnica">
             {stack.map((item) => (
@@ -142,6 +150,7 @@ export function AboutPage() {
                   company={exp.company}
                   period={exp.period}
                   description={exp.description}
+                  projects={exp.projects}
                 />
               </motion.div>
             ))}

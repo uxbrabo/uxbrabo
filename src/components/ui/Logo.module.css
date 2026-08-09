@@ -8,6 +8,7 @@
 }
 
 .wordmark {
+  font-family: var(--font-family-logo);
   font-size: 24px;
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-logo);
@@ -16,6 +17,7 @@
 }
 
 .trademark {
+  font-family: var(--font-family-logo);
   font-size: 10px;
   font-weight: var(--fw-regular);
   color: var(--color-text-primary);

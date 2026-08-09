@@ -19,7 +19,7 @@ const fadeUp = {
 export function WorkPage() {
   return (
     <main className={styles.page}>
-      <SEO title="Trabalhos" description="Projetos de UX Design, direção de arte e desenvolvimento front-end por Lucas Brabo." />
+      <SEO title="Trabalhos" description="Projetos de Design de Produto e UX/UI por Lucas Brabo, com direção de arte como repertório complementar." />
 
       {/* UX Design */}
       <section className={styles.category} aria-label="UX Design">
@@ -71,6 +71,9 @@ export function WorkPage() {
       <section className={styles.category} aria-label="Direção de Arte">
         <div className={styles.categoryHeader}>
           <p className={styles.categoryLabel}>Direção de Arte</p>
+          <p className={styles.categoryNote}>
+            Repertório extra da minha trajetória em comunicação, que soma na visão de produto.
+          </p>
         </div>
         <motion.div
           className={styles.artGrid}

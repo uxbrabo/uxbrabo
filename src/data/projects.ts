@@ -18,21 +18,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'academia-moura',
-    slug: 'academia-moura',
-    title: 'ACADEMIA MOURA',
-    subtitle: 'Plataforma EAD',
-    category: 'UX DESIGN',
-    year: '2024',
-    description:
-      'Plataforma de capacitação da rede de distribuição da Moura, com trilhas de desenvolvimento, gamificação com pontos e moedas, loja de brindes e relatórios para gestores.',
-    coverPlaceholder: '#0B1533',
-    coverImage: '/assets/academia-moura/hero.png',
-    coverMockup: 'browser',
-    mockupImage: '/assets/academia-moura/home-desktop.png',
-    hidden: true,
-  },
-  {
     id: 'vem',
     slug: 'vem',
     title: 'VEM',
@@ -82,24 +67,11 @@ export const projects: Project[] = [
     category: 'AI-ASSISTED DESIGN',
     year: '2025',
     description:
-      'App EdTech mobile-first para o ENEM com IA socrática, mapa de conhecimento adaptativo (BKT) e gamificação, concebido, prototipado e entregue como app iOS nativo com Claude Code.',
+      'App EdTech mobile-first para o ENEM, com IA socrática, mapa de conhecimento adaptativo (BKT) e gamificação. Concebido, prototipado e entregue como app iOS nativo de verdade, feito com Claude Code.',
     coverPlaceholder: '#0a0a0a',
     coverImage: '/assets/study/card-cover.png',
     coverMockup: 'phone',
     mockupImage: '/assets/study/home.png',
-  },
-  {
-    id: 'cuca',
-    slug: 'cuca',
-    title: 'CUCA',
-    subtitle: 'Gestão educacional',
-    category: 'UX DESIGN',
-    year: '2025',
-    description:
-      'Plataforma de gestão educacional que centraliza processos acadêmicos e administrativos de instituições de ensino.',
-    coverPlaceholder: '#0d0d0d',
-    coverImage: '/assets/cuca/card-thumb.png',
-    hidden: true,
   },
   {
     id: 'oab-pe',
